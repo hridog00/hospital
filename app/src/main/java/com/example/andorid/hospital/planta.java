@@ -26,7 +26,7 @@ public class planta extends Activity{
         rellenar(message);
 
 
-
+//jaja
 
     }
 
