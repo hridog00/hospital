@@ -23,16 +23,17 @@ public class MainActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-               Intent planta  = new Intent(getApplicationContext(), menu.class);
+               Intent planta  = new Intent(getApplicationContext(), planta.class);
                 ArrayList<String>  info = d.getInfo();
                //planta p = new planta();
                 //p.rellenar(info);
                // Intent planta  = new Intent(getApplicationContext(), menu.class);
+
                 pacientes[0] = "Helena";
                 pacientes[1] = "Sergio";
 
-
-                planta.putExtra("Paciente",pacientes );
+                System.out.println("AQUI");
+                planta.putExtra("Paciente",info );
                 startActivity(planta);
             }
         });

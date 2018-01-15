@@ -14,23 +14,27 @@ public class planta extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_planta);
         Intent intent = getIntent();
         ArrayList<String> message = new ArrayList<String>();
 
-        message = intent.getStringArrayListExtra(MainActivity.pacientes[0]);
-        System.out.println("fndjkfhdshoidHFDAHADHJADJADF  ENTRO");
+        message = intent.getExtras().getStringArrayList("Paciente");
+
+        System.out.println("fndjkfhdshoidHFDAHADHJADJADF  "+message.get(0));
 
         rellenar(message);
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_planta);
+
+
+
+
     }
 
     public void rellenar(ArrayList<String> info){
 
-        Button boton1 = (Button) findViewById(R.id.hab1);
-        boton1.setText(info.get(0));
-        System.out.println("fndjkfhdshoidHFDAHADHJADJADF  "+info.get(0));
 
+        Button boton1  = (Button) findViewById(R.id.hab1);
+        boton1.setText(info.get(0));
 
     }
 }
