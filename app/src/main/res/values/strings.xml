@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">hospital</string>
+    <string name="button">Button</string>
+    <string name="name">Name</string>
+    <string name="entrar">Entrar</string>
+    <string name="logo">logo</string>
+    <string name="planta">PLANTA</string>
+    <string name="a_adir_paciente">Añadir Paciente</string>
+    <color name="white">#FFFFFF</color>
+    <string name="title_activity_menu">Menu</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+
+</resources>
