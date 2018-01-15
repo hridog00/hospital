@@ -1,5 +1,6 @@
 package com.example.andorid.hospital;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +13,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+
+import java.util.ArrayList;
 
 public class menu extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -40,6 +44,19 @@ public class menu extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        //jajajajajajajajajajajajajajajajaja
+
+
+        Intent intent = getIntent();
+        ArrayList<String> message = new ArrayList<String>();
+
+        message = intent.getExtras().getStringArrayList("Paciente");
+
+        System.out.println("fndjkfhdshoidHFDAHADHJADJADF  "+message.get(0));
+
+        rellenar(message);
     }
 
     @Override
@@ -97,5 +114,13 @@ public class menu extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void rellenar(ArrayList<String> info){
+
+
+        Button boton1  = (Button) findViewById(R.id.hab1);
+        boton1.setText(info.get(0));
+
     }
 }

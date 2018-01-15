@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-               Intent planta  = new Intent(getApplicationContext(), planta.class);
+               Intent planta  = new Intent(getApplicationContext(), menu.class);
                 ArrayList<String>  info = d.getInfo();
                //planta p = new planta();
                 //p.rellenar(info);

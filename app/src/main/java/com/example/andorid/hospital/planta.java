@@ -16,25 +16,19 @@ public class planta extends Activity{
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planta);
-        Intent intent = getIntent();
+       /* Intent intent = getIntent();
         ArrayList<String> message = new ArrayList<String>();
 
         message = intent.getExtras().getStringArrayList("Paciente");
 
         System.out.println("fndjkfhdshoidHFDAHADHJADJADF  "+message.get(0));
 
-        rellenar(message);
+        rellenar(message);*/
 
 
 //jaj
 
     }
 
-    public void rellenar(ArrayList<String> info){
 
-
-        Button boton1  = (Button) findViewById(R.id.hab1);
-        boton1.setText(info.get(0));
-
-    }
 }
