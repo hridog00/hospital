@@ -31,13 +31,14 @@
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".PacienteUI" />
-        <activity android:name=".MedicacionUI" />
+        <activity android:name=".MedicacionMedicoUI" />
         <activity android:name=".AddMUI" />
         <activity android:name=".AddPacienteUI" />
         <activity android:name=".MensajesUI" />
         <activity android:name=".EstudianteUI" />
         <activity android:name=".AddEstudianteUI" />
-        <activity android:name=".ValoracionUI"></activity>
+        <activity android:name=".ValoracionUI" />
+        <activity android:name=".MedicacionEnfermeroUI"></activity>
     </application>
 
 </manifest>
