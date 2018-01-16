@@ -6,9 +6,18 @@
     android:layout_height="match_parent"
     tools:context="com.example.andorid.hospital.AddPacienteUI">
 
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent" />
+
     <ScrollView
-        android:layout_width="1008dp"
-        android:layout_height="704dp"
+        android:id="@+id/scrollView4"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,7 +29,9 @@
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill"
+            android:orientation="horizontal">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -28,7 +39,7 @@
 
                 <TextView
                     android:id="@+id/nombretxt"
-                    android:layout_width="386dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Nombre" />
 
@@ -38,7 +49,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="Name" />
+                    android:text="@string/name" />
             </TableRow>
 
             <TableRow
@@ -47,7 +58,7 @@
 
                 <TextView
                     android:id="@+id/apellidostxt"
-                    android:layout_width="386dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Apellidos" />
 
@@ -57,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="Name" />
+                    android:text="" />
             </TableRow>
 
             <TableRow
@@ -65,7 +76,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:layout_width="386dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="DNI" />
 
@@ -75,7 +86,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="Name" />
+                    android:text="" />
             </TableRow>
 
             <TableRow
@@ -83,13 +94,13 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:layout_width="386dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Fecha de nacimiento" />
 
                 <EditText
                     android:id="@+id/fecha"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="date" />
@@ -101,7 +112,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:layout_width="386dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Diagnostico" />
 
@@ -111,7 +122,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="Name" />
+                    android:text="" />
             </TableRow>
 
             <TableRow
@@ -119,7 +130,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:layout_width="386dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Alergias" />
 
@@ -129,7 +140,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="Name" />
+                    android:text="" />
             </TableRow>
 
             <TableRow
@@ -137,10 +148,9 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="386dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="Intervenciones pasadas" />
 
                 <EditText
                     android:id="@+id/intervenciones"
@@ -148,107 +158,108 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="Name" />
+                    android:text="" />
             </TableRow>
 
             <TableRow
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="386dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="Necesidades de Virginia Henderson" />
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_span="2"
                     android:orientation="vertical">
+                    >
 
                     <RadioButton
-                        android:id="@+id/radioButton14"
+                        android:id="@+id/n1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="RadioButton" />
+                        android:text="Respirar normalmente" />
 
                     <RadioButton
-                        android:id="@+id/radioButton12"
+                        android:id="@+id/n2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="RadioButton" />
+                        android:text="Comer y beber de forma adecuada" />
 
                     <RadioButton
-                        android:id="@+id/radioButton13"
+                        android:id="@+id/n3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="RadioButton" />
+                        android:text=" Eliminar los desechos corporales" />
 
                     <RadioButton
-                        android:id="@+id/radioButton11"
+                        android:id="@+id/n4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="RadioButton" />
+                        android:text="Moverse y mantener una postura adecuada" />
 
                     <RadioButton
-                        android:id="@+id/radioButton10"
+                        android:id="@+id/n5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="RadioButton" />
+                        android:text=" Dormir y descansar" />
 
                     <RadioButton
-                        android:id="@+id/radioButton9"
+                        android:id="@+id/n6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="RadioButton" />
+                        android:text="Elegir la ropa adecuada" />
 
                     <RadioButton
-                        android:id="@+id/radioButton6"
+                        android:id="@+id/n7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="RadioButton" />
+                        android:text="Mantener la temperatura corporal" />
 
                     <RadioButton
-                        android:id="@+id/radioButton8"
+                        android:id="@+id/n8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="RadioButton" />
+                        android:text="Mantener la higiene corporal" />
 
                     <RadioButton
-                        android:id="@+id/radioButton7"
+                        android:id="@+id/n9"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="RadioButton" />
+                        android:text="Evitar los peligros del entorno" />
 
                     <RadioButton
-                        android:id="@+id/radioButton5"
+                        android:id="@+id/n10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="RadioButton" />
+                        android:text="Comunicarse con los otros" />
 
                     <RadioButton
-                        android:id="@+id/radioButton4"
+                        android:id="@+id/n11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="RadioButton" />
+                        android:text=" Actuar con arreglo a la propia fé" />
 
                     <RadioButton
-                        android:id="@+id/radioButton3"
+                        android:id="@+id/n12"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="RadioButton" />
+                        android:text="Trabajar para sentirse realizado" />
 
                     <RadioButton
-                        android:id="@+id/radioButton2"
+                        android:id="@+id/n13"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="RadioButton" />
+                        android:text="Participar en diversas formas de entretenimiento" />
 
                     <RadioButton
-                        android:id="@+id/radioButton"
+                        android:id="@+id/n14"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="RadioButton" />
+                        android:text="Aprender, descubrir o satisfacer la curiosidad" />
                 </LinearLayout>
 
             </TableRow>
@@ -258,18 +269,16 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="386dp"
-                    android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Habitos toxicos pasados" />
 
                 <EditText
                     android:id="@+id/habitosPasados"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Name" />
+                    android:inputType="textPersonName" />
             </TableRow>
 
             <TableRow
@@ -277,10 +286,9 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="386dp"
-                    android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Habitos toxicos presentes" />
 
                 <EditText
                     android:id="@+id/habitosPresentes"
@@ -288,7 +296,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="Name" />
+                    android:text="" />
             </TableRow>
 
             <TableRow
@@ -297,9 +305,9 @@
 
                 <TextView
                     android:id="@+id/textView6"
-                    android:layout_width="386dp"
-                    android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Antecedentes patológicos" />
 
                 <EditText
                     android:id="@+id/antecedentesP"
@@ -307,49 +315,55 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="Name" />
+                    android:text="" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Familiar Cercano" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Nombre, Apellidos" />
+
                 <EditText
-                    android:id="@+id/nombreFamiliar"
+                    android:id="@+id/editText9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Parentesco" />
+
+                <EditText
+                    android:id="@+id/editText11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="Name" />
-
-                <EditText
-                    android:id="@+id/editText8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Name" />
-
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TextView" />
-
-                <EditText
-                    android:id="@+id/editText9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Name" />
-
-                <EditText
-                    android:id="@+id/editText10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="phone" />
+                    android:text="" />
             </TableRow>
 
             <TableRow
@@ -357,13 +371,36 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:layout_width="278dp"
+                    android:id="@+id/textView12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="Telefono" />
+
+                <EditText
+                    android:id="@+id/editText12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
                 <Button
                     android:id="@+id/btnEnviar"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Enviar" />
             </TableRow>
