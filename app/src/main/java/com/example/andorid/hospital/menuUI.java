@@ -57,6 +57,22 @@ public class menuUI extends AppCompatActivity
         System.out.println("fndjkfhdshoidHFDAHADHJADJADF  "+message.get(0));
 
         rellenar(message);
+
+        Button botonLogin = (Button) findViewById(R.id.button10);
+
+        botonLogin.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent  addPac  = new Intent(getApplicationContext(), AddPacienteUI.class);
+
+                //PrincipalUI p = new PrincipalUI();
+                //p.rellenar(info);
+                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                startActivity(addPac);
+            }
+        });
     }
 
     @Override

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
@@ -24,6 +25,8 @@ public class PrincipalUI extends Activity{
         System.out.println("fndjkfhdshoidHFDAHADHJADJADF  "+message.get(0));
 
         rellenar(message);*/
+
+
 
 
 //jaj
