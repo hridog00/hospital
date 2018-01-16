@@ -14,7 +14,7 @@ public class EstudianteUI extends AppCompatActivity {
         setContentView(R.layout.activity_estudiante_ui);
 
 
-        Button botonValoraciones = (Button) findViewById(R.id.hab1);
+        Button botonValoraciones = (Button) findViewById(R.id.button5);
 
         botonValoraciones.setOnClickListener(new View.OnClickListener() {
 

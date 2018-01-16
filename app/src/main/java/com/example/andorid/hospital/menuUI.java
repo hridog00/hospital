@@ -110,7 +110,7 @@ public class menuUI extends AppCompatActivity
 
         Button botonPaciente = (Button) findViewById(R.id.hab1);
 
-        botonMensajes.setOnClickListener(new View.OnClickListener() {
+        botonPaciente.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
