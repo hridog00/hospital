@@ -58,9 +58,9 @@ public class menuUI extends AppCompatActivity
 
         rellenar(message);
 
-        Button botonLogin = (Button) findViewById(R.id.button10);
+        Button botonAnadirPaciente = (Button) findViewById(R.id.button2);
 
-        botonLogin.setOnClickListener(new View.OnClickListener() {
+        botonAnadirPaciente.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -71,6 +71,22 @@ public class menuUI extends AppCompatActivity
                 // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
 
                 startActivity(addPac);
+            }
+        });
+
+        Button botonAnadirEstudiante = (Button) findViewById(R.id.button10);
+
+        botonAnadirEstudiante.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent  addEst  = new Intent(getApplicationContext(), AddEstudianteUI.class);
+
+                //PrincipalUI p = new PrincipalUI();
+                //p.rellenar(info);
+                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                startActivity(addEst);
             }
         });
     }
@@ -141,6 +157,8 @@ public class menuUI extends AppCompatActivity
 
         Button boton1  = (Button) findViewById(R.id.hab1);
         boton1.setText(info.get(0));
+
+
 
     }
 }

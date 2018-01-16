@@ -6,7 +6,7 @@
     <string name="logo">logo</string>
     <string name="planta">PLANTA</string>
     <string name="a_adir_paciente">Añadir Paciente</string>
-    <color name="white">#FFFFFF</color>
+    <color name="white">#ffffff</color>
     <string name="title_activity_menu">Menu</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

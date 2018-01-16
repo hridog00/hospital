@@ -17,19 +17,7 @@ public class PrincipalUI extends Activity{
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planta);
-       /* Intent intent = getIntent();
-        ArrayList<String> message = new ArrayList<String>();
 
-        message = intent.getExtras().getStringArrayList("Paciente");
-
-        System.out.println("fndjkfhdshoidHFDAHADHJADJADF  "+message.get(0));
-
-        rellenar(message);*/
-
-
-
-
-//jaj
 
     }
 
