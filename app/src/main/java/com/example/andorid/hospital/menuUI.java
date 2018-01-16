@@ -91,7 +91,7 @@ public class menuUI extends AppCompatActivity
         });
 
 
-        Button botonMensajes = (Button) findViewById(R.id.fab);
+        FloatingActionButton botonMensajes = (FloatingActionButton) findViewById(R.id.fab);
 
         botonMensajes.setOnClickListener(new View.OnClickListener() {
 
