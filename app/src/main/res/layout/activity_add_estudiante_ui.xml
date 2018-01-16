@@ -7,88 +7,158 @@
     tools:context="com.example.andorid.hospital.AddEstudianteUI">
 
     <GridLayout
-        android:layout_width="752dp"
-        android:layout_height="871dp"
+        android:id="@+id/gridLayout"
+        android:layout_width="0dp"
+        android:layout_height="726dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        android:rowCount="7"
         android:columnCount="2"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:rowCount="7"
+        app:layout_constraintBottom_toTopOf="@+id/send"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/nombretxt"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="0"
+            android:layout_columnWeight=".5"
             android:layout_row="0"
-            android:text="Nombre" />
+            android:text="Nombre"
+            tools:layout_editor_absoluteX="780dp"
+            tools:layout_editor_absoluteY="379dp" />
 
         <EditText
             android:id="@+id/nombre"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_columnWeight=".5"
+            android:layout_row="0"
             android:ems="10"
             android:inputType="textPersonName"
-            android:layout_column="1"
-            android:layout_row="0"
-            android:text="@string/name" />
+
+            />
+
         <TextView
             android:id="@+id/apellidostxt"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="0"
+            android:layout_columnWeight=".5"
             android:layout_row="1"
+
             android:text="Apellidos" />
 
         <EditText
             android:id="@+id/apellidos"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:layout_column="1"
+            android:layout_columnWeight=".5"
             android:layout_row="1"
+            android:ems="10"
             android:inputType="textPersonName"
+
             android:text="" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="0"
+            android:layout_columnWeight=".5"
             android:layout_row="2"
+
             android:text="DNI" />
 
         <EditText
             android:id="@+id/dni"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:layout_column="1"
+            android:layout_columnWeight=".5"
             android:layout_row="2"
+            android:ems="10"
             android:inputType="textPersonName"
+
             android:text="" />
+
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="0"
+            android:layout_columnWeight=".5"
             android:layout_row="3"
+
             android:text="Fecha de nacimiento" />
 
         <EditText
             android:id="@+id/fecha"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:layout_column="1"
+            android:layout_columnWeight=".5"
             android:layout_row="3"
+            android:ems="10"
+
             android:inputType="date" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_columnWeight=".5"
+            android:layout_row="4"
 
+            android:text="Domicilio" />
 
+        <EditText
+            android:id="@+id/domicilio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_columnWeight=".5"
+            android:layout_row="4"
+            android:ems="10"
+
+            android:inputType="textPostalAddress" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_columnWeight=".5"
+            android:layout_row="4"
+
+            android:text="Datos académicos" />
+
+        <EditText
+            android:id="@+id/datos_academicos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_columnWeight=".5"
+
+            android:layout_row="4"
+            android:ems="10" />
 
 
     </GridLayout>
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Enviar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
