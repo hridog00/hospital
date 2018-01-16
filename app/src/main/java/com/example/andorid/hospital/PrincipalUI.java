@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 
-public class planta extends Activity{
+public class PrincipalUI extends Activity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

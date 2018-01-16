@@ -17,7 +17,7 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 
-public class menu extends AppCompatActivity
+public class menuUI extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
@@ -71,7 +71,7 @@ public class menu extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // Inflate the menuUI; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }

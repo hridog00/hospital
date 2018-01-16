@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".IniciarSesionUI"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,12 +24,20 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity
-            android:name=".planta"
+            android:name=".PrincipalUI"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
         <activity
-            android:name=".menu"
+            android:name=".menuUI"
             android:label="@string/title_activity_menu"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".PacienteUI" />
+        <activity android:name=".MedicacionUI" />
+        <activity android:name=".AddMUI" />
+        <activity android:name=".AddPacienteUI" />
+        <activity android:name=".MensajesUI" />
+        <activity android:name=".EstudianteUI" />
+        <activity android:name=".AddEstudianteUI" />
+        <activity android:name=".ValoracionUI"></activity>
     </application>
 
 </manifest>
