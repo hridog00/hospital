@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class IniciarSesionUI extends Activity {
 
-    final PrincipalDAO d = new PrincipalDAO();;
+    final PrincipalDAO d = new PrincipalDAO();
 
 
     protected void onCreate(Bundle savedInstanceState) {

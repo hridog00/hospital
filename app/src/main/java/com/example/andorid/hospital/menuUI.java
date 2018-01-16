@@ -89,6 +89,40 @@ public class menuUI extends AppCompatActivity
                 startActivity(addEst);
             }
         });
+
+
+        Button botonMensajes = (Button) findViewById(R.id.fab);
+
+        botonMensajes.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent  addMensaje  = new Intent(getApplicationContext(), MensajesUI.class);
+
+                //PrincipalUI p = new PrincipalUI();
+                //p.rellenar(info);
+                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                startActivity(addMensaje);
+            }
+        });
+//hacer for con los pacientes
+
+        Button botonPaciente = (Button) findViewById(R.id.hab1);
+
+        botonMensajes.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+
+                //PrincipalUI p = new PrincipalUI();
+                //p.rellenar(info);
+                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                startActivity(paciente);
+            }
+        });
     }
 
     @Override
@@ -138,6 +172,9 @@ public class menuUI extends AppCompatActivity
 
 
         } else if (id == R.id.nav_slideshow) {
+
+            Intent  estudiante  = new Intent(getApplicationContext(), EstudianteUI.class);
+            startActivity(estudiante);
 
         } else if (id == R.id.nav_manage) {
 
