@@ -24,7 +24,6 @@ public class PacienteController {
         ArrayList<String> s = new ArrayList<String>();
         return s;
     }
-
     public void gestionarMedicacion(){
         //no se si hace falta, crea el controller de medicacion, llama a la factoria de medicacion
 
