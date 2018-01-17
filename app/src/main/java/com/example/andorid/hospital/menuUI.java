@@ -349,7 +349,18 @@ public class menuUI extends AppCompatActivity
 
         } else if (id == R.id.nav_share) {
 
+
+            Intent  addPac  = new Intent(getApplicationContext(), AddPacienteUI.class);
+
+
+            startActivity(addPac);
+
         } else if (id == R.id.nav_send) {
+
+
+            Intent  addEst  = new Intent(getApplicationContext(), AddEstudianteUI.class);
+
+            startActivity(addEst);
 
         }
 
