@@ -27,4 +27,8 @@ public class SesionController {
     public boolean iniciarSesion(){
         return usuario.comprobar();
     }
+
+    public void cerrarSesion(){
+
+    }
 }
