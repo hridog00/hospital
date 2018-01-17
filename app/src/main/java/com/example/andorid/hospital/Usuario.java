@@ -12,5 +12,8 @@ public class Usuario {
     }
 
     private Usuario() {
+        PrincipalUI p = new PrincipalUI();
+
+
     }
 }
