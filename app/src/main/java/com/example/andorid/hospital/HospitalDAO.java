@@ -1,12 +1,17 @@
 package com.example.andorid.hospital;
 
+import java.util.ArrayList;
+
 /**
  * Created by sergiomerayo on 16/1/18.
  */
 
 public class HospitalDAO {
 
-    public void getListaPacientes(int planta){
+    public ArrayList<String> getListaPacientes(int planta){
+        ArrayList<String> pacientes =new ArrayList<String>();
+        pacientes.add("Helena");
+        return pacientes;
 
     }
 }

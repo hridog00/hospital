@@ -16,6 +16,7 @@ public class FactoriaInterfaz {
 
     private static final SesionController sesionController = new SesionController();
     private static final FactoriaInterfaz ourInstance = new FactoriaInterfaz();
+    private static final PrincipalController principalController = new PrincipalController();
 
     public static FactoriaInterfaz getInstance() {
         return ourInstance;
