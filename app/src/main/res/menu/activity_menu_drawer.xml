@@ -5,34 +5,17 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_lista"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Medicacion Enfermero" />
+            android:title=" Lista de Estudiantes" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_anadirEstudiante"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Estudiante" />
+            android:title="Añadir estudiante" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_anadirPaciente"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Medicacion M" />
+            android:title="Añadir Paciente " />
     </group>
-
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Añadir Paciente" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Añadir estudiante" />
-        </menu>
-    </item>
 
 </menu>

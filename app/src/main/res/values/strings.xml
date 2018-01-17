@@ -24,6 +24,7 @@
     <string name="textview">TextView</string>
 
     <string name="button">Button</string>
+    <string name="title_activity_menu__m__ui">menu_M_UI</string>
 
 
 </resources>

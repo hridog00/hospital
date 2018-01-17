@@ -35,7 +35,7 @@ public class MedicacionMedicoUI extends AppCompatActivity {
 
             // set some properties of rowTextView or something
             boton.setText("This is row #" + i);
-            textv.setText(i);
+            textv.setText("i");
             // add the textview to the linearlayout
 
             grid.addView(textv);

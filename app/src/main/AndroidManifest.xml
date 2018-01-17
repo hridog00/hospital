@@ -39,7 +39,12 @@
         <activity android:name=".AddEstudianteUI" />
         <activity android:name=".ValoracionUI" />
         <activity android:name=".MedicacionEnfermeroUI" />
-        <activity android:name=".ListaEstudiantes"></activity>
+        <activity android:name=".ListaEstudiantes" />
+        <activity
+            android:name=".menu_M_UI"
+            android:label="@string/title_activity_menu__m__ui"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MedicacionEstudianteUI"></activity>
     </application>
 
 </manifest>

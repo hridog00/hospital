@@ -30,11 +30,63 @@ public class FactoriaInterfaz {
     public void mostrarInterfaz(char tipo, Context applicationContext)
     {
 
-        ArrayList<String> info = sesionController.getListaPacientes();
+        if(tipo=='E')
+        {
+            ArrayList<String> info = sesionController.getListaPacientes();
+            Intent intent = new Intent(applicationContext, menuUI.class);
+            intent.putExtra("Paciente",info );
+            applicationContext.startActivity(intent);
+        }
+        else if(tipo=='M')
+        {
+            ArrayList<String> info = sesionController.getListaPacientes();
+            Intent intent = new Intent(applicationContext, menu_M_UI.class);
+            intent.putExtra("Paciente",info );
+            applicationContext.startActivity(intent);
+        }
+        else if(tipo=='S')
+        {
+            ArrayList<String> info = sesionController.getListaPacientes();
+            Intent intent = new Intent(applicationContext, PrincipalUI.class);
+            intent.putExtra("Paciente",info );
+            applicationContext.startActivity(intent);
+        }
+        else if(tipo=='P')
+        {
 
-        Intent intent = new Intent(applicationContext, menuUI.class);
-        intent.putExtra("Paciente",info );
-        applicationContext.startActivity(intent);
+            Intent intent = new Intent(applicationContext, MensajesUI.class);
+            applicationContext.startActivity(intent);
+        }
+
+
+    }
+
+
+    public void mostrarUIMedicacion(char tipo, Context applicationContext)
+    {
+        if(tipo=='E')
+        {
+            ArrayList<String> info = sesionController.getListaPacientes();
+            Intent intent = new Intent(applicationContext, MedicacionEnfermeroUI.class);
+            intent.putExtra("Paciente",info );
+            applicationContext.startActivity(intent);
+        }
+        else if(tipo=='M')
+        {
+            ArrayList<String> info = sesionController.getListaPacientes();
+            Intent intent = new Intent(applicationContext, MedicacionMedicoUI.class);
+            intent.putExtra("Paciente",info );
+            applicationContext.startActivity(intent);
+        }
+        else if(tipo=='S')
+        {
+            ArrayList<String> info = sesionController.getListaPacientes();
+            Intent intent = new Intent(applicationContext, MedicacionEstudianteUI.class);
+
+            intent.putExtra("Paciente",info );
+            applicationContext.startActivity(intent);
+        }
+
 
     }
 }

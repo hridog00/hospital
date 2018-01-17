@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.andorid.hospital.MedicacionEnfermeroUI">
+    tools:context="com.example.andorid.hospital.MedicacionEstudianteUI">
 
     <TextView
         android:id="@+id/textView6"
@@ -40,8 +40,8 @@
             android:id="@+id/grid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:columnCount="3"
+            android:rowCount="2"
+            android:columnCount="2"
             >
 
 

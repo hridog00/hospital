@@ -298,37 +298,22 @@ public class menuUI extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_anadirEstudiante) {
 
-            Intent  medicacion_enfermero  = new Intent(getApplicationContext(), MedicacionEnfermeroUI.class);
+            Intent  medicacion_enfermero  = new Intent(getApplicationContext(), AddEstudianteUI.class);
             startActivity(medicacion_enfermero);
 
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_lista) {
 
             Intent  estudiante  = new Intent(getApplicationContext(), ListaEstudiantes.class);
             startActivity(estudiante);
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_anadirPaciente) {
 
 
-            Intent  medico  = new Intent(getApplicationContext(), MedicacionMedicoUI.class);
+            Intent  medico  = new Intent(getApplicationContext(), AddPacienteUI.class);
             startActivity(medico);
-
-        } else if (id == R.id.nav_share) {
-
-
-            Intent  addPac  = new Intent(getApplicationContext(), AddPacienteUI.class);
-
-
-            startActivity(addPac);
-
-        } else if (id == R.id.nav_send) {
-
-
-            Intent  addEst  = new Intent(getApplicationContext(), AddEstudianteUI.class);
-
-            startActivity(addEst);
 
         }
 
