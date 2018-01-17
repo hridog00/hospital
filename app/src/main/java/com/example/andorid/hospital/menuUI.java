@@ -343,6 +343,10 @@ public class menuUI extends AppCompatActivity
 
         } else if (id == R.id.nav_manage) {
 
+
+            Intent  medico  = new Intent(getApplicationContext(), MedicacionMedicoUI.class);
+            startActivity(medico);
+
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
