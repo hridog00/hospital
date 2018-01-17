@@ -5,4 +5,8 @@ package com.example.andorid.hospital;
  */
 
 public class HospitalDAO {
+
+    public void getListaPacientes(int planta){
+
+    }
 }
