@@ -5,4 +5,7 @@ package com.example.andorid.hospital;
  */
 
 public class UsuarioDAO {
+    public boolean comprobar(){
+        return true;
+    }
 }

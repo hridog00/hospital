@@ -10,8 +10,7 @@ import java.util.ArrayList;
 
 public class IniciarSesionUI extends Activity {
 
-    final PrincipalDAO d = new PrincipalDAO();
-
+    final SesionController sesionController = new SesionController();
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,15 +22,20 @@ public class IniciarSesionUI extends Activity {
 
             @Override
             public void onClick(View v) {
+
                Intent  menu  = new Intent(getApplicationContext(), menuUI.class);
 
                //PrincipalUI p = new PrincipalUI();
                 //p.rellenar(info);
                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                if(sesionController.iniciarSesion()){
+                    ArrayList<String>  info = sesionController.getListaPacientes();
+                    menu.putExtra("Paciente",info );
+                    startActivity(menu);
+                }else{
+                    //mensaje de error
+                }
 
-                ArrayList<String>  info = d.getInfo();
-                menu.putExtra("Paciente",info );
-                startActivity(menu);
             }
         });
     }
