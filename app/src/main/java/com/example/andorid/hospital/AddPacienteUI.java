@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 public class AddPacienteUI extends AppCompatActivity {
     final PrincipalDAO d = new PrincipalDAO();
+    final PrincipalController principalController = new PrincipalController();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +27,7 @@ public class AddPacienteUI extends AppCompatActivity {
                 //p.rellenar(info);
                 // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
 
-                ArrayList<String> info = d.getInfo();
+                ArrayList<String> info = principalController.getListaPacientes(Usuario.getInstance().getnPlanta());
                 menu.putExtra("Paciente",info );
                 startActivity(menu);
             }
