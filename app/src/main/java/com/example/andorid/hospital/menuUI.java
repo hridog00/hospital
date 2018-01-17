@@ -58,38 +58,6 @@ public class menuUI extends AppCompatActivity
 
         rellenar(message);
 
-        Button botonAnadirPaciente = (Button) findViewById(R.id.button2);
-
-        botonAnadirPaciente.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                Intent  addPac  = new Intent(getApplicationContext(), AddPacienteUI.class);
-
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
-
-                startActivity(addPac);
-            }
-        });
-
-        Button botonAnadirEstudiante = (Button) findViewById(R.id.button10);
-
-        botonAnadirEstudiante.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent  addEst  = new Intent(getApplicationContext(), AddEstudianteUI.class);
-
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
-
-                startActivity(addEst);
-            }
-        });
 
 
         FloatingActionButton botonMensajes = (FloatingActionButton) findViewById(R.id.fab);
@@ -378,4 +346,5 @@ public class menuUI extends AppCompatActivity
 
 
     }
+
 }

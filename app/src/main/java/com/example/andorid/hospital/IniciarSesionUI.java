@@ -30,9 +30,13 @@ public class IniciarSesionUI extends Activity {
                 //p.rellenar(info);
                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
                 if(sesionController.iniciarSesion()){
-                    ArrayList<String>  info = sesionController.getListaPacientes();
-                    menu.putExtra("Paciente",info );
-                    startActivity(menu);
+
+                 //   ArrayList<String>  info = sesionController.getListaPacientes();
+                   // menu.putExtra("Paciente",info );
+
+                 FactoriaInterfaz factoria = FactoriaInterfaz.getInstance();
+                         factoria.mostrarInterfaz('E', getApplicationContext());
+                   // startActivity(menu);
                 }else{
                     TextView error = (TextView) findViewById(R.id.error);
                     error.setVisibility(View.VISIBLE);
