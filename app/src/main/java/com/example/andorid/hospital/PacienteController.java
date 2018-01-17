@@ -10,9 +10,9 @@ public class PacienteController {
     private int idPaciente;
 
     //De esto no estoy segura
-    public PacienteController(int id){
-        idPaciente = id;
-    }
+  /*  public PacienteController(int id){
+      idPaciente = id;
+    }*/
     public ArrayList<String> getInformacion(){
         //hacer llamada a DAO
         ArrayList<String> s = new ArrayList<String>();

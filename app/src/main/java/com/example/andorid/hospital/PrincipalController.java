@@ -17,10 +17,10 @@ public class PrincipalController {
     private Map<Integer , String> pacientes = new HashMap<Integer, String>();
 
     //Seria util tener un objeto Nombre-id. Quiza el propio paciente
-    public PrincipalController (int n){
+   /* public PrincipalController (int n){
         numeroPlanta = n;
     }
-
+*/
     public ArrayList<String> getListaPacientes(int planta){
         return hospitalDAO.getListaPacientes(planta);
     }
