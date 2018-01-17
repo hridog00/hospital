@@ -38,7 +38,8 @@
         <activity android:name=".EstudianteUI" />
         <activity android:name=".AddEstudianteUI" />
         <activity android:name=".ValoracionUI" />
-        <activity android:name=".MedicacionEnfermeroUI"></activity>
+        <activity android:name=".MedicacionEnfermeroUI" />
+        <activity android:name=".ListaEstudiantes"></activity>
     </application>
 
 </manifest>
