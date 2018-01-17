@@ -1,6 +1,8 @@
 package com.example.andorid.hospital;
 
 import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +15,7 @@ import org.w3c.dom.Text;
 
 public class MedicacionMedicoUI extends AppCompatActivity {
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,12 +32,15 @@ public class MedicacionMedicoUI extends AppCompatActivity {
             // create a new textview
             final Button boton = new Button(this);
             final TextView textv = new TextView(this);
+
             // set some properties of rowTextView or something
             boton.setText("This is row #" + i);
-            textv.setText("i");
+            textv.setText(i);
             // add the textview to the linearlayout
-            grid.addView(boton);
+
             grid.addView(textv);
+
+            grid.addView(boton);
             // save a reference to the textview for later
             button[i] = boton;
             textviews[i]=textv;
@@ -49,5 +55,17 @@ public class MedicacionMedicoUI extends AppCompatActivity {
                 }
             });
         }
+
+        Button btnAnadir = (Button) findViewById(R.id.button5);
+
+        btnAnadir.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent addM  = new Intent(getApplicationContext(), AddMUI.class);
+
+                startActivity(addM);
+            }
+        });
     }
 }
