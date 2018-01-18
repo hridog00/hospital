@@ -17,6 +17,7 @@ public class UsuarioDAO {
     {
 
 
+
       /*  Usuario usuario = Usuario.getInstance();
         usuario.setIdUsuario(info.get(0));
         usuario.setnPlanta(info.get(1));
