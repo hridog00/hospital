@@ -25,7 +25,7 @@
 
         <activity
             android:name=".UI.PrincipalUI"
-            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
+             />
         <activity
             android:name=".UI.menuUI"
             android:label="@string/title_activity_menu"
