@@ -22,7 +22,6 @@ public class UsuarioDAO {
         Future<List> resultado = service.submit(new ConexionBD("SELECT * FROM Usuario WHERE username='"+username+"' AND contraseña='"+password+ "'\n"));
         List res = resultado.get();
 
-        System.out.println("JAJAJJAAJAJAJ"+res.size());
         for(int i=0; i<res.size(); i++)
         {
             System.out.println(res.get(i));
