@@ -5,6 +5,13 @@ import android.content.Intent;
 
 import com.example.andorid.hospital.Controllers.PrincipalController;
 import com.example.andorid.hospital.Controllers.SesionController;
+import com.example.andorid.hospital.UI.MedicacionEnfermeroUI;
+import com.example.andorid.hospital.UI.MedicacionEstudianteUI;
+import com.example.andorid.hospital.UI.MedicacionMedicoUI;
+import com.example.andorid.hospital.UI.MensajesUI;
+import com.example.andorid.hospital.UI.PrincipalUI;
+import com.example.andorid.hospital.UI.menuUI;
+import com.example.andorid.hospital.UI.menu_M_UI;
 
 import java.util.ArrayList;
 

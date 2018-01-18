@@ -1,4 +1,4 @@
-package com.example.andorid.hospital;
+package com.example.andorid.hospital.UI;
 
 import android.content.Intent;
 import android.os.Build;
@@ -8,10 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.example.andorid.hospital.R;
+import com.example.andorid.hospital.UI.AddMUI;
+import com.example.andorid.hospital.UI.EstudianteUI;
 
 public class MedicacionMedicoUI extends AppCompatActivity {
 

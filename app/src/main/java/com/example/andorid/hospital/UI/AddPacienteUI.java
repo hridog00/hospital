@@ -1,4 +1,4 @@
-package com.example.andorid.hospital;
+package com.example.andorid.hospital.UI;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.andorid.hospital.Controllers.PrincipalController;
+import com.example.andorid.hospital.DAO.PrincipalDAO;
+import com.example.andorid.hospital.R;
+import com.example.andorid.hospital.Usuario;
 
 import java.util.ArrayList;
 

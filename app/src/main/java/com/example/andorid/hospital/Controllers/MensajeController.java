@@ -1,7 +1,9 @@
 package com.example.andorid.hospital.Controllers;
 
 import com.example.andorid.hospital.Mensaje;
-import com.example.andorid.hospital.MensajesDAO;
+import com.example.andorid.hospital.DAO.MensajesDAO;
+
+import com.example.andorid.hospital.DAO.MensajesDAO;
 
 import java.util.ArrayList;
 

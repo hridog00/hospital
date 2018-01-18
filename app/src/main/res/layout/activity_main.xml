@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="visible"
-    tools:context="com.example.andorid.hospital.IniciarSesionUI">
+    tools:context="com.example.andorid.hospital.UI.IniciarSesionUI">
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -31,6 +31,7 @@
                 android:layout_height="wrap_content"
 
                 android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_marginTop="28dp"
                 android:ems="10"
                 android:inputType="textPersonName"

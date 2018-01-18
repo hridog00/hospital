@@ -1,7 +1,9 @@
 package com.example.andorid.hospital.Controllers;
 
 import com.example.andorid.hospital.Medicacion;
-import com.example.andorid.hospital.PacienteDAO;
+import com.example.andorid.hospital.DAO.PacienteDAO;
+
+import com.example.andorid.hospital.DAO.PacienteDAO;
 
 import java.util.ArrayList;
 

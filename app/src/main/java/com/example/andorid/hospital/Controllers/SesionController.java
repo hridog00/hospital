@@ -1,9 +1,10 @@
 package com.example.andorid.hospital.Controllers;
 
-import android.content.Intent;
+import com.example.andorid.hospital.DAO.PrincipalDAO;
+import com.example.andorid.hospital.DAO.UsuarioDAO;
 
-import com.example.andorid.hospital.PrincipalDAO;
-import com.example.andorid.hospital.UsuarioDAO;
+import com.example.andorid.hospital.DAO.PrincipalDAO;
+import com.example.andorid.hospital.DAO.UsuarioDAO;
 
 import java.util.ArrayList;
 

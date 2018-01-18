@@ -1,4 +1,4 @@
-package com.example.andorid.hospital;
+package com.example.andorid.hospital.UI;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.andorid.hospital.Controllers.SesionController;
+import com.example.andorid.hospital.FactoriaInterfaz;
+import com.example.andorid.hospital.R;
 
 public class IniciarSesionUI extends Activity {
 

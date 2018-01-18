@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.andorid.hospital.menu_M_UI">
+    tools:context="com.example.andorid.hospital.UI.menu_M_UI">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

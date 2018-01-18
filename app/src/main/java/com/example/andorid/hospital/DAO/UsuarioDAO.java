@@ -1,4 +1,4 @@
-package com.example.andorid.hospital;
+package com.example.andorid.hospital.DAO;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;

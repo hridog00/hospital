@@ -1,4 +1,4 @@
-package com.example.andorid.hospital;
+package com.example.andorid.hospital.DAO;
 
 import java.util.ArrayList;
 

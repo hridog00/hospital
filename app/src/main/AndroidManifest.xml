@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".IniciarSesionUI"
+            android:name=".UI.IniciarSesionUI"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,27 +24,27 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity
-            android:name=".PrincipalUI"
+            android:name=".UI.PrincipalUI"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
         <activity
-            android:name=".menuUI"
+            android:name=".UI.menuUI"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".PacienteUI" />
-        <activity android:name=".MedicacionMedicoUI" />
-        <activity android:name=".AddMUI" />
-        <activity android:name=".AddPacienteUI" />
-        <activity android:name=".MensajesUI" />
-        <activity android:name=".EstudianteUI" />
-        <activity android:name=".AddEstudianteUI" />
-        <activity android:name=".ValoracionUI" />
-        <activity android:name=".MedicacionEnfermeroUI" />
-        <activity android:name=".ListaEstudiantes" />
+        <activity android:name=".UI.PacienteUI" />
+        <activity android:name=".UI.MedicacionMedicoUI" />
+        <activity android:name=".UI.AddMUI" />
+        <activity android:name=".UI.AddPacienteUI" />
+        <activity android:name=".UI.MensajesUI" />
+        <activity android:name=".UI.EstudianteUI" />
+        <activity android:name=".UI.AddEstudianteUI" />
+        <activity android:name=".UI.ValoracionUI" />
+        <activity android:name=".UI.MedicacionEnfermeroUI" />
+        <activity android:name=".UI.ListaEstudiantesUI" />
         <activity
-            android:name=".menu_M_UI"
+            android:name=".UI.menu_M_UI"
             android:label="@string/title_activity_menu__m__ui"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MedicacionEstudianteUI"></activity>
+        <activity android:name=".UI.MedicacionEstudianteUI"></activity>
     </application>
 
 </manifest>

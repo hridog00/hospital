@@ -1,4 +1,4 @@
-package com.example.andorid.hospital;
+package com.example.andorid.hospital.UI;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,18 +15,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
-import com.example.andorid.hospital.Controllers.PrincipalController;
+import com.example.andorid.hospital.R;
 
 import java.util.ArrayList;
 
-public class menu_M_UI extends AppCompatActivity
+public class menuUI extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private static final PrincipalController principalController= new PrincipalController();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu__m__ui);
+        setContentView(R.layout.activity_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -47,6 +46,9 @@ public class menu_M_UI extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        //jajajajajajajajajajajajajajajajaja
 
 
         Intent intent = getIntent();
@@ -270,8 +272,8 @@ public class menu_M_UI extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu__m__ui, menu);
+        // Inflate the menuUI; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
 
@@ -296,35 +298,29 @@ public class menu_M_UI extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_planta1) {
+       if (id == R.id.nav_anadirEstudiante) {
 
-            ArrayList<String> info = principalController.getListaPacientes(1);
-            rellenar(info);
-          /*  Intent intent = new Intent(getApplicationContext(), menu_M_UI.class);
-            intent.putExtra("Paciente",info );
-            startActivity(intent);*/
+            Intent  medicacion_enfermero  = new Intent(getApplicationContext(), AddEstudianteUI.class);
+            startActivity(medicacion_enfermero);
 
-            // Handle the camera action
-        } else if (id == R.id.nav_Planta2) {
-            ArrayList<String> info = principalController.getListaPacientes(2);
-            rellenar(info);
-            /*Intent intent = new Intent(getApplicationContext(), menu_M_UI.class);
-            intent.putExtra("Paciente",info );
-            startActivity(intent);*/
 
-        } else if (id == R.id.nav_planta3) {
-            ArrayList<String> info = principalController.getListaPacientes(3);
-            rellenar(info);
-           /* Intent intent = new Intent(getApplicationContext(), menu_M_UI.class);
-            intent.putExtra("Paciente",info );
-            startActivity(intent);*/
+        } else if (id == R.id.nav_lista) {
+
+            Intent  estudiante  = new Intent(getApplicationContext(), ListaEstudiantesUI.class);
+            startActivity(estudiante);
+
+        } else if (id == R.id.nav_anadirPaciente) {
+
+
+            Intent  medico  = new Intent(getApplicationContext(), AddPacienteUI.class);
+            startActivity(medico);
 
         }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
 
     public void rellenar(ArrayList<String> info){
 
@@ -335,4 +331,5 @@ public class menu_M_UI extends AppCompatActivity
 
 
     }
+
 }

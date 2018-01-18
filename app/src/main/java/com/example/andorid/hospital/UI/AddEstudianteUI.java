@@ -1,13 +1,15 @@
-package com.example.andorid.hospital;
+package com.example.andorid.hospital.UI;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MensajesUI extends AppCompatActivity {
+import com.example.andorid.hospital.R;
+
+public class AddEstudianteUI extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mensajes_ui);
+        setContentView(R.layout.activity_add_estudiante_ui);
     }
 }
