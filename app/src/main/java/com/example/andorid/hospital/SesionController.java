@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class SesionController {
     final PrincipalDAO d = new PrincipalDAO();
-    final UsuarioDAO usuario = new UsuarioDAO();
+    final UsuarioDAO usuarioDAO = new UsuarioDAO();
 
 
     public ArrayList<String>  getListaPacientes(){
@@ -25,7 +25,13 @@ public class SesionController {
     }
 
     public boolean iniciarSesion(){
-        return usuario.comprobar();
+        return usuarioDAO.comprobar();
+    }
+
+
+    public void crearUsuario(String id){
+       usuarioDAO.crearUsuario(id);
+
     }
 
     public void cerrarSesion(){

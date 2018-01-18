@@ -34,9 +34,10 @@ public class IniciarSesionUI extends Activity {
                  //   ArrayList<String>  info = sesionController.getListaPacientes();
                    // menu.putExtra("Paciente",info );
 
+
                  FactoriaInterfaz factoria = FactoriaInterfaz.getInstance();
-                    char tipo = ((TextView) findViewById(R.id.editText)).getText().charAt(0);
-                         factoria.mostrarInterfaz(tipo, getApplicationContext());
+                 char tipo = ((TextView) findViewById(R.id.editText)).getText().charAt(0);
+                 factoria.mostrarInterfaz(tipo, getApplicationContext());
                    // startActivity(menu);
                 }else{
                     TextView error = (TextView) findViewById(R.id.error);

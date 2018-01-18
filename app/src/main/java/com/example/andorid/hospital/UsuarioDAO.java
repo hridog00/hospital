@@ -1,5 +1,6 @@
 package com.example.andorid.hospital;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 /**
@@ -12,8 +13,15 @@ public class UsuarioDAO {
     }
 
 
-    public ArrayList<String> obtenerInformacionUsuario(String idUsuario)
+    public void crearUsuario(String idUsuario)
     {
-        return null;
+
+
+      /*  Usuario usuario = Usuario.getInstance();
+        usuario.setIdUsuario(info.get(0));
+        usuario.setnPlanta(info.get(1));
+        usuario.setNombreUsuario(info.get(2));
+        usuario.setTipo(info.get(3));*/
+
     }
 }

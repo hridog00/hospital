@@ -6,7 +6,7 @@ package com.example.andorid.hospital;
 
 public class Usuario {
     private static final Usuario ourInstance = new Usuario();
-    private int idUsuario;
+    private String idUsuario;
     private int nPlanta;
     private String nombreUsuario;
     private char tipo;
@@ -21,11 +21,11 @@ public class Usuario {
     private Usuario() {
     }
 
-    public int getIdUsuario() {
+    public String getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(int idUsuario) {
+    public void setIdUsuario(String idUsuario) {
         this.idUsuario = idUsuario;
     }
 
