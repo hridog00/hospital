@@ -1,4 +1,6 @@
-package com.example.andorid.hospital;
+package com.example.andorid.hospital.Controllers;
+
+import com.example.andorid.hospital.HospitalDAO;
 
 import java.util.ArrayList;
 import java.util.HashMap;

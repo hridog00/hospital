@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.andorid.hospital.Controllers.PrincipalController;
+
 import java.util.ArrayList;
 
 public class AddPacienteUI extends AppCompatActivity {

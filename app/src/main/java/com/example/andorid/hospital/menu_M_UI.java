@@ -15,12 +15,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import com.example.andorid.hospital.Controllers.PrincipalController;
+
 import java.util.ArrayList;
 
 public class menu_M_UI extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private static final SesionController sesionController = new SesionController();
+    private static final PrincipalController principalController= new PrincipalController();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -296,23 +298,26 @@ public class menu_M_UI extends AppCompatActivity
 
         if (id == R.id.nav_planta1) {
 
-            ArrayList<String> info = sesionController.getListaPacientes();
-            Intent intent = new Intent(getApplicationContext(), MedicacionMedicoUI.class);
+            ArrayList<String> info = principalController.getListaPacientes(1);
+            rellenar(info);
+          /*  Intent intent = new Intent(getApplicationContext(), menu_M_UI.class);
             intent.putExtra("Paciente",info );
-            startActivity(intent);
+            startActivity(intent);*/
 
             // Handle the camera action
         } else if (id == R.id.nav_Planta2) {
-            ArrayList<String> info = sesionController.getListaPacientes();
-            Intent intent = new Intent(getApplicationContext(), MedicacionMedicoUI.class);
+            ArrayList<String> info = principalController.getListaPacientes(2);
+            rellenar(info);
+            /*Intent intent = new Intent(getApplicationContext(), menu_M_UI.class);
             intent.putExtra("Paciente",info );
-            startActivity(intent);
+            startActivity(intent);*/
 
         } else if (id == R.id.nav_planta3) {
-            ArrayList<String> info = sesionController.getListaPacientes();
-            Intent intent = new Intent(getApplicationContext(), MedicacionMedicoUI.class);
+            ArrayList<String> info = principalController.getListaPacientes(3);
+            rellenar(info);
+           /* Intent intent = new Intent(getApplicationContext(), menu_M_UI.class);
             intent.putExtra("Paciente",info );
-            startActivity(intent);
+            startActivity(intent);*/
 
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
