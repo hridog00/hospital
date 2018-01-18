@@ -24,7 +24,12 @@ public class UsuarioDAO {
 
         for(int i=0; i<res.size(); i++)
         {
-            System.out.println(res.get(i));
+            //System.out.println(res.get(i));
+           /* List objeto = (List)res.get(i);
+            for(int j=0;j<objeto.size();j++){
+                System.out.println(objeto.get(j));
+            }*/
+
         }
 
         return true;
