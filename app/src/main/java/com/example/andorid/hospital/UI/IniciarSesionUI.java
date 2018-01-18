@@ -40,13 +40,14 @@ public class IniciarSesionUI extends Activity {
                  FactoriaInterfaz factoria = FactoriaInterfaz.getInstance();
                  char tipo = ((TextView) findViewById(R.id.editText)).getText().charAt(0);
                  factoria.mostrarInterfaz(tipo, getApplicationContext());
+
                    // startActivity(menu);
                 }else{
                     TextView error = (TextView) findViewById(R.id.error);
                     error.setVisibility(View.VISIBLE);
                     //mensaje de error
                 }
-
+                finish();
             }
         });
     }
