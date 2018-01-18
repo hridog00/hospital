@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -17,16 +18,15 @@ public class UsuarioDAO {
     //ConexionBD BD = new ConexionBD();
     public boolean comprobar(String username, String password) throws Exception{
 
-       //ResultSet rs  = BD.abrirConexion("SELECT * FROM Usuario WHERE username='"+username+"' AND contraseña='"+password+ "'\n");
-
         ExecutorService service = Executors.newFixedThreadPool(2);
-        Future<ResultSet> resultado = service.submit(new ConexionBD("SELECT * FROM Usuario WHERE username='"+username+"' AND contraseña='"+password+ "'\n"));
-        resultado.get();
+        Future<List> resultado = service.submit(new ConexionBD("SELECT * FROM Usuario WHERE username='"+username+"' AND contraseña='"+password+ "'\n"));
+        List res = resultado.get();
 
-
-
-      //  BD.cerrarConexion();
-
+        System.out.println("JAJAJJAAJAJAJ"+res.size());
+        for(int i=0; i<res.size(); i++)
+        {
+            System.out.println(res.get(i));
+        }
 
         return true;
     }

@@ -1,25 +1,19 @@
 package com.example.andorid.hospital.DAO;
 
-import android.util.Log;
-import android.widget.Toast;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-
-import javax.xml.transform.Result;
 
 /**
  * Created by sergiomerayo on 18/1/18.
  */
 
-public class ConexionBD implements Callable<ResultSet>{
+public class ConexionBD implements Callable<List>{
 
     private String dataBaseURL;
     private String driverName;
@@ -37,9 +31,11 @@ public class ConexionBD implements Callable<ResultSet>{
         sql=sentencia;
             }
 
-            public ResultSet call(){
+            public List call(){
+                List list = new ArrayList();
 
                 try {
+
                     Class.forName("com.mysql.jdbc.Driver");
 
                     conn = DriverManager.getConnection(
@@ -47,10 +43,14 @@ public class ConexionBD implements Callable<ResultSet>{
                     System.out.println("CONEXION");
                     PreparedStatement st = conn.prepareStatement(sql);
                     rs = st.executeQuery();
-                    while(rs.next()) {
-                        System.out.println(rs.getString("Nombre"));
-                    }
-                    conn.close();
+                    int numeroDeColumnas = rs.getMetaData().getColumnCount();
+                   while(rs.next()) {
+                       for(int i=1; i<=numeroDeColumnas; i++) {
+                           //System.out.println(rs.getString("Nombre"));
+                           list.add(rs.getString(i));
+                       }
+                   }
+                   conn.close();
 
                 } catch (SQLException se) {
                     System.out.println("oopsse puede conectar. Error: " + se.toString());
@@ -59,47 +59,6 @@ public class ConexionBD implements Callable<ResultSet>{
                 }
 
 
-                return rs;
+                return list;
             }
-
-
-
-
-
-
-
-    public ResultSet abrirConexion(String sentencia) throws Exception{
-        /*sql = sentencia;
-
-        sqlThread.start();*/
-        return rs;
-    }
-
-
-    public Connection getConexion() {
-        return conn;
-    }
-
-    Thread sqlThread = new Thread() {
-        public void run() {
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-
-                 conn = DriverManager.getConnection(
-                        "jdbc:mysql://hesefra.ck8fbpftjxut.us-east-2.rds.amazonaws.com/mydb", "Hesefra", "Lopetamos66");
-                System.out.println("CONEXION");
-                PreparedStatement st = conn.prepareStatement(sql);
-                rs = st.executeQuery();
-                while(rs.next()) {
-                    System.out.println(rs.getString("Nombre"));
-                }
-                conn.close();
-
-            } catch (SQLException se) {
-                System.out.println("oopsse puede conectar. Error: " + se.toString());
-            } catch (ClassNotFoundException e) {
-                System.out.println("oopsse encuentra la clase. Error: " + e.getMessage());
-            }
-        }
-    };
 }
