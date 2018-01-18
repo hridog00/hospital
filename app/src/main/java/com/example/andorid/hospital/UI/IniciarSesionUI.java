@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.andorid.hospital.Controllers.SesionController;
@@ -32,7 +34,9 @@ public class IniciarSesionUI extends Activity {
                 //p.rellenar(info);
                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
                 try {
-                    if(sesionController.iniciarSesion()){
+                  String username = ((EditText) findViewById(R.id.editText)).getText().toString();
+                    String password = ((EditText) findViewById(R.id.editText2)).getText().toString();
+                    if(sesionController.iniciarSesion(username, password)){
 
                      //   ArrayList<String>  info = sesionController.getListaPacientes();
                        // menu.putExtra("Paciente",info );

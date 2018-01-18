@@ -1,5 +1,7 @@
 package com.example.andorid.hospital.DAO;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
@@ -10,9 +12,19 @@ import java.util.ArrayList;
 public class UsuarioDAO {
 
     ConexionBD BD = new ConexionBD();
-    public boolean comprobar() throws Exception{
+    public boolean comprobar(String username, String password) throws Exception{
 
         BD.abrirConexion();
+
+        Connection con = BD.getConexion();
+        PreparedStatement st = con.prepareStatement("SELECT * FROM Usuario WHERE username='"+username+"' AND contraseña='"+password+ "'\n");
+        ResultSet rs = st.executeQuery();
+        while(rs.next()){
+
+            System.out.println(rs.getString("Nombre"));
+
+        }
+
         BD.cerrarConexion();
 
 

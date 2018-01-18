@@ -1,5 +1,8 @@
 package com.example.andorid.hospital.DAO;
 
+import android.util.Log;
+import android.widget.Toast;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
@@ -13,8 +16,9 @@ public class ConexionBD{
     private String driverName;
     private String user;
     private String pass;
-    private Connection conexion;
+    private Connection con = null;
     public String getDataBaseURL() { return dataBaseURL;}
+
             //........ AQUÍ VAN TODOS LOS GETTERS & SETTERS DE LOS PARÁMETROS DE LA CLASE
     public ConexionBD(){
             this.dataBaseURL = "jdbc:mysql://hesefra.ck8fbpftjxut.us-east-2.rds.amazonaws.com/mydb";
@@ -25,9 +29,12 @@ public class ConexionBD{
     public void abrirConexion() throws Exception{
 
          try{
+
              Class.forName("com.mysql.jdbc.Driver").newInstance();
-          Connection con = DriverManager.getConnection("jdbc:mysql://hesefra.ck8fbpftjxut.us-east-2.rds.amazonaws.com/mydb", "Hesefra", "Lopetamos66");
+          con = DriverManager.getConnection("jdbc:mysql://hesefra.ck8fbpftjxut.us-east-2.rds.amazonaws.com:3306/mydb", "Hesefra", "Lopetamos66");
          } catch (Exception e) {
+
+
          System.out.println("Al abrir la base de datos " + e.getMessage());
      }
     }
@@ -41,5 +48,9 @@ public class ConexionBD{
             catch (Exception e){
             throw new Exception("Al cerrar la conexión de la base de datos. " + e.getMessage());
             }
+    }
+
+    public Connection getConexion() {
+        return con;
     }
 }

@@ -28,8 +28,8 @@ public class SesionController {
         return  info;
     }
 
-    public boolean iniciarSesion() throws Exception{
-        return usuarioDAO.comprobar();
+    public boolean iniciarSesion(String username, String password) throws Exception{
+        return usuarioDAO.comprobar(username, password);
     }
 
 
