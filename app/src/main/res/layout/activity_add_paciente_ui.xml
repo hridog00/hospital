@@ -174,86 +174,108 @@
 
                     <RadioButton
                         android:id="@+id/n1"
+                        style="@style/Base.Widget.AppCompat.CompoundButton.CheckBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:duplicateParentState="true"
                         android:text="Respirar normalmente" />
 
                     <RadioButton
                         android:id="@+id/n2"
+                        style="@style/Base.Widget.AppCompat.CompoundButton.CheckBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:duplicateParentState="true"
                         android:text="Comer y beber de forma adecuada" />
 
                     <RadioButton
                         android:id="@+id/n3"
+                        style="@style/Base.Widget.AppCompat.CompoundButton.CheckBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:duplicateParentState="true"
                         android:text=" Eliminar los desechos corporales" />
 
                     <RadioButton
                         android:id="@+id/n4"
+                        style="@style/Base.Widget.AppCompat.CompoundButton.CheckBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:duplicateParentState="true"
                         android:text="Moverse y mantener una postura adecuada" />
 
                     <RadioButton
                         android:id="@+id/n5"
+                        style="@style/Base.Widget.AppCompat.CompoundButton.CheckBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:duplicateParentState="true"
                         android:text=" Dormir y descansar" />
 
                     <RadioButton
                         android:id="@+id/n6"
+                        style="@style/Base.Widget.AppCompat.CompoundButton.CheckBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:duplicateParentState="true"
                         android:text="Elegir la ropa adecuada" />
 
                     <RadioButton
                         android:id="@+id/n7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:duplicateParentState="true"
                         android:text="Mantener la temperatura corporal" />
 
                     <RadioButton
                         android:id="@+id/n8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:duplicateParentState="true"
                         android:text="Mantener la higiene corporal" />
 
                     <RadioButton
                         android:id="@+id/n9"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:duplicateParentState="true"
                         android:text="Evitar los peligros del entorno" />
 
                     <RadioButton
                         android:id="@+id/n10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:duplicateParentState="true"
                         android:text="Comunicarse con los otros" />
 
                     <RadioButton
                         android:id="@+id/n11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:duplicateParentState="true"
                         android:text=" Actuar con arreglo a la propia fé" />
 
                     <RadioButton
                         android:id="@+id/n12"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:duplicateParentState="true"
                         android:text="Trabajar para sentirse realizado" />
 
                     <RadioButton
                         android:id="@+id/n13"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:duplicateParentState="true"
                         android:text="Participar en diversas formas de entretenimiento" />
 
                     <RadioButton
                         android:id="@+id/n14"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:duplicateParentState="true"
                         android:text="Aprender, descubrir o satisfacer la curiosidad" />
                 </LinearLayout>
 
