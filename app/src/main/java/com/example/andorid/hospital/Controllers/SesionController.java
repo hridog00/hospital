@@ -28,7 +28,7 @@ public class SesionController {
         return  info;
     }
 
-    public boolean iniciarSesion(){
+    public boolean iniciarSesion() throws Exception{
         return usuarioDAO.comprobar();
     }
 

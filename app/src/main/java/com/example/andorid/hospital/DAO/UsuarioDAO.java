@@ -8,7 +8,14 @@ import java.util.ArrayList;
  */
 
 public class UsuarioDAO {
-    public boolean comprobar(){
+
+    ConexionBD BD = new ConexionBD();
+    public boolean comprobar() throws Exception{
+
+        BD.abrirConexion();
+        BD.cerrarConexion();
+
+
         return true;
     }
 

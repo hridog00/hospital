@@ -31,21 +31,25 @@ public class IniciarSesionUI extends Activity {
                //PrincipalUI p = new PrincipalUI();
                 //p.rellenar(info);
                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
-                if(sesionController.iniciarSesion()){
+                try {
+                    if(sesionController.iniciarSesion()){
 
-                 //   ArrayList<String>  info = sesionController.getListaPacientes();
-                   // menu.putExtra("Paciente",info );
+                     //   ArrayList<String>  info = sesionController.getListaPacientes();
+                       // menu.putExtra("Paciente",info );
 
 
-                 FactoriaInterfaz factoria = FactoriaInterfaz.getInstance();
-                 char tipo = ((TextView) findViewById(R.id.editText)).getText().charAt(0);
-                 factoria.mostrarInterfaz(tipo, getApplicationContext());
+                     FactoriaInterfaz factoria = FactoriaInterfaz.getInstance();
+                     char tipo = ((TextView) findViewById(R.id.editText)).getText().charAt(0);
+                     factoria.mostrarInterfaz(tipo, getApplicationContext());
 
-                   // startActivity(menu);
-                }else{
-                    TextView error = (TextView) findViewById(R.id.error);
-                    error.setVisibility(View.VISIBLE);
-                    //mensaje de error
+                       // startActivity(menu);
+                    }else{
+                        TextView error = (TextView) findViewById(R.id.error);
+                        error.setVisibility(View.VISIBLE);
+                        //mensaje de error
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
                 finish();
             }
