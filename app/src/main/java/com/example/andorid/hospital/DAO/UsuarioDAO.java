@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 /**
  * Created by sergiomerayo on 16/1/18.
@@ -11,19 +14,16 @@ import java.util.ArrayList;
 
 public class UsuarioDAO {
 
-    ConexionBD BD = new ConexionBD();
+    //ConexionBD BD = new ConexionBD();
     public boolean comprobar(String username, String password) throws Exception{
 
-        ResultSet rs  = BD.abrirConexion("SELECT * FROM Usuario WHERE username='"+username+"' AND contraseña='"+password+ "'\n");
+       //ResultSet rs  = BD.abrirConexion("SELECT * FROM Usuario WHERE username='"+username+"' AND contraseña='"+password+ "'\n");
 
-       /* Connection con = BD.getConexion();
-        PreparedStatement st = con.prepareStatement("SELECT * FROM Usuario WHERE username='"+username+"' AND contraseña='"+password+ "'\n");
-        ResultSet rs = st.executeQuery();*/
-        while(rs.next()){
+        ExecutorService service = Executors.newFixedThreadPool(2);
+        Future<ResultSet> resultado = service.submit(new ConexionBD("SELECT * FROM Usuario WHERE username='"+username+"' AND contraseña='"+password+ "'\n"));
+        resultado.get();
 
-            System.out.println(rs.getString("Nombre"));
 
-        }
 
       //  BD.cerrarConexion();
 
