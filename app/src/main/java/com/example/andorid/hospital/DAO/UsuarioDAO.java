@@ -17,7 +17,7 @@ public class UsuarioDAO {
         BD.abrirConexion();
 
         Connection con = BD.getConexion();
-        PreparedStatement st = con.prepareStatement("SELECT * FROM Usuario WHERE username='"+username+"' AND contraseña='"+password+ "'\n");
+      /*  PreparedStatement st = con.prepareStatement("SELECT * FROM Usuario WHERE username='"+username+"' AND contraseña='"+password+ "'\n");
         ResultSet rs = st.executeQuery();
         while(rs.next()){
 
@@ -25,7 +25,7 @@ public class UsuarioDAO {
 
         }
 
-        BD.cerrarConexion();
+        BD.cerrarConexion();*/
 
 
         return true;
