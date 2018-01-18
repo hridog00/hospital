@@ -150,6 +150,7 @@
 
     </GridLayout>
 
+
     <Button
         android:id="@+id/send"
         android:layout_width="wrap_content"
