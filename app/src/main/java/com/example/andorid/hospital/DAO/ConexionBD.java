@@ -19,7 +19,9 @@ public class ConexionBD {
     private String driverName;
     private String user;
     private String pass;
-    private Connection con = null;
+    private String sql;
+    private Connection conn = null;
+    private  ResultSet rs;
     public String getDataBaseURL() { return dataBaseURL;}
 
             //........ AQUÍ VAN TODOS LOS GETTERS & SETTERS DE LOS PARÁMETROS DE LA CLASE
@@ -30,24 +32,34 @@ public class ConexionBD {
             this.pass = "Lopetamos66";
             }
 
-    public void abrirConexion() throws Exception{
+    public ResultSet abrirConexion(String sentencia) throws Exception{
+        sql = sentencia;
+        Class.forName("com.mysql.jdbc.Driver").newInstance();
+        // "jdbc:mysql://IP:PUERTO/DB", "USER", "PASSWORD");
+        // Si estás utilizando el emulador de android y tenes el mysql en tu misma PC no utilizar 127.0.0.1 o localhost como IP, utilizar 10.0.2.2
+        System.out.println("START");
 
-        /*try{
+        conn = DriverManager.getConnection(
+                "jdbc:mysql://hesefra.ck8fbpftjxut.us-east-2.rds.amazonaws.com/mydb", "Hesefra", "Lopetamos66");
+        //En el stsql se puede agregar cualquier consulta SQL deseada.
+        System.out.println("CONEXION");
+        //PreparedStatement st = conn.prepareStatement("SELECT * FROM Usuario WHERE username='E71475642Z' AND contraseña='hesefra'\n");
+        PreparedStatement st = conn.prepareStatement(sql);
+        rs = st.executeQuery();
+        while(rs.next()){
 
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
-            con = DriverManager.getConnection("jdbc:mysql://hesefra.ck8fbpftjxut.us-east-2.rds.amazonaws.com:3306/mydb", "Hesefra", "Lopetamos66");
-        } catch (Exception e) {
+            System.out.println(rs.getString("Nombre"));
 
-
-            System.out.println("Al abrir la base de datos " + e.getMessage());
-        }*/
-        sqlThread.start();
+        }
+     //   sqlThread.start();
+        return rs;
     }
 
 
 
 
     public void cerrarConexion() throws Exception { try {
+        conn.close();
 
         System.out.println ("Cierre correcto de la conexión con la base de datos"); }
     catch (Exception e){
@@ -56,7 +68,7 @@ public class ConexionBD {
     }
 
     public Connection getConexion() {
-        return con;
+        return conn;
     }
 
     Thread sqlThread = new Thread() {
@@ -67,12 +79,13 @@ public class ConexionBD {
                 // Si estás utilizando el emulador de android y tenes el mysql en tu misma PC no utilizar 127.0.0.1 o localhost como IP, utilizar 10.0.2.2
                 System.out.println("START");
 
-                Connection conn = DriverManager.getConnection(
+                 conn = DriverManager.getConnection(
                         "jdbc:mysql://hesefra.ck8fbpftjxut.us-east-2.rds.amazonaws.com/mydb", "Hesefra", "Lopetamos66");
                 //En el stsql se puede agregar cualquier consulta SQL deseada.
                 System.out.println("CONEXION");
-                PreparedStatement st = conn.prepareStatement("SELECT * FROM Usuario WHERE username='E71475642Z' AND contraseña='hesefra'\n");
-                ResultSet rs = st.executeQuery();
+                //PreparedStatement st = conn.prepareStatement("SELECT * FROM Usuario WHERE username='E71475642Z' AND contraseña='hesefra'\n");
+                PreparedStatement st = conn.prepareStatement(sql);
+                rs = st.executeQuery();
                 while(rs.next()){
 
                     System.out.println(rs.getString("Nombre"));

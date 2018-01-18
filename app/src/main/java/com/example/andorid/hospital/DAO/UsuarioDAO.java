@@ -14,18 +14,18 @@ public class UsuarioDAO {
     ConexionBD BD = new ConexionBD();
     public boolean comprobar(String username, String password) throws Exception{
 
-        BD.abrirConexion();
+        ResultSet rs  = BD.abrirConexion("SELECT * FROM Usuario WHERE username='"+username+"' AND contraseña='"+password+ "'\n");
 
-        Connection con = BD.getConexion();
-      /*  PreparedStatement st = con.prepareStatement("SELECT * FROM Usuario WHERE username='"+username+"' AND contraseña='"+password+ "'\n");
-        ResultSet rs = st.executeQuery();
+       /* Connection con = BD.getConexion();
+        PreparedStatement st = con.prepareStatement("SELECT * FROM Usuario WHERE username='"+username+"' AND contraseña='"+password+ "'\n");
+        ResultSet rs = st.executeQuery();*/
         while(rs.next()){
 
             System.out.println(rs.getString("Nombre"));
 
         }
 
-        BD.cerrarConexion();*/
+      //  BD.cerrarConexion();
 
 
         return true;
