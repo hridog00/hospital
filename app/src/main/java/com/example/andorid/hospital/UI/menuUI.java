@@ -307,6 +307,7 @@ public class menuUI extends AppCompatActivity
         } else if (id == R.id.nav_lista) {
 
             Intent  estudiante  = new Intent(getApplicationContext(), ListaEstudiantesUI.class);
+
             startActivity(estudiante);
 
         } else if (id == R.id.nav_anadirPaciente) {

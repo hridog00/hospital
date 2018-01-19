@@ -9,15 +9,32 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.andorid.hospital.Controllers.EstudianteController;
+import com.example.andorid.hospital.Controllers.PacienteController;
+import com.example.andorid.hospital.Estudiante;
 import com.example.andorid.hospital.R;
 import com.example.andorid.hospital.UI.MedicacionEnfermeroUI;
 
+import java.util.ArrayList;
+
 public class PacienteUI extends AppCompatActivity {
 
+    EstudianteController estudianteController = new EstudianteController();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paciente_ui);
+
+
+        ArrayList<Estudiante> listaEstudiantes= null;
+        try {
+            //listaEstudiantes = estudianteController.getEstudiante();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
         Button medicacion = (Button) findViewById(R.id.button5);
 
         medicacion.setOnClickListener(new View.OnClickListener() {
