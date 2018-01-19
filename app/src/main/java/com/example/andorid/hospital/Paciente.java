@@ -13,7 +13,7 @@ public class Paciente {
     private String nombre;
     private String Apellidos;
     private String DNI;
-    private Date fechaNacimiento;
+    private String fechaNacimiento;
     private int habitacionID;
     private int planta;
     private String Diagnóstico;
@@ -49,11 +49,11 @@ public class Paciente {
         this.DNI = DNI;
     }
 
-    public Date getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 

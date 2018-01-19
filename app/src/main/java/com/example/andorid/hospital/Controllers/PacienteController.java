@@ -80,7 +80,7 @@ public class PacienteController {
         String date = info.get(3);
         System.out.println(date);
         Date d = sdf.parse(date);
-        paciente.setFechaNacimiento(d);
+        paciente.setFechaNacimiento(date);
         paciente.setDiagnóstico(info.get(4));
 
 

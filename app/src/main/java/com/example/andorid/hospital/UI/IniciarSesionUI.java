@@ -56,7 +56,6 @@ public class IniciarSesionUI extends Activity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                finish();
             }
         });
     }
