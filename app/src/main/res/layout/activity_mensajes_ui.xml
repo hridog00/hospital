@@ -23,6 +23,7 @@
         app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
+            android:id="@+id/linearMSG"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"></LinearLayout>
@@ -68,21 +69,21 @@
             android:visibility="visible">
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/rMedico"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Médico" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/rEnfermero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Enfermero" />
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/rPaciente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -91,7 +92,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/send"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

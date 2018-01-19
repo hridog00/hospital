@@ -42,20 +42,30 @@ public class ConexionBD implements Callable<List>{
                             "jdbc:mysql://hesefra.ck8fbpftjxut.us-east-2.rds.amazonaws.com/mydb", "Hesefra", "Lopetamos66");
                     System.out.println("CONEXION");
                     PreparedStatement st = conn.prepareStatement(sql);
-                    rs = st.executeQuery();
-                    int numeroDeColumnas = rs.getMetaData().getColumnCount();
-                   while(rs.next()) {
-                       List objeto = new ArrayList();
 
-                       for(int i=1; i<=numeroDeColumnas; i++) {
-                           objeto.add(rs.getString(i));
-                           //System.out.println(rs.getString("Nombre"));
-                        //   list.add(rs);
+                    try{
+                        rs = st.executeQuery();
+                        int numeroDeColumnas = rs.getMetaData().getColumnCount();
+                       while(rs.next()) {
+                           List objeto = new ArrayList();
 
+                           for (int i = 1; i <= numeroDeColumnas; i++) {
+                               objeto.add(rs.getString(i));
+                               //System.out.println(rs.getString("Nombre"));
+                               //   list.add(rs);
+
+                           }
+                           list.add(objeto);
                        }
-                       list.add(objeto);
+                   } catch (SQLException se) {
+                    System.out.println("oopsse puede conectar. Error: " + se.toString());
+                    }
 
-                   }
+                    try{
+                        st.executeUpdate();
+                    } catch (SQLException se) {
+                        System.out.println("oopsse puede conectar. Error: " + se.toString());
+                    }
                    conn.close();
 
                 } catch (SQLException se) {
