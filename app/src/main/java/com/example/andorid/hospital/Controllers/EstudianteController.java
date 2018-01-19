@@ -30,7 +30,7 @@ public class EstudianteController {
         return dao.getEstudiante(idEstudiante);
     }
 
-    public Valoracion getValoracionEstudiante(int idEstudiante) {
+    public ArrayList<Valoracion> getValoracionEstudiante(int idEstudiante) throws ExecutionException, InterruptedException {
 
 
         return dao.getValoracionEstudiante(idEstudiante);

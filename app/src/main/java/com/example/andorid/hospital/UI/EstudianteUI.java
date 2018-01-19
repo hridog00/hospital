@@ -65,7 +65,7 @@ public class EstudianteUI extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent valoraciones  = new Intent(getApplicationContext(), ValoracionUI.class);
-                valoraciones.putExtra("isEstudiante", idEst);
+                valoraciones.putExtra("idEstudiante", idEst);
 
 
                 //PrincipalUI p = new PrincipalUI();

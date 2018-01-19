@@ -1,15 +1,19 @@
 package com.example.andorid.hospital.UI;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.andorid.hospital.Controllers.EstudianteController;
 import com.example.andorid.hospital.Estudiante;
 import com.example.andorid.hospital.R;
+import com.example.andorid.hospital.Usuario;
 import com.example.andorid.hospital.Valoracion;
 
 import java.util.ArrayList;
@@ -25,13 +29,39 @@ public class ValoracionUI extends AppCompatActivity {
 
         Bundle datos = this.getIntent().getExtras();
 
-        int idEstudiante = datos.getInt("id");
+        int idEstudiante = datos.getInt("idEstudiante");
 
-        ArrayList<Valoracion> valoracion = new Valoracion();
-
-            valoracion = estudianteController.getValoracionEstudiante(idEstudiante);
+        ArrayList<Valoracion> valoraciones = new ArrayList<Valoracion>();
 
 
+        try {
+            valoraciones = estudianteController.getValoracionEstudiante(idEstudiante);
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+
+       // System.out.println("//////////////////"+valoraciones.get(0).getContenido());
+
+        LinearLayout linearLayout = (LinearLayout)findViewById(R.id.contenido);
+
+
+        for(int i=0;i<valoraciones.size();i++){
+
+            final TextView emisor = new TextView(this);
+            emisor.setText(valoraciones.get(i).getNombreEnfermero());
+            emisor.setTextColor(Color.BLUE);
+            linearLayout.addView(emisor);
+
+            final TextView msg = new TextView(this);
+            msg.setText(valoraciones.get(i).getContenido());
+            linearLayout.addView(msg);
+
+
+        }
 
     }
 

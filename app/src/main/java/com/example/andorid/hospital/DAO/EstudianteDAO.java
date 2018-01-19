@@ -60,23 +60,29 @@ public class EstudianteDAO {
 
     }
 
-    public Valoracion getValoracionEstudiante(int idEstudiante) throws ExecutionException, InterruptedException {
+    public ArrayList<Valoracion> getValoracionEstudiante(int idEstudiante) throws ExecutionException, InterruptedException {
 
 
-        ArrayList<Valoracion> listaEstudiantes = new ArrayList<>();
-        String sentencia = "SELECT * FROM mydb.Valoracion WHERE idEstudiante='"+idEstudiante+"'";
+        ArrayList<Valoracion> valoraciones = new ArrayList<Valoracion>();
+        String sentencia = "SELECT * FROM mydb.Valoraciones WHERE idEstudiante='"+idEstudiante+"'";
         ExecutorService service = Executors.newFixedThreadPool(2);
         Future<List> resultado = service.submit(new ConexionBD(sentencia));
         List res = resultado.get();
-        Valoracion valoracion = new Valoracion();
-        List objeto = (List)res.get(0);
 
-        valoracion.setNombreEnfermero(objeto.get(5).toString());
+        //System.out.println("//////////////////////// Id estudiante: "+idEstudiante+" Cotenido: "+));
+        for(int i=0; i<res.size();i++)
+        {
+            Valoracion valoracion = new Valoracion();
+            List objeto = (List)res.get(i);
 
-        valoracion.setContenido(objeto.get(4).toString());
-        est.setidEstudiante(objeto.get(3).toString());
-        est.setFecha((String) objeto.get(6).toString());
+            valoracion.setNombreEnfermero(objeto.get(5).toString());
 
+            valoracion.setContenido(objeto.get(4).toString());
+            valoraciones.add(valoracion);
+
+        }
+
+return valoraciones;
 
     }
 }
