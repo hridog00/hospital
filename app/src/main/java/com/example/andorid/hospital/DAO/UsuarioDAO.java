@@ -51,16 +51,26 @@ public class UsuarioDAO {
         List result = resultado.get();
         List res =(List)result.get(0);
 
+        /*List res = resultado.get();
+        for(int i=0; i<res.size(); i++)
+        {
+            // System.out.println(res.get(i));
+            List objeto = (List)res.get(i);
+            for(int j=0;j<objeto.size();j++){
+                System.out.println(objeto.get(j)+" "+i);
+            }
+
+        }*/
 
 
 
         Usuario usuario = Usuario.getInstance();
 
-       /* usuario.setIdUsuario(Integer.parseInt(res.get(0).toString()));
+        usuario.setIdUsuario(Integer.parseInt(res.get(0).toString()));
        // usuario.setnPlanta(info.get(1));
         String nombreCompleto = res.get(1).toString() +" "+res.get(2).toString();
         usuario.setNombreUsuario(nombreCompleto);
-        usuario.setTipo(res.get(4).toString().charAt(0));*/
+        usuario.setTipo(res.get(4).toString().charAt(0));
 
     }
 }

@@ -45,14 +45,16 @@ public class ConexionBD implements Callable<List>{
                     rs = st.executeQuery();
                     int numeroDeColumnas = rs.getMetaData().getColumnCount();
                    while(rs.next()) {
+                       List objeto = new ArrayList();
+
                        for(int i=1; i<=numeroDeColumnas; i++) {
-                           List objeto = new ArrayList();
                            objeto.add(rs.getString(i));
                            //System.out.println(rs.getString("Nombre"));
-                           list.add(objeto);
                         //   list.add(rs);
 
                        }
+                       list.add(objeto);
+
                    }
                    conn.close();
 
