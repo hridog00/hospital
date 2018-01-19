@@ -99,6 +99,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:id="@+id/dnitxt"
                     android:layout_width="386dp"
                     android:layout_height="wrap_content"
                     android:text="DNI" />
@@ -110,6 +111,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:id="@+id/fechatxt"
                     android:layout_width="386dp"
                     android:layout_height="wrap_content"
                     android:text="Fecha de nacimiento" />

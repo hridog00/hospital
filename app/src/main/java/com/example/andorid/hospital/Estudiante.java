@@ -9,6 +9,15 @@ public class Estudiante {
     String nombre;
     String apellido;
     int idEstudiante;
+
+
+
+    String dni;
+
+
+
+    String fecha;
+
     public void setIdEstudiante(int idEstudiante) {
         this.idEstudiante = idEstudiante;
     }
@@ -39,5 +48,19 @@ public class Estudiante {
         return this.apellido;
     }
 
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
 
+    public String getdni() {
+        return dni;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
 }

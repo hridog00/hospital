@@ -7,15 +7,34 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.example.andorid.hospital.Controllers.EstudianteController;
+import com.example.andorid.hospital.Estudiante;
 import com.example.andorid.hospital.R;
+import com.example.andorid.hospital.Valoracion;
+
+import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 public class ValoracionUI extends AppCompatActivity {
 
+    EstudianteController estudianteController = new EstudianteController();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_valoracion_ui);
+
+        Bundle datos = this.getIntent().getExtras();
+
+        int idEstudiante = datos.getInt("id");
+
+        ArrayList<Valoracion> valoracion = new Valoracion();
+
+            valoracion = estudianteController.getValoracionEstudiante(idEstudiante);
+
+
+
     }
+
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar
         MenuInflater inflater = getMenuInflater();
