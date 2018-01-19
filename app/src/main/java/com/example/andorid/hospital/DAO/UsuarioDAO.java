@@ -61,5 +61,6 @@ public class UsuarioDAO {
         String nombreCompleto = res.get(1).toString() +" "+res.get(2).toString();
         usuario.setNombreUsuario(nombreCompleto);
         usuario.setTipo(res.get(4).toString().charAt(0));*/
+
     }
 }
