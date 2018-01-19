@@ -7,9 +7,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.andorid.hospital.Controllers.PacienteController;
+import com.example.andorid.hospital.Paciente;
 import com.example.andorid.hospital.R;
+
+import java.util.ArrayList;
 
 public class AddEstudianteUI extends AppCompatActivity {
     final PacienteController sesionController = new PacienteController();
@@ -23,7 +27,7 @@ public class AddEstudianteUI extends AppCompatActivity {
         // Inflate the menu items for use in the action bar
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.action_bar, menu);
-        /*
+
         Button btnSend = (Button) findViewById(R.id.send);
          btnSend.setOnClickListener(new View.OnClickListener() {
 
@@ -32,8 +36,14 @@ public class AddEstudianteUI extends AppCompatActivity {
 
 
 
+
+
+
+
+
+
             }
-        });*/
+        });
         return super.onCreateOptionsMenu(menu);
     }
 }
