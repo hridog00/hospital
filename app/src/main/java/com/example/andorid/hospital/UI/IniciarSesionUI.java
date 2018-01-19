@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.andorid.hospital.Controllers.SesionController;
 import com.example.andorid.hospital.FactoriaInterfaz;
 import com.example.andorid.hospital.R;
+import com.example.andorid.hospital.Usuario;
 
 public class IniciarSesionUI extends Activity {
 
@@ -40,14 +41,14 @@ public class IniciarSesionUI extends Activity {
 
                      //   ArrayList<String>  info = sesionController.getListaPacientes();
                        // menu.putExtra("Paciente",info );
-
-
+                        sesionController.crearUsuario(username);
                      FactoriaInterfaz factoria = FactoriaInterfaz.getInstance();
                      char tipo = ((TextView) findViewById(R.id.editText)).getText().charAt(0);
                      factoria.mostrarInterfaz(tipo, getApplicationContext());
 
                        // startActivity(menu);
                     }else{
+
                         TextView error = (TextView) findViewById(R.id.error);
                         error.setVisibility(View.VISIBLE);
                         //mensaje de error

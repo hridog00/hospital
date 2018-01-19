@@ -33,7 +33,7 @@ public class SesionController {
     }
 
 
-    public void crearUsuario(String id){
+    public void crearUsuario(String id) throws  Exception{
        usuarioDAO.crearUsuario(id);
 
     }

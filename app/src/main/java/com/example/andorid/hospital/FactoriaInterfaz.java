@@ -45,6 +45,7 @@ public class FactoriaInterfaz {
             ArrayList<String> info = sesionController.getListaPacientes();
             Intent intent = new Intent(applicationContext, menuUI.class);
             intent.putExtra("Paciente",info );
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             applicationContext.startActivity(intent);
         }
         else if(tipo=='M')
@@ -52,6 +53,8 @@ public class FactoriaInterfaz {
             ArrayList<String> info = sesionController.getListaPacientes();
             Intent intent = new Intent(applicationContext, menu_M_UI.class);
             intent.putExtra("Paciente",info );
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
             applicationContext.startActivity(intent);
         }
         else if(tipo=='S')
@@ -59,12 +62,16 @@ public class FactoriaInterfaz {
             ArrayList<String> info = sesionController.getListaPacientes();
             Intent intent = new Intent(applicationContext, PrincipalUI.class);
             intent.putExtra("Paciente",info );
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
             applicationContext.startActivity(intent);
         }
         else if(tipo=='P')
         {
 
             Intent intent = new Intent(applicationContext, MensajesUI.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
             applicationContext.startActivity(intent);
         }
 
@@ -79,6 +86,8 @@ public class FactoriaInterfaz {
             ArrayList<String> info = sesionController.getListaPacientes();
             Intent intent = new Intent(applicationContext, MedicacionEnfermeroUI.class);
             intent.putExtra("Paciente",info );
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
             applicationContext.startActivity(intent);
         }
         else if(tipo=='M')
@@ -86,6 +95,8 @@ public class FactoriaInterfaz {
             ArrayList<String> info = sesionController.getListaPacientes();
             Intent intent = new Intent(applicationContext, MedicacionMedicoUI.class);
             intent.putExtra("Paciente",info );
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
             applicationContext.startActivity(intent);
         }
         else if(tipo=='S')
@@ -94,6 +105,8 @@ public class FactoriaInterfaz {
             Intent intent = new Intent(applicationContext, MedicacionEstudianteUI.class);
 
             intent.putExtra("Paciente",info );
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
             applicationContext.startActivity(intent);
         }
 
