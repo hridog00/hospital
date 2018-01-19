@@ -16,9 +16,9 @@ import java.util.Date;
 public class MensajeController {
     MensajesDAO mensajesDAO = new MensajesDAO();
 
-    public ArrayList<Mensaje> getMensajes(char tipo){
-        ArrayList<Mensaje> mensajes = new ArrayList<Mensaje>();
-        //ArrayList<Mensaje> mensajes = mensajesDAO.getMensajes(tipo)
+    public ArrayList<Mensaje> getMensajes(char tipo) throws Exception{
+       // ArrayList<Mensaje> mensajes = new ArrayList<Mensaje>();
+        ArrayList<Mensaje> mensajes = mensajesDAO.getMensajes(tipo);
 
         return mensajes;
     }
