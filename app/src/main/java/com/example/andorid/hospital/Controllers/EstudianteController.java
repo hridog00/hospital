@@ -3,6 +3,7 @@ package com.example.andorid.hospital.Controllers;
 import com.example.andorid.hospital.DAO.EstudianteDAO;
 import com.example.andorid.hospital.Estudiante;
 import com.example.andorid.hospital.Mensaje;
+import com.example.andorid.hospital.Usuario;
 import com.example.andorid.hospital.Valoracion;
 
 import java.util.ArrayList;
@@ -34,5 +35,22 @@ public class EstudianteController {
 
 
         return dao.getValoracionEstudiante(idEstudiante);
+    }
+
+    public void addEstudiante(ArrayList<String> info) throws Exception {
+        Estudiante estudiante = new Estudiante();
+
+        estudiante.setNombre(info.get(0));
+        estudiante.setApellido(info.get(1));
+        estudiante.setDate(info.get(3));
+        estudiante.setDni(info.get(2));
+        estudiante.setDomicilio(info.get(4));
+        estudiante.setDatosAcademicos(info.get(5));
+        estudiante.setPlanta(Usuario.getInstance().getnPlanta());
+
+        System.out.println(estudiante.getDate());
+
+        dao.addEstudiante(estudiante);
+
     }
 }

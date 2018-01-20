@@ -85,4 +85,29 @@ public class EstudianteDAO {
 return valoraciones;
 
     }
+    public void addEstudiante(Estudiante estudiante) throws Exception{
+        String addUsQSL = "INSERT INTO `mydb`.`Usuario` (`Nombre`, `Apellido`, `DNI`, `username`, `contraseña`, `FechaNacimiento`, `Tipo`) VALUES ('"+estudiante.getNombre()+"', '"+estudiante.getApellido()+"', '"+estudiante.getDni()+"', 'S"+estudiante.getDni()+"', 'hesefra', '"+estudiante.getDate()+"','S');\n";
+
+        ExecutorService service = Executors.newFixedThreadPool(2);
+        Future<List> resultado = service.submit(new ConexionBD(addUsQSL));
+        List res = resultado.get();
+
+        ExecutorService service1 = Executors.newFixedThreadPool(2);
+
+        String sql = "Select idUsuario FROM Usuario where username='S"+estudiante.getDni()+"'";
+        Future<List> resultado2 = service.submit(new ConexionBD(sql));
+        List res2 = resultado2.get();
+
+        String idUuario = ((List)res2.get(0)).get(0).toString();
+
+        String inserUsuario = "INSERT INTO Estudiante ('idEstudiante', 'Planta') VALUES('"+idUuario+"','"+estudiante.getPlanta()+"')";
+        Future<List> resultado3 = service.submit(new ConexionBD(inserUsuario));
+
+       // String datosAcad = "INSERT INTO `mydb`.`DatosAcademicos` (`idEstudiante`, `Optativas`, `Curso`, `NotaMedia`) VALUES ('"+idUuario+"', 'Infantil', '2', '8.5');\n";
+
+
+
+
+
+    }
 }

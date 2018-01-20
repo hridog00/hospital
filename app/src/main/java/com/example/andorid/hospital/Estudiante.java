@@ -8,9 +8,12 @@ public class Estudiante {
 
     String nombre;
     String apellido;
+    String date;
+    String domicilio;
+    String datosAcademicos;
+
     int idEstudiante;
-
-
+    int planta;
 
     String dni;
 
@@ -62,5 +65,41 @@ public class Estudiante {
 
     public String getFecha() {
         return fecha;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getDomicilio() {
+        return domicilio;
+    }
+
+    public void setDomicilio(String domicilio) {
+        this.domicilio = domicilio;
+    }
+
+    public String getDatosAcademicos() {
+        return datosAcademicos;
+    }
+
+    public void setDatosAcademicos(String datosAcademicos) {
+        this.datosAcademicos = datosAcademicos;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public int getPlanta() {
+        return planta;
+    }
+
+    public void setPlanta(int planta) {
+        this.planta = planta;
     }
 }
