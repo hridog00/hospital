@@ -29,9 +29,9 @@ public class MedicacionEnfermeroUI extends AppCompatActivity {
 
         final int N = 10; // total number of textviews to add
 
-        final TextView[] myTextViews = new TextView[N]; // create an empty array;
-        final CheckBox[] checkDarMedicacion = new CheckBox[N];
-        final CheckBox[] checkNoDarMedicacion = new CheckBox[N];
+        final ArrayList <TextView> myTextViews = new ArrayList<>();// create an empty array;
+        final ArrayList <CheckBox> checkDarMedicacion = new ArrayList<>();
+        final ArrayList <CheckBox> checkNoDarMedicacion = new ArrayList<>();
 
         GridLayout grid = (GridLayout) findViewById(R.id.grid);
 
@@ -79,9 +79,9 @@ public class MedicacionEnfermeroUI extends AppCompatActivity {
 
 
             // save a reference to the textview for later
-            myTextViews[i] = rowTextView;
-            checkDarMedicacion[i]=dar;
-            checkNoDarMedicacion[i]=noDar;
+            myTextViews.add(rowTextView);
+            checkDarMedicacion.add(dar);
+            checkNoDarMedicacion.add(noDar);
 
 
 

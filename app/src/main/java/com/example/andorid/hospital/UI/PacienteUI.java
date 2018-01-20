@@ -14,9 +14,11 @@ import android.widget.TextView;
 import com.example.andorid.hospital.Controllers.EstudianteController;
 import com.example.andorid.hospital.Controllers.PacienteController;
 import com.example.andorid.hospital.Estudiante;
+import com.example.andorid.hospital.FactoriaInterfaz;
 import com.example.andorid.hospital.Paciente;
 import com.example.andorid.hospital.R;
 import com.example.andorid.hospital.UI.MedicacionEnfermeroUI;
+import com.example.andorid.hospital.Usuario;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -85,13 +87,16 @@ public class PacienteUI extends AppCompatActivity {
             public void onClick(View v) {
 
                 //llamar a factoria
-                Intent med  = new Intent(getApplicationContext(), MedicacionEnfermeroUI.class);
+               /* Intent med  = new Intent(getApplicationContext(), MedicacionEnfermeroUI.class);
                 med.putExtra("idPaciente",idP);
                 //PrincipalUI p = new PrincipalUI();
                 //p.rellenar(info);
                 // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
 
-                startActivity(med);
+                startActivity(med);*/
+                FactoriaInterfaz factoria = FactoriaInterfaz.getInstance();
+                factoria.mostrarUIMedicacion(Usuario.getInstance().getTipo(),getApplicationContext(), idP);
+
 
             }
 

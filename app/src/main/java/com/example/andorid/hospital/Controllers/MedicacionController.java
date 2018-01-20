@@ -22,8 +22,13 @@ public class MedicacionController {
 
     }
 
-    public void addMedicacion(ArrayList<String> medicacion){
+    public void addMedicacion(ArrayList<String> medicacion, int idPaciente) throws ExecutionException, InterruptedException {
         Medicacion m = new Medicacion();
+        m.setNombre(medicacion.get(0));
+        m.setDosis(Integer.parseInt(medicacion.get(1)));
+        m.setHora(medicacion.get(2));
+        m.setIdPaciente(idPaciente);
+        medicacionDAO.addMedicacion(m);
         //setter medicacion
        // return pacienteDAO.addMedicacion(idPaciente, m);
 

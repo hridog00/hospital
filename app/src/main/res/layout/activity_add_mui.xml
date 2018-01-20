@@ -59,7 +59,7 @@
                     android:text="Dosis" />
 
                 <EditText
-                    android:id="@+id/apellidos"
+                    android:id="@+id/dosis"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -77,7 +77,7 @@
                     android:text="Hora" />
 
                 <EditText
-                    android:id="@+id/dni"
+                    android:id="@+id/hora"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"

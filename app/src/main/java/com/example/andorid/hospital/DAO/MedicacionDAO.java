@@ -44,8 +44,12 @@ public class MedicacionDAO {
 
     }
 
-    public void addMedicacion(){
-        String sqlSentencia = "INSERT INTO `mydb`.`Medicacion` (`idMedicacion`, `Nombre`, `Dosis`, `Hora`, `idPaciente`) VALUES ('', 'X', '3', '02:00', '23');";
+    public void addMedicacion(Medicacion medicacion) throws ExecutionException, InterruptedException {
+        String sqlSentencia = "INSERT INTO `mydb`.`Medicacion` ( `Nombre`, `Dosis`, `Hora`, `idPaciente`) VALUES ( '"+medicacion.getNombre()+"', '"+medicacion.getDosis()+"', '"+medicacion.getDosis()+"', '"+medicacion.getIdPaciente()+"');";
+        ExecutorService service = Executors.newFixedThreadPool(2);
+        Future<List> resultado = service.submit(new ConexionBD(sqlSentencia));
+        List res = resultado.get();
+
     }
     public void cambiarEstado(int idMedicacion, char estado) throws ExecutionException, InterruptedException {
         String sql = "UPDATE `mydb`.`Medicacion` SET `estado`='"+estado+"' WHERE `idMedicacion`='"+idMedicacion+"';\n";

@@ -13,11 +13,16 @@ import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
+import com.example.andorid.hospital.Controllers.MedicacionController;
+import com.example.andorid.hospital.Medicacion;
 import com.example.andorid.hospital.R;
 import com.example.andorid.hospital.UI.AddMUI;
 import com.example.andorid.hospital.UI.EstudianteUI;
 
+import java.util.ArrayList;
+
 public class MedicacionMedicoUI extends AppCompatActivity {
+    final MedicacionController medicacionController = new MedicacionController();
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -31,15 +36,26 @@ public class MedicacionMedicoUI extends AppCompatActivity {
         final Button[] button = new Button[N]; // create an empty array;
         final TextView[] textviews = new TextView[N];
 
+        Bundle datos = this.getIntent().getExtras();
+
+        final int idPaciente = datos.getInt("idPaciente");
+        ArrayList<Medicacion> medicacions = new ArrayList<>();
+        try {
+            medicacions = medicacionController.getMedicacion(idPaciente);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         GridLayout grid = (GridLayout) findViewById(R.id.gridLayout);
-        for (int i = 0; i < N; i++) {
+        for (int i = 0; i < medicacions.size(); i++) {
             // create a new textview
             final Button boton = new Button(this);
             final TextView textv = new TextView(this);
 
             // set some properties of rowTextView or something
-            boton.setText("This is row #" + i);
-            textv.setText("i");
+            boton.setText("Eliminar");
+            textv.setText("Nombre: "+medicacions.get(i).getNombre()+" Dosis: "+medicacions.get(i).getDosis()+" Hora: "+medicacions.get(i).getHora());
+
             // add the textview to the linearlayout
 
             grid.addView(textv);
@@ -67,7 +83,7 @@ public class MedicacionMedicoUI extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent addM  = new Intent(getApplicationContext(), AddMUI.class);
-
+                addM.putExtra("idPaciente",idPaciente);
                 startActivity(addM);
             }
         });
