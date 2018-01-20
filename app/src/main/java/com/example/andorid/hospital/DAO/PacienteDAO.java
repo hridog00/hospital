@@ -37,8 +37,9 @@ public class PacienteDAO {
         String inserUsuario = "INSERT INTO Paciente ('idPaciente') VALUES('"+idUuario+"')";
         Future<List> resultado3 = service.submit(new ConexionBD("INSERT INTO `mydb`.`Paciente` (`idPaciente`) VALUES ('"+idUuario+"');\n"));
 
-
-        String sqlHabitacion = "UPDATE `mydb`.`Habitacion` SET `idPacienteH`='"+idUuario+"' WHERE `NumeroHabitacion`='"+p.getHabitacionID()+"' and`PlantaH`='"+p.getPlanta()+"';";
+        System.out.println(p.getPlanta()+" "+p.getHabitacionID());
+       // String sqlHabitacion = "UPDATE `mydb`.`Habitacion` SET `idPacienteH`='"+idUuario+"' WHERE `NumeroHabitacion`='"+p.getHabitacionID()+"' and`PlantaH`='"+p.getPlanta()+"';";
+        String sqlHabitacion ="UPDATE `mydb`.`Habitacion` SET `idPacienteH`='"+idUuario+"', `nombrePaciente`='"+p.getNombre()+"', `apellidoPaciente`='"+p.getApellidos()+"' WHERE `NumeroHabitacion`='"+p.getHabitacionID()+"' and`PlantaH`='"+p.getPlanta()+"';";
          resultado3 = service.submit(new ConexionBD(sqlHabitacion));
 
         for(int i=0;i<p.getAlergias().size();i++) {
@@ -114,13 +115,54 @@ public class PacienteDAO {
             // System.out.println(res.get(i));
             Paciente pac = new Paciente();
             List objeto = (List)res.get(i);
-            pac.setNombre(objeto.get(3).toString());
-            pac.setApellidos(objeto.get(4).toString());
-            //est.set(Integer.parseInt(objeto.get(0).toString()));
+            if(objeto.get(3)!= null){
+                pac.setNombre(objeto.get(3).toString());
 
-            pac.setIdPaciente(Integer.parseInt(objeto.get(2).toString()));
+            }
+            if(objeto.get(4)!= null) {
+
+                pac.setApellidos(objeto.get(4).toString());
+
+            }
+            if(objeto.get(2) != null){
+
+                //est.set(Integer.parseInt(objeto.get(0).toString()));
+                    pac.setIdPaciente(Integer.parseInt(objeto.get(2).toString()));
+            }
+            listaPacientes.add(pac);
+
+        }
+        return listaPacientes;
+    }
+    public ArrayList<Paciente> getListaPacientesPlanta(int planta) throws ExecutionException, InterruptedException {
 
 
+
+        ArrayList<Paciente> listaPacientes = new ArrayList<>();
+        String sentencia = "SELECT * FROM mydb.Habitacion WHERE PlantaH='"+planta+"'";
+        ExecutorService service = Executors.newFixedThreadPool(2);
+        Future<List> resultado = service.submit(new ConexionBD(sentencia));
+        List res = resultado.get();
+
+        for(int i=0; i<res.size(); i++)
+        {
+            // System.out.println(res.get(i));
+            Paciente pac = new Paciente();
+            List objeto = (List)res.get(i);
+            if(objeto.get(3)!= null){
+                pac.setNombre(objeto.get(3).toString());
+
+            }
+            if(objeto.get(4)!= null) {
+
+                pac.setApellidos(objeto.get(4).toString());
+
+            }
+            if(objeto.get(2) != null){
+
+                //est.set(Integer.parseInt(objeto.get(0).toString()));
+                pac.setIdPaciente(Integer.parseInt(objeto.get(2).toString()));
+            }
             listaPacientes.add(pac);
 
         }

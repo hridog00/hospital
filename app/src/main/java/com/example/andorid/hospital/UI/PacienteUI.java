@@ -1,6 +1,7 @@
 package com.example.andorid.hospital.UI;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -53,6 +54,9 @@ public class PacienteUI extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        TextView titulo = findViewById(R.id.titulo);
+      //  titulo.setText("HABITACION "+paciente.getHabitacionID());
+        titulo.setTextColor(Color.BLUE);
 
         TextView nombretxt = findViewById(R.id.nombretxt);
         nombretxt.setText("Nombre:    "+paciente.getNombre());
@@ -74,6 +78,7 @@ public class PacienteUI extends AppCompatActivity {
 
         Button medicacion = (Button) findViewById(R.id.button5);
 
+        final int idP = idPaciente;
         medicacion.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -81,7 +86,7 @@ public class PacienteUI extends AppCompatActivity {
 
                 //llamar a factoria
                 Intent med  = new Intent(getApplicationContext(), MedicacionEnfermeroUI.class);
-
+                med.putExtra("idPaciente",idP);
                 //PrincipalUI p = new PrincipalUI();
                 //p.rellenar(info);
                 // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);

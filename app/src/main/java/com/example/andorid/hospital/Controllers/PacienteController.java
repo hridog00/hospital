@@ -84,7 +84,7 @@ public class PacienteController {
         paciente.setFechaNacimiento(date);
         paciente.setDiagnóstico(info.get(4));
 
-
+        paciente.setPlanta(Usuario.getInstance().getnPlanta());
         paciente.setAlergias(descomponer(info.get(5)));
         paciente.setIntervenciones(descomponer(info.get(6)));
         paciente.setNecesidadesVH(descomponer(info.get(7)));
@@ -97,9 +97,9 @@ public class PacienteController {
         return paciente;
     }
     public int habitacionLibre()throws Exception{
-       // int nHabitacion = hospitalDAO.getHabitacionLibre(Usuario.getInstance().getnPlanta());
-         int nHabitacion = hospitalDAO.getHabitacionLibre(1);
-
+       int nHabitacion = hospitalDAO.getHabitacionLibre(Usuario.getInstance().getnPlanta());
+       //  int nHabitacion = hospitalDAO.getHabitacionLibre(1);
+        System.out.println("HABITACION "+nHabitacion);
         return nHabitacion;
     }
 
@@ -110,7 +110,9 @@ public class PacienteController {
     public ArrayList<Paciente> getlistaPacientes() throws ExecutionException, InterruptedException {
         return pacienteDAO.getLista();
     }
-
+    public ArrayList<Paciente> getlistaPacientesPorPlanta(int p) throws ExecutionException, InterruptedException {
+        return pacienteDAO.getListaPacientesPlanta(p);
+    }
 
 
 }

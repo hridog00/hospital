@@ -71,6 +71,18 @@ public class MensajesUI extends AppCompatActivity {
 
             }
         });
+
+        Button recargar = (Button) findViewById(R.id.recargar);
+        recargar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+              Intent recargar = new Intent(getApplicationContext(),MensajesUI.class);
+              startActivity(recargar);
+
+
+            }
+        });
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar

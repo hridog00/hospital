@@ -1,6 +1,7 @@
 package com.example.andorid.hospital.UI;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -77,8 +78,7 @@ public class menuUI extends AppCompatActivity
 
 //los put extra en cada boton
 
-
-
+        final ArrayList<Paciente> pacientes = listaPacientes;
 
         FloatingActionButton botonMensajes = (FloatingActionButton) findViewById(R.id.fab);
 
@@ -103,13 +103,18 @@ public class menuUI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(0)!=null){
+                    Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(0).getIdPaciente());
+
+                    startActivity(paciente);
+
+                }
 
                 //PrincipalUI p = new PrincipalUI();
                 //p.rellenar(info);
                 // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
 
-                startActivity(paciente);
             }
         });
         Button hab2 = (Button) findViewById(R.id.hab2);
@@ -118,13 +123,17 @@ public class menuUI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(1)!=null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(1).getIdPaciente());
 
-                startActivity(paciente);
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         });
         Button hab3 = (Button) findViewById(R.id.hab3);
@@ -133,13 +142,18 @@ public class menuUI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(2)!=null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(2).getIdPaciente());
 
-                startActivity(paciente);
+
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         });
         Button hab4 = (Button) findViewById(R.id.hab4);
@@ -148,13 +162,18 @@ public class menuUI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(3)!=null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(3).getIdPaciente());
 
-                startActivity(paciente);
+
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         });
         Button hab5 = (Button) findViewById(R.id.hab5);
@@ -163,13 +182,17 @@ public class menuUI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(4)!=null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(4).getIdPaciente());
 
-                startActivity(paciente);
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         });
         Button hab6 = (Button) findViewById(R.id.hab6);
@@ -178,13 +201,17 @@ public class menuUI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(5)!=null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(5).getIdPaciente());
 
-                startActivity(paciente);
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         }); Button hab7 = (Button) findViewById(R.id.hab7);
 
@@ -192,13 +219,18 @@ public class menuUI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(6)!=null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(6).getIdPaciente());
 
-                startActivity(paciente);
+
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         });
         Button hab8 = (Button) findViewById(R.id.hab8);
@@ -207,13 +239,18 @@ public class menuUI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(7)!=null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(7).getIdPaciente());
 
-                startActivity(paciente);
+
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         });
         Button hab9 = (Button) findViewById(R.id.hab9);
@@ -222,13 +259,18 @@ public class menuUI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(8)!=null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(8).getIdPaciente());
 
-                startActivity(paciente);
+
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         });
         Button hab10 = (Button) findViewById(R.id.hab10);
@@ -237,13 +279,18 @@ public class menuUI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(9)!=null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(9).getIdPaciente());
 
-                startActivity(paciente);
+
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         });
         Button hab11 = (Button) findViewById(R.id.hab11);
@@ -252,13 +299,18 @@ public class menuUI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(10)!=null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(10).getIdPaciente());
 
-                startActivity(paciente);
+
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         });
         Button hab12 = (Button) findViewById(R.id.hab12);
@@ -267,13 +319,18 @@ public class menuUI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(11)!=null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(11).getIdPaciente());
 
-                startActivity(paciente);
+
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         });
     }
@@ -343,34 +400,63 @@ public class menuUI extends AppCompatActivity
     public void rellenar(ArrayList<Paciente> info){
 
 
-        Button boton1  = (Button) findViewById(R.id.hab1);
-        boton1.setText(info.get(0).getNombre());
+       Button boton1  = (Button) findViewById(R.id.hab1);
+       if(info.get(0).getNombre()!= null) {
+           boton1.setText(info.get(0).getNombre() +" "+info.get(0).getApellidos());
+       }
+        if(info.get(1).getNombre()!= null) {
+            Button boton2 = (Button) findViewById(R.id.hab2);
+            boton2.setText(info.get(1).getNombre()+" "+info.get(1).getApellidos());
+        }
+        if(info.get(2).getNombre()!= null){
+            Button boton3  = (Button) findViewById(R.id.hab3);
+            boton3.setText(info.get(2).getNombre()+" "+info.get(2).getApellidos());
 
-        Button boton2  = (Button) findViewById(R.id.hab2);
-        boton2.setText(info.get(1).getNombre());
-        Button boton3  = (Button) findViewById(R.id.hab3);
-        boton3.setText(info.get(2).getNombre());
-        Button boton4  = (Button) findViewById(R.id.hab4);
-        boton4.setText(info.get(3).getNombre());
-        Button boton5  = (Button) findViewById(R.id.hab5);
-        boton5.setText(info.get(4).getNombre());
-        Button boton6  = (Button) findViewById(R.id.hab6);
-        boton6.setText(info.get(5).getNombre());
-        Button boton7  = (Button) findViewById(R.id.hab7);
-        boton7.setText(info.get(6).getNombre());
-        Button boton8  = (Button) findViewById(R.id.hab8);
-        boton8.setText(info.get(7).getNombre());
+        }
+        if(info.get(3).getNombre()!= null) {
+             Button boton4 = (Button) findViewById(R.id.hab4);
+             boton4.setText(info.get(3).getNombre()+" "+info.get(3).getApellidos());
 
-        Button boton9  = (Button) findViewById(R.id.hab9);
-        boton9.setText(info.get(8).getNombre());
+        }
+        if(info.get(4).getNombre()!= null) {
+              Button boton5 = (Button) findViewById(R.id.hab5);
+              boton5.setText(info.get(4).getNombre()+" "+info.get(4).getApellidos());
+        }
+        if(info.get(5).getNombre()!= null) {
+            Button boton6 = (Button) findViewById(R.id.hab6);
+            boton6.setText(info.get(5).getNombre()+" "+info.get(5).getApellidos());
+        }
+        if(info.get(6).getNombre()!= null) {
+            Button boton7 = (Button) findViewById(R.id.hab7);
+            boton7.setText(info.get(6).getNombre()+" "+info.get(6).getApellidos());
+        }
+        if(info.get(7).getNombre()!= null) {
+            Button boton8 = (Button) findViewById(R.id.hab8);
+            boton8.setText(info.get(7).getNombre()+" "+info.get(7).getApellidos());
+        }
+        if(info.get(8).getNombre()!= null) {
+               Button boton9 = (Button) findViewById(R.id.hab9);
+               boton9.setText(info.get(8).getNombre()+" "+info.get(8).getApellidos());
 
-        Button boton10  = (Button) findViewById(R.id.hab10);
-        boton10.setText(info.get(9).getNombre());
-        Button boton11  = (Button) findViewById(R.id.hab11);
-        boton11.setText(info.get(10).getNombre());
-        Button boton12  = (Button) findViewById(R.id.hab12);
-        boton12.setText(info.get(11).getNombre());
 
+        }
+        if(info.get(9).getNombre()!= null) {
+            Button boton10 = (Button) findViewById(R.id.hab10);
+            boton10.setText(info.get(9).getNombre()+" "+info.get(9).getApellidos());
+            boton10.setBackgroundColor(Color.CYAN);
+
+        }
+        if(info.get(10).getNombre()!= null) {
+            Button boton11 = (Button) findViewById(R.id.hab11);
+            boton11.setText(info.get(10).getNombre()+" "+info.get(10).getApellidos());
+            boton11.setBackgroundColor(Color.CYAN);
+
+        }
+        if(info.get(11).getNombre()!= null) {
+            Button boton12 = (Button) findViewById(R.id.hab12);
+            boton12.setText(info.get(11).getNombre()+" "+info.get(11).getApellidos());
+            boton12.setBackgroundColor(Color.CYAN);
+        }
 
 
 

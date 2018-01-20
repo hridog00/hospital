@@ -72,5 +72,17 @@ public class UsuarioDAO {
         usuario.setNombreUsuario(nombreCompleto);
         usuario.setTipo(res.get(4).toString().charAt(0));
 
+        if(usuario.getTipo()=='E'){
+            String getPlanta = "SELECT PLanta FROM mydb.Enfermero where idEnfermero='"+usuario.getIdUsuario()+"';";
+            Future<List> resultado1 = service.submit(new ConexionBD("SELECT * FROM Usuario WHERE username='"+idUsuario+"' \n"));
+            List result1 = resultado1.get();
+            usuario.setnPlanta(Integer.parseInt(((List)result1.get(0)).get(0).toString()));
+
+
+        }
+        if(usuario.getTipo()=='M'){
+            usuario.setnPlanta(1);
+        }
+
     }
 }

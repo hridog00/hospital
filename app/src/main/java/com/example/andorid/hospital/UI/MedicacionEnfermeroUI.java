@@ -12,10 +12,15 @@ import android.widget.CheckBox;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
+import com.example.andorid.hospital.Controllers.MedicacionController;
 import com.example.andorid.hospital.FactoriaInterfaz;
+import com.example.andorid.hospital.Medicacion;
 import com.example.andorid.hospital.R;
 
+import java.util.ArrayList;
+
 public class MedicacionEnfermeroUI extends AppCompatActivity {
+    final MedicacionController medicacionController = new MedicacionController();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,17 +46,32 @@ public class MedicacionEnfermeroUI extends AppCompatActivity {
         grid.addView(darTitulo);
         grid.addView(noDarTitulo);
 
+        Bundle datos = this.getIntent().getExtras();
 
-        for (int i = 0; i < N; i++) {
+        int idPaciente = datos.getInt("idPaciente");
+         ArrayList<Medicacion> medicacions = new ArrayList<>();
+        try {
+            medicacions = medicacionController.getMedicacion(idPaciente);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        for (int i = 0; i < medicacions.size(); i++) {
             // create a new textview
             final TextView rowTextView = new TextView(this);
             final CheckBox  dar  = new CheckBox(this);
             final CheckBox noDar = new CheckBox(this);
 
             // set some properties of rowTextView or something
-            rowTextView.setText("This is row #" + i);
+            rowTextView.setText("Nombre: "+medicacions.get(i).getNombre()+" Dosis: "+medicacions.get(i).getDosis()+" Hora: "+medicacions.get(i).getHora());
 
             // add the textview to the linearlayout
+            if(medicacions.get(i).getEstado()=='D'){
+                dar.setChecked(true);
+            }else if(medicacions.get(i).getEstado()=='X'){
+                noDar.setChecked(true);
+            }
             grid.addView(rowTextView);
             grid.addView(dar);
             grid.addView(noDar);
@@ -66,20 +86,21 @@ public class MedicacionEnfermeroUI extends AppCompatActivity {
 
 
 
-
+            final int d = i;
+            final ArrayList<Medicacion> medicacionArrayList = medicacions;
             dar.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View v) {
                 noDar.setChecked(false);
+                    medicacionController.cambiarEstado(medicacionArrayList.get(d).getIdMedicacion(), 'D');
 
                 }
             });
-
             noDar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    medicacionController.cambiarEstado(medicacionArrayList.get(d).getIdMedicacion(), 'X');
                     dar.setChecked(false);
                 }
             });
