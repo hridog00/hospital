@@ -16,15 +16,23 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import com.example.andorid.hospital.Controllers.PacienteController;
+import com.example.andorid.hospital.Paciente;
 import com.example.andorid.hospital.R;
 
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 public class menuUI extends AppCompatActivity
+
+
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        PacienteController pacienteController = new PacienteController();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -52,14 +60,23 @@ public class menuUI extends AppCompatActivity
         //jajajajajajajajajajajajajajajajaja
 
 
-        Intent intent = getIntent();
-        ArrayList<String> message = new ArrayList<String>();
+        ArrayList<Paciente> listaPacientes=null;
 
-        message = intent.getExtras().getStringArrayList("Paciente");
+        try {
+            listaPacientes = pacienteController.getlistaPacientes();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-        System.out.println("fndjkfhdshoidHFDAHADHJADJADF  "+message.get(0));
+        rellenar(listaPacientes);
 
-        rellenar(message);
+        //rellenar("Helena");
+
+
+//los put extra en cada boton
+
 
 
 
@@ -323,11 +340,38 @@ public class menuUI extends AppCompatActivity
         return true;
     }
 
-    public void rellenar(ArrayList<String> info){
+    public void rellenar(ArrayList<Paciente> info){
 
 
         Button boton1  = (Button) findViewById(R.id.hab1);
-        boton1.setText(info.get(0));
+        boton1.setText(info.get(0).getNombre());
+
+        Button boton2  = (Button) findViewById(R.id.hab2);
+        boton2.setText(info.get(1).getNombre());
+        Button boton3  = (Button) findViewById(R.id.hab3);
+        boton3.setText(info.get(2).getNombre());
+        Button boton4  = (Button) findViewById(R.id.hab4);
+        boton4.setText(info.get(3).getNombre());
+        Button boton5  = (Button) findViewById(R.id.hab5);
+        boton5.setText(info.get(4).getNombre());
+        Button boton6  = (Button) findViewById(R.id.hab6);
+        boton6.setText(info.get(5).getNombre());
+        Button boton7  = (Button) findViewById(R.id.hab7);
+        boton7.setText(info.get(6).getNombre());
+        Button boton8  = (Button) findViewById(R.id.hab8);
+        boton8.setText(info.get(7).getNombre());
+
+        Button boton9  = (Button) findViewById(R.id.hab9);
+        boton9.setText(info.get(8).getNombre());
+
+        Button boton10  = (Button) findViewById(R.id.hab10);
+        boton10.setText(info.get(9).getNombre());
+        Button boton11  = (Button) findViewById(R.id.hab11);
+        boton11.setText(info.get(10).getNombre());
+        Button boton12  = (Button) findViewById(R.id.hab12);
+        boton12.setText(info.get(11).getNombre());
+
+
 
 
 

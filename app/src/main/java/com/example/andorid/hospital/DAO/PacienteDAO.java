@@ -1,8 +1,12 @@
 package com.example.andorid.hospital.DAO;
 
+import com.example.andorid.hospital.Estudiante;
 import com.example.andorid.hospital.Paciente;
+import com.example.andorid.hospital.Usuario;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -57,5 +61,69 @@ public class PacienteDAO {
 
 
 
+    }
+
+
+    public Paciente getPaciente(int idPaciente) throws ExecutionException, InterruptedException {
+
+
+
+        //ArrayList<Paciente> listaEstudiantes = new ArrayList<Paciente>();
+        String sentencia = "SELECT * FROM mydb.Usuario WHERE idUsuario='"+idPaciente +"'";
+        ExecutorService service = Executors.newFixedThreadPool(2);
+        Future<List> resultado = service.submit(new ConexionBD(sentencia));
+        List res = resultado.get();
+        Paciente pac = new Paciente();
+        List objeto = (List)res.get(0);
+
+        pac.setNombre(objeto.get(1).toString());
+        pac.setApellidos(objeto.get(2).toString());
+        pac.setDNI(objeto.get(3).toString());
+        pac.setFechaNacimiento((String) objeto.get(6).toString());
+
+
+        String sentencia2 = "SELECT * FROM mydb.NecesidadesVH WHERE idPaciente='"+idPaciente +"'";
+        ExecutorService service2 = Executors.newFixedThreadPool(2);
+        Future<List> resultado2 = service.submit(new ConexionBD(sentencia2));
+        List res2 = resultado.get();
+        ArrayList<String> necesidades = new ArrayList<String>();
+
+        for(int i=0; i<res2.size(); i++)
+        {
+            List objeto2 = (List)res2.get(i);
+            necesidades.add(objeto.get(2).toString());
+        }
+        pac.setNecesidadesVH(necesidades);
+
+        return pac;
+
+    }
+
+    public ArrayList<Paciente> getLista() throws ExecutionException, InterruptedException {
+
+        int planta = Usuario.getInstance().getnPlanta();
+
+        ArrayList<Paciente> listaPacientes = new ArrayList<>();
+        String sentencia = "SELECT * FROM mydb.Habitacion WHERE PlantaH='"+planta+"'";
+        ExecutorService service = Executors.newFixedThreadPool(2);
+        Future<List> resultado = service.submit(new ConexionBD(sentencia));
+        List res = resultado.get();
+
+        for(int i=0; i<res.size(); i++)
+        {
+            // System.out.println(res.get(i));
+            Paciente pac = new Paciente();
+            List objeto = (List)res.get(i);
+            pac.setNombre(objeto.get(3).toString());
+            pac.setApellidos(objeto.get(4).toString());
+            //est.set(Integer.parseInt(objeto.get(0).toString()));
+
+            pac.setIdPaciente(Integer.parseInt(objeto.get(2).toString()));
+
+
+            listaPacientes.add(pac);
+
+        }
+        return listaPacientes;
     }
 }

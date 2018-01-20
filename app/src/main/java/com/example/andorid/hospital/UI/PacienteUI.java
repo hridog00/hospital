@@ -8,18 +8,21 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.andorid.hospital.Controllers.EstudianteController;
 import com.example.andorid.hospital.Controllers.PacienteController;
 import com.example.andorid.hospital.Estudiante;
+import com.example.andorid.hospital.Paciente;
 import com.example.andorid.hospital.R;
 import com.example.andorid.hospital.UI.MedicacionEnfermeroUI;
 
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 public class PacienteUI extends AppCompatActivity {
 
-    EstudianteController estudianteController = new EstudianteController();
+    PacienteController pacienteController = new PacienteController();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,40 @@ public class PacienteUI extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
+
+        Bundle datos = this.getIntent().getExtras();
+
+        int idPaciente = datos.getInt("idPaciente");
+
+
+        Paciente paciente = null;
+        try {
+            paciente = pacienteController.getPaciente(idPaciente);
+
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+        TextView nombretxt = findViewById(R.id.nombretxt);
+        nombretxt.setText("Nombre:    "+paciente.getNombre());
+
+
+        TextView apellidotxt = findViewById(R.id.apellidostxt);
+        apellidotxt.setText("Apellido:    "+paciente.getApellidos());
+
+
+        TextView dnitxt = findViewById(R.id.dnitxt);
+        dnitxt.setText("DNI:    "+paciente.getDNI());
+
+        TextView fechatxt = findViewById(R.id.fechatxt);
+        fechatxt.setText("Fecha de Nacimiento:    "+paciente.getFechaNacimiento());
+
+
 
 
 

@@ -8,6 +8,7 @@ import com.example.andorid.hospital.Usuario;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Created by sergiomerayo on 16/1/18.
@@ -102,6 +103,13 @@ public class PacienteController {
         return nHabitacion;
     }
 
+    public Paciente getPaciente(int idPaciente) throws ExecutionException, InterruptedException {
+        return pacienteDAO.getPaciente(idPaciente);
+    }
+
+    public ArrayList<Paciente> getlistaPacientes() throws ExecutionException, InterruptedException {
+        return pacienteDAO.getLista();
+    }
 
 
 

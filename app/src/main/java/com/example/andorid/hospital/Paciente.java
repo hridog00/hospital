@@ -24,6 +24,7 @@ public class Paciente {
     private ArrayList<String> hToxicosPresentes;
     private ArrayList <String> antecedentes;
     private ParientePaciente parientePaciente;
+    private int idPaciente;
 
     public String getNombre() {
         return nombre;
@@ -136,5 +137,14 @@ public class Paciente {
     public void setParientePaciente(ArrayList<String> parientePaciente) {
         ParientePaciente p = new ParientePaciente(parientePaciente.get(0),parientePaciente.get(1),parientePaciente.get(2));
         this.parientePaciente = p;
+    }
+
+    public int getIdPaciente()
+    {
+        return idPaciente;
+    }
+
+    public void setIdPaciente(int idPaciente) {
+        this.idPaciente=idPaciente;
     }
 }
