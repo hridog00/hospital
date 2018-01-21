@@ -28,10 +28,11 @@
         android:text="Eliga el motivo"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.783" />
+        app:layout_constraintVertical_bias="0.793" />
 
     <LinearLayout
         android:id="@+id/linearLayout5"
@@ -67,14 +68,16 @@
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginBottom="612dp"
+        android:layout_height="406dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginTop="14dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14">
 
         <RadioButton
             android:id="@+id/radioButton2"

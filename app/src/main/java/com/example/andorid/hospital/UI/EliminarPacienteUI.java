@@ -34,8 +34,8 @@ public class EliminarPacienteUI extends AppCompatActivity {
 
                 pacienteController.eliminarPaciente(idPaciente);
 
-                FactoriaInterfaz.getInstance().mostrarInterfaz(Usuario.getInstance().getTipo(),getApplicationContext());
-
+                Intent planta =  new Intent(getApplicationContext(), menuUI.class);
+                startActivity(planta);
             }
 
         });
@@ -45,7 +45,8 @@ public class EliminarPacienteUI extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                FactoriaInterfaz.getInstance().mostrarInterfaz(Usuario.getInstance().getTipo(),getApplicationContext());
+                Intent planta =  new Intent(getApplicationContext(), menuUI.class);
+                startActivity(planta);
 
             }
 

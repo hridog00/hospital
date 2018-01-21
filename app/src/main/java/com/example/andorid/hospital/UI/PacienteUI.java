@@ -101,6 +101,10 @@ public class PacienteUI extends AppCompatActivity {
         });
 
         Button eliminar = (Button) findViewById(R.id.eliminar);
+        eliminar.setVisibility(View.INVISIBLE);
+        if(Usuario.getInstance().getTipo()=='E'){
+            eliminar.setVisibility(View.VISIBLE);
+        }
 
         eliminar.setOnClickListener(new View.OnClickListener() {
 
