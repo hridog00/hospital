@@ -59,4 +59,5 @@ public class Medicacion {
     public void setEstado(char estado) {
         this.estado = estado;
     }
+
 }
