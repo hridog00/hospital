@@ -8,6 +8,22 @@ public class Valoracion {
 
 String nombreEnfermero;
 String contenido;
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    String date;
+
+    public int getIdEstudiante() {
+        return idEstudiante;
+    }
+
+    int idEstudiante;
     public void setNombreEnfermero(String nombreEnfermero) {
         this.nombreEnfermero = nombreEnfermero;
     }
@@ -22,5 +38,9 @@ String contenido;
 
     public String getContenido() {
         return contenido;
+    }
+
+    public void setIdEstudiante(int idEstudiante) {
+        this.idEstudiante = idEstudiante;
     }
 }

@@ -4,6 +4,7 @@ import android.widget.TextView;
 
 import com.example.andorid.hospital.Estudiante;
 import com.example.andorid.hospital.Mensaje;
+import com.example.andorid.hospital.Usuario;
 import com.example.andorid.hospital.Valoracion;
 
 import java.util.ArrayList;
@@ -115,7 +116,16 @@ return valoraciones;
 
     public void guardarValoracion(Valoracion valoracion) {
 
+        int idEstudiante = valoracion.getIdEstudiante();
+        String contenido = valoracion.getContenido();
+        String nombreEnfermero = Usuario.getInstance().getNombreUsuario();
+        int idEnfermero = Usuario.getInstance().getIdUsuario();
+        String fecha = valoracion.getDate();
 
+        String addUsQSL ="INSERT INTO `mydb`.`Valoraciones` (`idEstudiante`, `idEnfermero`, `Fecha`, `Contenido`, `NombreEnfermero`) VALUES ('"+idEstudiante+"', '"+idEnfermero+"', '"+fecha+"', '"+contenido+"', '"+nombreEnfermero+"')";
+
+        ExecutorService service = Executors.newFixedThreadPool(2);
+        Future<List> resultado = service.submit(new ConexionBD(addUsQSL));
 
     }
 }

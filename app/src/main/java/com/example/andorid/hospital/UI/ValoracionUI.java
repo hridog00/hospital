@@ -31,7 +31,7 @@ public class ValoracionUI extends AppCompatActivity {
 
         Bundle datos = this.getIntent().getExtras();
 
-        int idEstudiante = datos.getInt("idEstudiante");
+        final int idEstudiante = datos.getInt("idEstudiante");
 
         ArrayList<Valoracion> valoraciones = new ArrayList<Valoracion>();
 
@@ -72,7 +72,7 @@ public class ValoracionUI extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                estudianteController.setValoracion(contenidoVal);
+                estudianteController.setValoracion(contenidoVal, idEstudiante);
             }
         });
 

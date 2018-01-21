@@ -9,6 +9,7 @@ import com.example.andorid.hospital.Usuario;
 import com.example.andorid.hospital.Valoracion;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -56,9 +57,16 @@ public class EstudianteController {
 
     }
 
-    public void setValoracion(String valoracion) {
+    public void setValoracion(String valoracion, int idEstudiante) {
         Valoracion val = new Valoracion();
         val.setContenido(valoracion);
+        val.setIdEstudiante(idEstudiante);
+        Date date = new Date();
+        java.text.SimpleDateFormat sdf =
+                new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        val.setDate(sdf.format(date));
+
         dao.guardarValoracion(val);
 
     }
