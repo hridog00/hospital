@@ -64,6 +64,20 @@ public class PacienteDAO {
 
     }
 
+    public void eliminarPaciente(int idPaciente){
+
+        String sqlUsuario = "DELETE FROM `mydb`.`Usuario` WHERE `idUsuario`='"+idPaciente+"';";
+        String sqlPaciente = "DELETE FROM `mydb`.`Paciente` WHERE `idUsuario`='"+idPaciente+"';";
+        String sqlHabitacion = "UPDATE `mydb`.`Habitacion` SET `idPacienteH`=NULL, `nombrePaciente`=NULL, `apellidoPaciente`=NULL WHERE `idPacienteH`='"+idPaciente+"';";
+
+        ExecutorService service = Executors.newFixedThreadPool(2);
+        Future<List> resultado = service.submit(new ConexionBD(sqlUsuario));
+         resultado = service.submit(new ConexionBD(sqlPaciente));
+        resultado = service.submit(new ConexionBD(sqlHabitacion));
+
+
+
+    }
 
     public Paciente getPaciente(int idPaciente) throws ExecutionException, InterruptedException {
 

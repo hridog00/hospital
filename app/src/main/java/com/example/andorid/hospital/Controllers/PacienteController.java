@@ -49,8 +49,10 @@ public class PacienteController {
         //llamada a PacienteDAO para añadirlo
     }
 
-    public void eliminarPaciente(){
+    public void eliminarPaciente(int idPaciente){
         //lamada al dao para eliminar el paciente, se le pasa como parametro idPaciente
+        pacienteDAO.eliminarPaciente(idPaciente);
+
     }
 
     public ArrayList<String> descomponer(String al){

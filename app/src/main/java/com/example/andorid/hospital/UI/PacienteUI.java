@@ -11,13 +11,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.andorid.hospital.Controllers.EstudianteController;
 import com.example.andorid.hospital.Controllers.PacienteController;
 import com.example.andorid.hospital.Estudiante;
 import com.example.andorid.hospital.FactoriaInterfaz;
 import com.example.andorid.hospital.Paciente;
 import com.example.andorid.hospital.R;
-import com.example.andorid.hospital.UI.MedicacionEnfermeroUI;
 import com.example.andorid.hospital.Usuario;
 
 import java.util.ArrayList;
@@ -101,6 +99,32 @@ public class PacienteUI extends AppCompatActivity {
             }
 
         });
+
+        Button eliminar = (Button) findViewById(R.id.eliminar);
+
+        eliminar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                //llamar a factoria
+                Intent eliminar  = new Intent(getApplicationContext(), EliminarPacienteUI.class);
+                eliminar.putExtra("idPaciente",idP);
+                //PrincipalUI p = new PrincipalUI();
+                //p.rellenar(info);
+                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                startActivity(eliminar);
+
+
+
+            }
+
+        });
+
+
+
+
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar
