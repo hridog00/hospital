@@ -137,6 +137,8 @@ return valoraciones;
         int idEnfermero = Usuario.getInstance().getIdUsuario();
         String fecha = valoracion.getDate();
 
+        System.out.println("Id estudiante"+idEstudiante);
+
         String addUsQSL ="INSERT INTO `mydb`.`Valoraciones` (`idEstudiante`, `idEnfermero`, `Fecha`, `Contenido`, `NombreEnfermero`) VALUES ('"+idEstudiante+"', '"+idEnfermero+"', '"+fecha+"', '"+contenido+"', '"+nombreEnfermero+"')";
 
         ExecutorService service = Executors.newFixedThreadPool(2);

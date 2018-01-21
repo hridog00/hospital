@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -62,17 +63,30 @@ public class ValoracionUI extends AppCompatActivity {
         }
 
 
-        TextView valoracion = (TextView) findViewById(R.id.contenidoValoracion);
+        //final TextView emisor2 = new TextView(this);
+        //final TextView msg2 = new TextView(this);
 
-        final String contenidoVal = valoracion.getText().toString();
+
+
 
         Button btnEnviarValoracion = (Button) findViewById(R.id.button3);
+
+
 
         btnEnviarValoracion.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+                EditText valoracion = (EditText) findViewById(R.id.contenidoValoracion);
+
+                String contenidoVal = valoracion.getText().toString();
                 estudianteController.setValoracion(contenidoVal, idEstudiante);
+
+                finish();
+
+
+
+
             }
         });
 

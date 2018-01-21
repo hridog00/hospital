@@ -11,13 +11,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.andorid.hospital.Controllers.PacienteController;
 import com.example.andorid.hospital.Paciente;
 import com.example.andorid.hospital.R;
 
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 public class PrincipalUI extends AppCompatActivity{
 
+    PacienteController pacienteController = new PacienteController();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -25,7 +28,19 @@ public class PrincipalUI extends AppCompatActivity{
         setContentView(R.layout.activity_planta);
 
 
+        ArrayList<Paciente> listaPacientes=null;
 
+        try {
+            listaPacientes = pacienteController.getlistaPacientes();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        rellenar(listaPacientes);
+
+        final ArrayList<Paciente> pacientes = listaPacientes;
 
         Button hab1 = (Button) findViewById(R.id.hab1);
 
@@ -33,12 +48,18 @@ public class PrincipalUI extends AppCompatActivity{
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(0).getNombre()!=null){
+                    Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(0).getIdPaciente());
+
+                    startActivity(paciente);
+
+                }
+
                 //PrincipalUI p = new PrincipalUI();
                 //p.rellenar(info);
                 // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
 
-                startActivity(paciente);
             }
         });
         Button hab2 = (Button) findViewById(R.id.hab2);
@@ -47,13 +68,17 @@ public class PrincipalUI extends AppCompatActivity{
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(1).getNombre()!= null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(1).getIdPaciente());
 
-                startActivity(paciente);
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         });
         Button hab3 = (Button) findViewById(R.id.hab3);
@@ -62,13 +87,18 @@ public class PrincipalUI extends AppCompatActivity{
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(2).getNombre()!=null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(2).getIdPaciente());
 
-                startActivity(paciente);
+
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         });
         Button hab4 = (Button) findViewById(R.id.hab4);
@@ -77,13 +107,18 @@ public class PrincipalUI extends AppCompatActivity{
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(3).getNombre()!=null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(3).getIdPaciente());
 
-                startActivity(paciente);
+
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         });
         Button hab5 = (Button) findViewById(R.id.hab5);
@@ -92,13 +127,17 @@ public class PrincipalUI extends AppCompatActivity{
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(4).getNombre()!=null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(4).getIdPaciente());
 
-                startActivity(paciente);
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         });
         Button hab6 = (Button) findViewById(R.id.hab6);
@@ -107,13 +146,17 @@ public class PrincipalUI extends AppCompatActivity{
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(5).getNombre()!=null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(5).getIdPaciente());
 
-                startActivity(paciente);
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         }); Button hab7 = (Button) findViewById(R.id.hab7);
 
@@ -121,13 +164,18 @@ public class PrincipalUI extends AppCompatActivity{
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(6).getNombre()!=null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(6).getIdPaciente());
 
-                startActivity(paciente);
+
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         });
         Button hab8 = (Button) findViewById(R.id.hab8);
@@ -136,13 +184,18 @@ public class PrincipalUI extends AppCompatActivity{
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(7)!=null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(7).getIdPaciente());
 
-                startActivity(paciente);
+
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         });
         Button hab9 = (Button) findViewById(R.id.hab9);
@@ -151,13 +204,18 @@ public class PrincipalUI extends AppCompatActivity{
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(8)!=null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(8).getIdPaciente());
 
-                startActivity(paciente);
+
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         });
         Button hab10 = (Button) findViewById(R.id.hab10);
@@ -166,13 +224,18 @@ public class PrincipalUI extends AppCompatActivity{
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(9)!=null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(9).getIdPaciente());
 
-                startActivity(paciente);
+
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         });
         Button hab11 = (Button) findViewById(R.id.hab11);
@@ -181,13 +244,18 @@ public class PrincipalUI extends AppCompatActivity{
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(10)!=null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(10).getIdPaciente());
 
-                startActivity(paciente);
+
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         });
         Button hab12 = (Button) findViewById(R.id.hab12);
@@ -196,16 +264,20 @@ public class PrincipalUI extends AppCompatActivity{
 
             @Override
             public void onClick(View v) {
-                Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
+                if(pacientes.get(11)!=null) {
 
-                //PrincipalUI p = new PrincipalUI();
-                //p.rellenar(info);
-                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+                    Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
+                    paciente.putExtra("idPaciente",pacientes.get(11).getIdPaciente());
 
-                startActivity(paciente);
+
+                    //PrincipalUI p = new PrincipalUI();
+                    //p.rellenar(info);
+                    // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                    startActivity(paciente);
+                }
             }
         });
-
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar
