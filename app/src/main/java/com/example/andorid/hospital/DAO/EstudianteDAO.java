@@ -116,10 +116,6 @@ return valoraciones;
     public void guardarValoracion(Valoracion valoracion) {
 
 
-        String addUsQSL =
-
-        ExecutorService service = Executors.newFixedThreadPool(2);
-        Future<List> resultado = service.submit(new ConexionBD(addUsQSL));
 
     }
 }

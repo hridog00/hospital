@@ -337,12 +337,12 @@ public class menuUI extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        /*DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
-        }
+        }*/
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar
@@ -443,24 +443,23 @@ public class menuUI extends AppCompatActivity
         if(info.get(9).getNombre()!= null) {
             Button boton10 = (Button) findViewById(R.id.hab10);
             boton10.setText(info.get(9).getNombre()+" "+info.get(9).getApellidos());
-            boton10.setBackgroundColor(Color.CYAN);
 
         }
         if(info.get(10).getNombre()!= null) {
             Button boton11 = (Button) findViewById(R.id.hab11);
             boton11.setText(info.get(10).getNombre()+" "+info.get(10).getApellidos());
-            boton11.setBackgroundColor(Color.CYAN);
 
         }
         if(info.get(11).getNombre()!= null) {
             Button boton12 = (Button) findViewById(R.id.hab12);
             boton12.setText(info.get(11).getNombre()+" "+info.get(11).getApellidos());
-            boton12.setBackgroundColor(Color.CYAN);
         }
 
 
 
 
     }
+
+
 
 }
