@@ -40,6 +40,7 @@ public class EstudianteController {
         return dao.getValoracionEstudiante(idEstudiante);
     }
 
+
     public void addEstudiante(ArrayList<String> info) throws Exception {
         Estudiante estudiante = new Estudiante();
 
@@ -54,6 +55,10 @@ public class EstudianteController {
         System.out.println(estudiante.getDate());
 
         dao.addEstudiante(estudiante);
+
+    }
+    public void eliminarEstudiante(int idEstudiante){
+        dao.eliminarEstudiante(idEstudiante);
 
     }
 

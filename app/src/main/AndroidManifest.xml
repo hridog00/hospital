@@ -46,7 +46,8 @@
             android:label="@string/title_activity_menu__m__ui"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".UI.MedicacionEstudianteUI" />
-        <activity android:name=".UI.EliminarPacienteUI"></activity>
+        <activity android:name=".UI.EliminarPacienteUI" />
+        <activity android:name=".UI.eliminarEstudianteUI"></activity>
     </application>
 
 </manifest>

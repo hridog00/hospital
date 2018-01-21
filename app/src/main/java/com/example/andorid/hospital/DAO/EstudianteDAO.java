@@ -114,6 +114,21 @@ return valoraciones;
 
     }
 
+
+    public void eliminarEstudiante(int idEstudiante){
+
+        String sqlUsuario = "DELETE FROM `mydb`.`Usuario` WHERE `idUsuario`='"+idEstudiante+"';";
+        String sqlEstudiante = "DELETE FROM `mydb`.`Estudiante` WHERE `idEstudiante`='"+idEstudiante+"';";
+
+        ExecutorService service = Executors.newFixedThreadPool(2);
+        Future<List> resultado = service.submit(new ConexionBD(sqlEstudiante));
+
+        resultado = service.submit(new ConexionBD(sqlUsuario));
+
+
+
+    }
+
     public void guardarValoracion(Valoracion valoracion) {
 
         int idEstudiante = valoracion.getIdEstudiante();

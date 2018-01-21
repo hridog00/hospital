@@ -75,6 +75,25 @@ public class EstudianteUI extends AppCompatActivity {
                 startActivity(valoraciones);
             }
         });
+        Button eliminar = (Button) findViewById(R.id.eliminar);
+
+        eliminar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent valoraciones  = new Intent(getApplicationContext(), eliminarEstudianteUI.class);
+                valoraciones.putExtra("idEstudiante", idEst);
+
+
+                //PrincipalUI p = new PrincipalUI();
+                //p.rellenar(info);
+                // Intent PrincipalUI  = new Intent(getApplicationContext(), menuUI.class);
+
+                startActivity(valoraciones);
+            }
+        });
+
+
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar
