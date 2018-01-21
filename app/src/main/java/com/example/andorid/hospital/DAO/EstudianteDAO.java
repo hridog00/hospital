@@ -1,5 +1,7 @@
 package com.example.andorid.hospital.DAO;
 
+import android.widget.TextView;
+
 import com.example.andorid.hospital.Estudiante;
 import com.example.andorid.hospital.Mensaje;
 import com.example.andorid.hospital.Valoracion;
@@ -108,6 +110,16 @@ return valoraciones;
 
 
 
+
+    }
+
+    public void guardarValoracion(Valoracion valoracion) {
+
+
+        String addUsQSL =
+
+        ExecutorService service = Executors.newFixedThreadPool(2);
+        Future<List> resultado = service.submit(new ConexionBD(addUsQSL));
 
     }
 }

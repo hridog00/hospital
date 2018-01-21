@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -42,10 +44,6 @@ public class ValoracionUI extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
-
-       // System.out.println("//////////////////"+valoraciones.get(0).getContenido());
-
         LinearLayout linearLayout = (LinearLayout)findViewById(R.id.contenido);
 
 
@@ -62,6 +60,21 @@ public class ValoracionUI extends AppCompatActivity {
 
 
         }
+
+
+        TextView valoracion = (TextView) findViewById(R.id.contenidoValoracion);
+
+        final String contenidoVal = valoracion.getText().toString();
+
+        Button btnEnviarValoracion = (Button) findViewById(R.id.button3);
+
+        btnEnviarValoracion.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                estudianteController.setValoracion(contenidoVal);
+            }
+        });
 
     }
 

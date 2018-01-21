@@ -53,7 +53,7 @@
             android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/editText7"
+            android:id="@+id/contenidoValoracion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight=".3"

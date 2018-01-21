@@ -58,7 +58,7 @@ public class EstudianteUI extends AppCompatActivity {
         final int idEst = idEstudiante;
 
 
-        Button botonValoraciones = (Button) findViewById(R.id.button5);
+        Button botonValoraciones = (Button) findViewById(R.id.btnValoracion);
 
         botonValoraciones.setOnClickListener(new View.OnClickListener() {
 

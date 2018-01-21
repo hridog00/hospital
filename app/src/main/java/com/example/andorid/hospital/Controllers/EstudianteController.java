@@ -1,5 +1,7 @@
 package com.example.andorid.hospital.Controllers;
 
+import android.widget.TextView;
+
 import com.example.andorid.hospital.DAO.EstudianteDAO;
 import com.example.andorid.hospital.Estudiante;
 import com.example.andorid.hospital.Mensaje;
@@ -51,6 +53,13 @@ public class EstudianteController {
         System.out.println(estudiante.getDate());
 
         dao.addEstudiante(estudiante);
+
+    }
+
+    public void setValoracion(String valoracion) {
+        Valoracion val = new Valoracion();
+        val.setContenido(valoracion);
+        dao.guardarValoracion(val);
 
     }
 }
