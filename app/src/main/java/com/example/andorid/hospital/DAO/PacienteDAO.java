@@ -62,6 +62,7 @@ public class PacienteDAO {
             resultado = service.submit(new ConexionBD("INSERT INTO `mydb`.`Intervenciones` (`idPaciente`, `Nombre`) VALUES ('"+p.getIdPaciente()+"', '"+p.getIntervenciones().get(i)+"');"));
         }
 
+
         for(int i=0;i<p.gethToxicosPasados().size();i++){
             resultado = service.submit(new ConexionBD("NSERT INTO `mydb`.`HabitosToxicos` (`idPaciente`, `Nombre`, `Estado`) VALUES ('"+p.getIdPaciente()+"', '"+p.gethToxicosPasados().get(i)+"', 'Pasado');"));
         }
