@@ -50,6 +50,9 @@ public class MedicacionEnfermeroUI extends AppCompatActivity {
 
         int idPaciente = datos.getInt("idPaciente");
          ArrayList<Medicacion> medicacions = new ArrayList<>();
+
+        TextView nombre = (TextView) findViewById(R.id.nombre) ;
+        nombre.setText(datos.getString("nombrePaciente"));
         try {
             medicacions = medicacionController.getMedicacion(idPaciente);
         } catch (Exception e) {
