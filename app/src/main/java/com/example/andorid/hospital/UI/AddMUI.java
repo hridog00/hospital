@@ -24,6 +24,7 @@ public class AddMUI extends AppCompatActivity {
 
         final int idPaciente = datos.getInt("idPaciente");
         Button enviar = (Button) findViewById(R.id.btnEnviar);
+        final String nPaciente = datos.getString("nombrePaciente");
         enviar.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -33,7 +34,7 @@ public class AddMUI extends AppCompatActivity {
               info.add(((EditText)findViewById(R.id.dosis)).getText().toString());
               info.add(((EditText)findViewById(R.id.hora)).getText().toString());
                 try {
-                    medicacionController.addMedicacion(info,idPaciente);
+                    medicacionController.addMedicacion(info,idPaciente,nPaciente);
                 } catch (ExecutionException e) {
                     e.printStackTrace();
                 } catch (InterruptedException e) {

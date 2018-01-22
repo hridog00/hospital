@@ -1,8 +1,12 @@
 package com.example.andorid.hospital.DAO;
 
+import com.example.andorid.hospital.Controllers.MensajeController;
 import com.example.andorid.hospital.Medicacion;
+import com.example.andorid.hospital.Mensaje;
+import com.example.andorid.hospital.Usuario;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -44,11 +48,22 @@ public class MedicacionDAO {
 
     }
 
-    public void addMedicacion(Medicacion medicacion) throws ExecutionException, InterruptedException {
+    public void addMedicacion(Medicacion medicacion, String nombrePacietne) throws ExecutionException, InterruptedException {
         String sqlSentencia = "INSERT INTO `mydb`.`Medicacion` ( `Nombre`, `Dosis`, `Hora`, `idPaciente`) VALUES ( '"+medicacion.getNombre()+"', '"+medicacion.getDosis()+"', '"+medicacion.getDosis()+"', '"+medicacion.getIdPaciente()+"');";
         ExecutorService service = Executors.newFixedThreadPool(2);
         Future<List> resultado = service.submit(new ConexionBD(sqlSentencia));
         List res = resultado.get();
+
+        Mensaje m = new Mensaje();
+        m.setNombreUsuario(Usuario.getInstance().getNombreUsuario());
+        m.setTexto("Se ha añadido la medicacion "+medicacion.getNombre()+" al paciente "+nombrePacietne);
+        Date dt = new Date();
+        m.setFecha(dt);
+        m.setDestinatario('E');
+        MensajesDAO mensajesDAO = new MensajesDAO();
+        mensajesDAO.enviar(m);
+
+
 
     }
     public void cambiarEstado(int idMedicacion, char estado) throws ExecutionException, InterruptedException {

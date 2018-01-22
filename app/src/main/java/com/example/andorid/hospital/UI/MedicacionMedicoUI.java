@@ -39,6 +39,10 @@ public class MedicacionMedicoUI extends AppCompatActivity {
         Bundle datos = this.getIntent().getExtras();
 
         final int idPaciente = datos.getInt("idPaciente");
+
+        TextView nombre = (TextView) findViewById(R.id.nombreP) ;
+        nombre.setText(datos.getString("nombrePaciente"));
+        final String nombrePaciente = datos.getString("nombrePaciente");
         ArrayList<Medicacion> medicacions = new ArrayList<>();
         try {
             medicacions = medicacionController.getMedicacion(idPaciente);
@@ -53,6 +57,7 @@ public class MedicacionMedicoUI extends AppCompatActivity {
             final TextView textv = new TextView(this);
            // final Button btnEliminar = new Button(this);
             final int idMedicacion = medicacions.get(i).getIdMedicacion();
+
 
             // set some properties of rowTextView or something
             boton.setText("Eliminar");
@@ -100,6 +105,7 @@ public class MedicacionMedicoUI extends AppCompatActivity {
             public void onClick(View v) {
                 Intent addM  = new Intent(getApplicationContext(), AddMUI.class);
                 addM.putExtra("idPaciente",idPaciente);
+                addM.putExtra("nombrePaciente", nombrePaciente);
                 startActivity(addM);
             }
         });

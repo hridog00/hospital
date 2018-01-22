@@ -62,12 +62,13 @@ public class PacienteDAO {
         }*/
 
 
-        for(int i=0;i<p.gethToxicosPasados().size();i++){
+    /*    for(int i=0;i<p.gethToxicosPasados().size();i++){
             resultado = service.submit(new ConexionBD("INSERT INTO `mydb`.`HabitosToxicos` (`idPaciente`, `Nombre`, `Estado`) VALUES ('"+p.getIdPaciente()+"', '"+p.gethToxicosPasados().get(i)+"', 'Pasado');"));
         }
         for(int i=0;i<p.gethToxicosPresentes().size();i++){
             resultado = service.submit(new ConexionBD("INSERT INTO `mydb`.`HabitosToxicos` (`idPaciente`, `Nombre`, `Estado`) VALUES ('"+p.getIdPaciente()+"', '"+p.gethToxicosPresentes().get(i)+"', 'Presente');"));
         }
+        */
 
         String sqlHabitacion ="UPDATE `mydb`.`Habitacion` SET `idPacienteH`='"+idUuario+"', `nombrePaciente`='"+p.getNombre()+"', `apellidoPaciente`='"+p.getApellidos()+"' WHERE `NumeroHabitacion`='"+p.getHabitacionID()+"' and`PlantaH`='"+p.getPlanta()+"';";
 
