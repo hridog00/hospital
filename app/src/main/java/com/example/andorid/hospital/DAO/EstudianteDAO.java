@@ -103,6 +103,8 @@ return valoraciones;
 
         String idUuario = ((List)res2.get(0)).get(0).toString();
 
+
+
         String inserUsuario = "INSERT INTO `mydb`.`Estudiante` (`idEstudiante`, `Planta`) VALUES ('"+idUuario+"','"+estudiante.getPlanta()+"')";
         Future<List> resultado3 = service.submit(new ConexionBD(inserUsuario));
 
@@ -138,6 +140,7 @@ return valoraciones;
         String fecha = valoracion.getDate();
 
         System.out.println("Id estudiante"+idEstudiante);
+
 
         String addUsQSL ="INSERT INTO `mydb`.`Valoraciones` (`idEstudiante`, `idEnfermero`, `Fecha`, `Contenido`, `NombreEnfermero`) VALUES ('"+idEstudiante+"', '"+idEnfermero+"', '"+fecha+"', '"+contenido+"', '"+nombreEnfermero+"')";
 
