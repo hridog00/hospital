@@ -54,6 +54,23 @@ public class PacienteDAO {
 
         }
 
+        for(int i=0;i<p.getAntecedentes().size();i++){
+            resultado = service.submit(new ConexionBD("INSERT INTO `mydb`.`AntecedentesPatologicos` (`idPaciente`, `Nombre`) VALUES ('"+p.getIdPaciente()+"', '"+p.getAntecedentes().get(i)+"');"));
+        }
+
+        for(int i=0;i<p.getIntervenciones().size();i++){
+            resultado = service.submit(new ConexionBD("INSERT INTO `mydb`.`Intervenciones` (`idPaciente`, `Nombre`) VALUES ('"+p.getIdPaciente()+"', '"+p.getIntervenciones().get(i)+"');"));
+        }
+
+        for(int i=0;i<p.gethToxicosPasados().size();i++){
+            resultado = service.submit(new ConexionBD("NSERT INTO `mydb`.`HabitosToxicos` (`idPaciente`, `Nombre`, `Estado`) VALUES ('"+p.getIdPaciente()+"', '"+p.gethToxicosPasados().get(i)+"', 'Pasado');"));
+        }
+        for(int i=0;i<p.gethToxicosPresentes().size();i++){
+            resultado = service.submit(new ConexionBD("NSERT INTO `mydb`.`HabitosToxicos` (`idPaciente`, `Nombre`, `Estado`) VALUES ('"+p.getIdPaciente()+"', '"+p.gethToxicosPresentes().get(i)+"', 'Presente');"));
+        }
+
+
+
 
 
 

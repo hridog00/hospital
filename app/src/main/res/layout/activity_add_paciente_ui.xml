@@ -39,7 +39,7 @@
                     android:text="Nombre" />
 
                 <EditText
-                    android:id="@+id/nombreP"
+                    android:id="@+id/nombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -172,8 +172,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_span="2"
-                    android:orientation="vertical">
+                    android:orientation="vertical"><![CDATA[
                     >
+
+                    ]]>
 
                     <CheckBox
                         android:id="@+id/n1"
@@ -186,7 +188,7 @@
 
                     <CheckBox
                         android:id="@+id/n2"
-                        style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                        style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:duplicateParentState="true"
@@ -194,7 +196,7 @@
 
                     <CheckBox
                         android:id="@+id/n3"
-                        style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                        style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:duplicateParentState="true"
@@ -202,7 +204,7 @@
 
                     <CheckBox
                         android:id="@+id/n4"
-                        style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                        style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:duplicateParentState="true"
@@ -210,7 +212,7 @@
 
                     <CheckBox
                         android:id="@+id/n5"
-                        style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                        style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:duplicateParentState="true"
@@ -218,7 +220,7 @@
 
                     <CheckBox
                         android:id="@+id/n6"
-                        style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                        style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:checked="false"
@@ -331,78 +333,6 @@
 
                 <EditText
                     android:id="@+id/antecedentesP"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Familiar Cercano" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Nombre, Apellidos" />
-
-                <EditText
-                    android:id="@+id/nombrePariente"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-
-                    android:inputType="textPersonName"
-                    android:text="" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/textView11"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Parentesco" />
-
-                <EditText
-                    android:id="@+id/parentesco"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/textView12"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/textView13"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Telefono" />
-
-                <EditText
-                    android:id="@+id/telefono"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
