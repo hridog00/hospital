@@ -65,6 +65,7 @@ public class MedicacionDAO {
 
 
 
+
     }
     public void cambiarEstado(int idMedicacion, char estado) throws ExecutionException, InterruptedException {
         String sql = "UPDATE `mydb`.`Medicacion` SET `estado`='"+estado+"' WHERE `idMedicacion`='"+idMedicacion+"';\n";
