@@ -95,7 +95,7 @@
             android:layout_columnWeight=".5"
             android:layout_row="3"
 
-            android:text="Fecha de nacimiento" />
+            android:text="Fecha de nacimiento (yyyy-mm-dd)" />
 
         <EditText
             android:id="@+id/fecha"
