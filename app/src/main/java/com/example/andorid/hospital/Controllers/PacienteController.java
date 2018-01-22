@@ -94,7 +94,7 @@ public class PacienteController {
         paciente.sethToxicosPresentes(descomponer(info.get(9)));
         paciente.sethToxicosPasados(descomponer(info.get(8)));
         paciente.setAntecedentes(descomponer(info.get(10)));
-        paciente.setParientePaciente(descomponer(info.get(11)));
+//        paciente.setParientePaciente(descomponer(info.get(11)));
 
         return paciente;
     }

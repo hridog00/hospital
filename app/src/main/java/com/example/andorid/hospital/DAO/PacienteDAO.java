@@ -39,8 +39,7 @@ public class PacienteDAO {
 
         System.out.println(p.getPlanta()+" "+p.getHabitacionID());
        // String sqlHabitacion = "UPDATE `mydb`.`Habitacion` SET `idPacienteH`='"+idUuario+"' WHERE `NumeroHabitacion`='"+p.getHabitacionID()+"' and`PlantaH`='"+p.getPlanta()+"';";
-        String sqlHabitacion ="UPDATE `mydb`.`Habitacion` SET `idPacienteH`='"+idUuario+"', `nombrePaciente`='"+p.getNombre()+"', `apellidoPaciente`='"+p.getApellidos()+"' WHERE `NumeroHabitacion`='"+p.getHabitacionID()+"' and`PlantaH`='"+p.getPlanta()+"';";
-         resultado3 = service.submit(new ConexionBD(sqlHabitacion));
+
 
         for(int i=0;i<p.getAlergias().size();i++) {
             String sqlAlergias = "INSERT INTO `mydb`.`Alergias` (`idPaciente`, `Nombre`) VALUES ('" + idUuario + "', '" + p.getAlergias().get(i) + "');\n";
@@ -64,15 +63,16 @@ public class PacienteDAO {
 
 
         for(int i=0;i<p.gethToxicosPasados().size();i++){
-            resultado = service.submit(new ConexionBD("NSERT INTO `mydb`.`HabitosToxicos` (`idPaciente`, `Nombre`, `Estado`) VALUES ('"+p.getIdPaciente()+"', '"+p.gethToxicosPasados().get(i)+"', 'Pasado');"));
+            resultado = service.submit(new ConexionBD("INSERT INTO `mydb`.`HabitosToxicos` (`idPaciente`, `Nombre`, `Estado`) VALUES ('"+p.getIdPaciente()+"', '"+p.gethToxicosPasados().get(i)+"', 'Pasado');"));
         }
         for(int i=0;i<p.gethToxicosPresentes().size();i++){
-            resultado = service.submit(new ConexionBD("NSERT INTO `mydb`.`HabitosToxicos` (`idPaciente`, `Nombre`, `Estado`) VALUES ('"+p.getIdPaciente()+"', '"+p.gethToxicosPresentes().get(i)+"', 'Presente');"));
+            resultado = service.submit(new ConexionBD("INSERT INTO `mydb`.`HabitosToxicos` (`idPaciente`, `Nombre`, `Estado`) VALUES ('"+p.getIdPaciente()+"', '"+p.gethToxicosPresentes().get(i)+"', 'Presente');"));
         }
 
+        String sqlHabitacion ="UPDATE `mydb`.`Habitacion` SET `idPacienteH`='"+idUuario+"', `nombrePaciente`='"+p.getNombre()+"', `apellidoPaciente`='"+p.getApellidos()+"' WHERE `NumeroHabitacion`='"+p.getHabitacionID()+"' and`PlantaH`='"+p.getPlanta()+"';";
 
 
-
+        resultado3 = service.submit(new ConexionBD(sqlHabitacion));
 
 
 

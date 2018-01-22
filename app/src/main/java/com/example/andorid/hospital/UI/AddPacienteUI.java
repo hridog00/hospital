@@ -41,7 +41,7 @@ public class AddPacienteUI extends AppCompatActivity {
 
 
                 ArrayList<String> info = new ArrayList<>();
-                info.add(((EditText)findViewById(R.id.nombreP)).getText().toString());
+                info.add(((EditText)findViewById(R.id.nombre)).getText().toString());
 
                 info.add(((EditText)findViewById(R.id.apellidos)).getText().toString());
                 info.add(((EditText)findViewById(R.id.dni)).getText().toString());
@@ -123,9 +123,9 @@ public class AddPacienteUI extends AppCompatActivity {
 
     public String getParienteInfo(){
         String pariente = "";
-        pariente = pariente + (((EditText)findViewById(R.id.nombrePariente)).getText().toString()) +";";
+        /*pariente = pariente + (((EditText)findViewById(R.id.nombrePariente)).getText().toString()) +";";
         pariente = pariente + (((EditText)findViewById(R.id.parentesco)).getText().toString()) +";";
-        pariente = pariente + (((EditText)findViewById(R.id.telefono)).getText().toString()) +";";
+        pariente = pariente + (((EditText)findViewById(R.id.telefono)).getText().toString()) +";";*/
 
         return pariente;
 
