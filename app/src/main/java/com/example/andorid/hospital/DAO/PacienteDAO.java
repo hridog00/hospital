@@ -20,7 +20,7 @@ public class PacienteDAO {
     public void addPaciente(Paciente p) throws Exception{
 
 
-        String addUsQSL = "INSERT INTO `mydb`.`Usuario` (`Nombre`, `Apellido`, `DNI`, `username`, `contraseña`, `FechaNacimiento`, `Tipo`) VALUES ('"+p.getNombre()+"', '"+p.getApellidos()+"', '"+p.getDNI()+"', 'P"+p.getDNI()+"', 'hesefra', '"+p.getFechaNacimiento()+"','P');\n";
+        String addUsQSL = "INSERT INTO `mydb`.`Usuario` (`Nombre`, `Apellido`, `DNI`, `username`, `contraseña`, `FechaNacimiento`, `Tipo`) VALUES ('"+p.getNombre()+"', '"+p.getApellidos()+"', '"+p.getDNI()+"', 'P"+p.getDNI()+"', '"+p.getPassword()+"', '"+p.getFechaNacimiento()+"','P');\n";
         ExecutorService service = Executors.newFixedThreadPool(2);
         Future<List> resultado = service.submit(new ConexionBD(addUsQSL));
         List res = resultado.get();

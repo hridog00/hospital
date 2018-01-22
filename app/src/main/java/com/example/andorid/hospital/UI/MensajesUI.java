@@ -69,8 +69,31 @@ public class MensajesUI extends AppCompatActivity {
                 }else if(((RadioButton)findViewById(R.id.rPaciente)).isChecked()){
                     tipo = 'P';
                 }
-                System.out.println(tipo);
+               // System.out.println(tipo);
                 mensajeController.escribirMensaje(texto, tipo);
+
+                ArrayList<Mensaje> mensajes = new ArrayList<>();
+                LinearLayout linearLayout = (LinearLayout)findViewById(R.id.linearMSG);
+
+                linearLayout.removeAllViews();
+                try{
+                    mensajes = mensajeController.getMensajes(Usuario.getInstance().getTipo());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                for(int i=0;i<mensajes.size();i++){
+                    final TextView emisor = new TextView(getApplicationContext());
+                    emisor.setText(mensajes.get(i).getNombreUsuario());
+                    emisor.setTextColor(Color.BLUE);
+                    linearLayout.addView(emisor);
+
+                    final TextView msg = new TextView(getApplicationContext());
+                    msg.setText(mensajes.get(i).getTexto());
+                    linearLayout.addView(msg);
+
+
+                }
 
 
             }

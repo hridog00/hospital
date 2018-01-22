@@ -84,7 +84,7 @@ public class PacienteController {
         System.out.println(date);
         Date d = sdf.parse(date);
         paciente.setFechaNacimiento(date);
-        paciente.setDiagnóstico(info.get(4));
+        paciente.setPassword(info.get(4));
 
         paciente.setPlanta(Usuario.getInstance().getnPlanta());
         paciente.setAlergias(descomponer(info.get(5)));

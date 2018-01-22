@@ -26,6 +26,16 @@ public class Paciente {
     private ParientePaciente parientePaciente;
     private int idPaciente;
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    private String password;
+
     public String getNombre() {
         return nombre;
     }

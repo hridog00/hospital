@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
@@ -45,7 +46,7 @@ public class AddPacienteUI extends AppCompatActivity {
                 info.add(((EditText)findViewById(R.id.apellidos)).getText().toString());
                 info.add(((EditText)findViewById(R.id.dni)).getText().toString());
                 info.add(((EditText)findViewById(R.id.fecha)).getText().toString());
-                info.add(((EditText)findViewById(R.id.diagnostico)).getText().toString());
+                info.add(((EditText)findViewById(R.id.password)).getText().toString());
                 info.add(((EditText)findViewById(R.id.alergias)).getText().toString());
                 info.add(((EditText)findViewById(R.id.intervenciones)).getText().toString());
                 info.add(getNecesidadesVH());
@@ -75,46 +76,46 @@ public class AddPacienteUI extends AppCompatActivity {
 
     public String getNecesidadesVH(){
         String necesidades = "";
-        if(((RadioButton)findViewById(R.id.n1)).isChecked()){
+        if(((CheckBox)findViewById(R.id.n1)).isChecked()){
             necesidades = necesidades + "Respirar Correctamente;";
         }
-        if(((RadioButton)findViewById(R.id.n2)).isChecked()){
+        if(((CheckBox)findViewById(R.id.n2)).isChecked()){
             necesidades = necesidades + "Comer y beber de forma adecuada;";
         }
-        if(((RadioButton)findViewById(R.id.n3)).isChecked()){
+        if(((CheckBox)findViewById(R.id.n3)).isChecked()){
             necesidades = necesidades + " Eliminar los desechos corporales;";
         }
-        if(((RadioButton)findViewById(R.id.n4)).isChecked()){
+        if(((CheckBox)findViewById(R.id.n4)).isChecked()){
             necesidades = necesidades + "Moverse y mantener una postura adecuada;";
         }
-        if(((RadioButton)findViewById(R.id.n5)).isChecked()){
+        if(((CheckBox)findViewById(R.id.n5)).isChecked()){
             necesidades = necesidades + " Dormir y descansar;";
         }
-        if(((RadioButton)findViewById(R.id.n6)).isChecked()){
+        if(((CheckBox)findViewById(R.id.n6)).isChecked()){
             necesidades = necesidades + "Elegir la ropa adecuada;";
         }
-        if(((RadioButton)findViewById(R.id.n7)).isChecked()){
+        if(((CheckBox)findViewById(R.id.n7)).isChecked()){
             necesidades = necesidades + "Mantener la temperatura corporal;";
         }
-        if(((RadioButton)findViewById(R.id.n8)).isChecked()){
+        if(((CheckBox)findViewById(R.id.n8)).isChecked()){
             necesidades = necesidades + "Mantener la higiene corporal;";
         }
-        if(((RadioButton)findViewById(R.id.n9)).isChecked()){
+        if(((CheckBox)findViewById(R.id.n9)).isChecked()){
             necesidades = necesidades + "Evitar los peligros del entorno;";
         }
-        if(((RadioButton)findViewById(R.id.n10)).isChecked()){
+        if(((CheckBox)findViewById(R.id.n10)).isChecked()){
             necesidades = necesidades + "Comunicarse con los otros;";
         }
-        if(((RadioButton)findViewById(R.id.n11)).isChecked()){
+        if(((CheckBox)findViewById(R.id.n11)).isChecked()){
             necesidades = necesidades + " Actuar con arreglo a la propia fé;";
         }
-        if(((RadioButton)findViewById(R.id.n12)).isChecked()){
+        if(((CheckBox)findViewById(R.id.n12)).isChecked()){
             necesidades = necesidades + "Trabajar para sentirse realizado;";
         }
-        if(((RadioButton)findViewById(R.id.n13)).isChecked()){
+        if(((CheckBox)findViewById(R.id.n13)).isChecked()){
             necesidades = necesidades + "Participar en diversas formas de entretenimiento;";
         }
-        if(((RadioButton)findViewById(R.id.n14)).isChecked()){
+        if(((CheckBox)findViewById(R.id.n14)).isChecked()){
             necesidades = necesidades + "Aprender, descubrir o satisfacer la curiosidad;";
         }
         return necesidades;
