@@ -51,11 +51,14 @@ public class MedicacionMedicoUI extends AppCompatActivity {
             // create a new textview
             final Button boton = new Button(this);
             final TextView textv = new TextView(this);
+           // final Button btnEliminar = new Button(this);
+            final int idMedicacion = medicacions.get(i).getIdMedicacion();
 
             // set some properties of rowTextView or something
             boton.setText("Eliminar");
             textv.setText("Nombre: "+medicacions.get(i).getNombre()+" Dosis: "+medicacions.get(i).getDosis()+" Hora: "+medicacions.get(i).getHora());
 
+            boton.setBackground(this.getResources().getDrawable(R.drawable.ic_menu_manage));
             // add the textview to the linearlayout
 
             grid.addView(textv);
@@ -65,7 +68,7 @@ public class MedicacionMedicoUI extends AppCompatActivity {
             button[i] = boton;
             textviews[i]=textv;
 
-            boton.setOnClickListener(new View.OnClickListener() {
+            /*boton.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View v) {
@@ -73,7 +76,19 @@ public class MedicacionMedicoUI extends AppCompatActivity {
 
                     startActivity(prueba);
                 }
+            });*/
+
+
+            final Medicacion medicacionActual = medicacions.get(i);
+            boton.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    medicacionController.eliminarMedicacion(medicacionActual, idMedicacion);
+                    finish();
+                }
             });
+
         }
 
         Button btnAnadir = (Button) findViewById(R.id.button5);

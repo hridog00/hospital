@@ -59,4 +59,16 @@ public class MedicacionDAO {
         List res = resultado.get();
 
     }
+
+    public void eliminarMedicacion(Medicacion m, int idMedicacion) {
+
+
+        String sql = "DELETE FROM `mydb`.`Medicacion` WHERE `idMedicacion`='"+idMedicacion+"';";
+
+        ExecutorService service = Executors.newFixedThreadPool(2);
+        Future<List> resultado = service.submit(new ConexionBD(sql));
+
+
+
+    }
 }

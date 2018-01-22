@@ -33,9 +33,9 @@ public class MedicacionController {
        // return pacienteDAO.addMedicacion(idPaciente, m);
 
     }
-    public void eliminarMedicacion(Medicacion m){
+    public void eliminarMedicacion(Medicacion m, int idMedicacion){
         //llamada a la DAO
-
+        medicacionDAO.eliminarMedicacion(m, idMedicacion);
     }
 
     public void cambiarEstado(int idMedicacion, char estado){
