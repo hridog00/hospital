@@ -7,7 +7,7 @@
     tools:context="com.example.andorid.hospital.UI.MedicacionEnfermeroUI">
 
     <TextView
-        android:id="@+id/nombre"
+        android:id="@+id/nombreP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -15,6 +15,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/obtener_nombre_del_paciente"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombre"
+        app:layout_constraintTop_toBottomOf="@+id/nombreP"
         app:layout_constraintVertical_bias="1.0">
 
         <GridLayout

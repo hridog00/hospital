@@ -1,6 +1,5 @@
 package com.example.andorid.hospital.UI;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -30,7 +29,7 @@ public class AddMUI extends AppCompatActivity {
             @Override
             public void onClick(View v) {
               ArrayList<String> info = new ArrayList<>();
-              info.add(((EditText)findViewById(R.id.nombre)).getText().toString());
+              info.add(((EditText)findViewById(R.id.nombreP)).getText().toString());
               info.add(((EditText)findViewById(R.id.dosis)).getText().toString());
               info.add(((EditText)findViewById(R.id.hora)).getText().toString());
                 try {

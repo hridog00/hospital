@@ -39,7 +39,7 @@
                     android:text="Nombre" />
 
                 <EditText
-                    android:id="@+id/nombre"
+                    android:id="@+id/nombreP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -175,16 +175,16 @@
                     android:orientation="vertical">
                     >
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/n1"
-                        style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                        style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:checked="false"
                         android:duplicateParentState="true"
                         android:text="Respirar normalmente" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/n2"
                         style="@style/Widget.AppCompat.CompoundButton.RadioButton"
                         android:layout_width="match_parent"
@@ -192,7 +192,7 @@
                         android:duplicateParentState="true"
                         android:text="Comer y beber de forma adecuada" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/n3"
                         style="@style/Widget.AppCompat.CompoundButton.RadioButton"
                         android:layout_width="match_parent"
@@ -200,7 +200,7 @@
                         android:duplicateParentState="true"
                         android:text=" Eliminar los desechos corporales" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/n4"
                         style="@style/Widget.AppCompat.CompoundButton.RadioButton"
                         android:layout_width="match_parent"
@@ -208,7 +208,7 @@
                         android:duplicateParentState="true"
                         android:text="Moverse y mantener una postura adecuada" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/n5"
                         style="@style/Widget.AppCompat.CompoundButton.RadioButton"
                         android:layout_width="match_parent"
@@ -216,7 +216,7 @@
                         android:duplicateParentState="true"
                         android:text=" Dormir y descansar" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/n6"
                         style="@style/Widget.AppCompat.CompoundButton.RadioButton"
                         android:layout_width="match_parent"
@@ -225,56 +225,56 @@
                         android:duplicateParentState="true"
                         android:text="Elegir la ropa adecuada" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/n7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:duplicateParentState="true"
                         android:text="Mantener la temperatura corporal" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/n8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:duplicateParentState="true"
                         android:text="Mantener la higiene corporal" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/n9"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:duplicateParentState="true"
                         android:text="Evitar los peligros del entorno" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/n10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:duplicateParentState="true"
                         android:text="Comunicarse con los otros" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/n11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:duplicateParentState="true"
                         android:text=" Actuar con arreglo a la propia fé" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/n12"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:duplicateParentState="true"
                         android:text="Trabajar para sentirse realizado" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/n13"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:duplicateParentState="true"
                         android:text="Participar en diversas formas de entretenimiento" />
 
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/n14"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -324,7 +324,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/nombre"
+                    android:id="@+id/nombreP"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Antecedentes patológicos" />

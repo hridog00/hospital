@@ -1,6 +1,5 @@
 package com.example.andorid.hospital.UI;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,8 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.andorid.hospital.Controllers.EstudianteController;
-import com.example.andorid.hospital.Controllers.PacienteController;
-import com.example.andorid.hospital.Paciente;
 import com.example.andorid.hospital.R;
 
 import java.util.ArrayList;
@@ -31,7 +28,7 @@ public class AddEstudianteUI extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ArrayList<String> info = new ArrayList<>();
-                info.add(((EditText)findViewById(R.id.nombre)).getText().toString());
+                info.add(((EditText)findViewById(R.id.nombreP)).getText().toString());
                 info.add(((EditText)findViewById(R.id.apellidos)).getText().toString());
                 info.add(((EditText)findViewById(R.id.dni)).getText().toString());
                 info.add(((EditText)findViewById(R.id.fecha)).getText().toString());

@@ -7,13 +7,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
 import com.example.andorid.hospital.Controllers.MedicacionController;
-import com.example.andorid.hospital.FactoriaInterfaz;
 import com.example.andorid.hospital.Medicacion;
 import com.example.andorid.hospital.R;
 
@@ -51,7 +49,7 @@ public class MedicacionEnfermeroUI extends AppCompatActivity {
         int idPaciente = datos.getInt("idPaciente");
          ArrayList<Medicacion> medicacions = new ArrayList<>();
 
-        TextView nombre = (TextView) findViewById(R.id.nombre) ;
+        TextView nombre = (TextView) findViewById(R.id.nombreP) ;
         nombre.setText(datos.getString("nombrePaciente"));
         try {
             medicacions = medicacionController.getMedicacion(idPaciente);
