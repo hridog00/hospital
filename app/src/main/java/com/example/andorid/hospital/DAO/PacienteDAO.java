@@ -53,13 +53,13 @@ public class PacienteDAO {
 
         }
 
-        for(int i=0;i<p.getAntecedentes().size();i++){
+        /*for(int i=0;i<p.getAntecedentes().size();i++){
             resultado = service.submit(new ConexionBD("INSERT INTO `mydb`.`AntecedentesPatologicos` (`idPaciente`, `Nombre`) VALUES ('"+p.getIdPaciente()+"', '"+p.getAntecedentes().get(i)+"');"));
         }
 
         for(int i=0;i<p.getIntervenciones().size();i++){
             resultado = service.submit(new ConexionBD("INSERT INTO `mydb`.`Intervenciones` (`idPaciente`, `Nombre`) VALUES ('"+p.getIdPaciente()+"', '"+p.getIntervenciones().get(i)+"');"));
-        }
+        }*/
 
 
         for(int i=0;i<p.gethToxicosPasados().size();i++){
