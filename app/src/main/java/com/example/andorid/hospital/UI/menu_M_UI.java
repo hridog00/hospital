@@ -101,7 +101,7 @@ public class menu_M_UI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                if(pacientes.get(0)!=null){
+                if(pacientes.get(0).getNombre()!=null){
                     Intent  paciente  = new Intent(getApplicationContext(), PacienteUI.class);
                     paciente.putExtra("idPaciente",pacientes.get(0).getIdPaciente());
 
@@ -121,7 +121,7 @@ public class menu_M_UI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                if(pacientes.get(1)!=null) {
+                if(pacientes.get(1).getNombre()!=null) {
 
                     Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
                     paciente.putExtra("idPaciente",pacientes.get(1).getIdPaciente());
@@ -140,7 +140,7 @@ public class menu_M_UI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                if(pacientes.get(2)!=null) {
+                if(pacientes.get(2).getNombre()!=null) {
 
                     Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
                     paciente.putExtra("idPaciente",pacientes.get(2).getIdPaciente());
@@ -160,7 +160,7 @@ public class menu_M_UI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                if(pacientes.get(3)!=null) {
+                if(pacientes.get(3).getNombre()!=null) {
 
                     Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
                     paciente.putExtra("idPaciente",pacientes.get(3).getIdPaciente());
@@ -180,7 +180,7 @@ public class menu_M_UI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                if(pacientes.get(4)!=null) {
+                if(pacientes.get(4).getNombre()!=null) {
 
                     Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
                     paciente.putExtra("idPaciente",pacientes.get(4).getIdPaciente());
@@ -199,7 +199,7 @@ public class menu_M_UI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                if(pacientes.get(5)!=null) {
+                if(pacientes.get(5).getNombre()!=null) {
 
                     Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
                     paciente.putExtra("idPaciente",pacientes.get(5).getIdPaciente());
@@ -217,7 +217,7 @@ public class menu_M_UI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                if(pacientes.get(6)!=null) {
+                if(pacientes.get(6).getNombre()!=null) {
 
                     Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
                     paciente.putExtra("idPaciente",pacientes.get(6).getIdPaciente());
@@ -237,7 +237,7 @@ public class menu_M_UI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                if(pacientes.get(7)!=null) {
+                if(pacientes.get(7).getNombre()!=null) {
 
                     Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
                     paciente.putExtra("idPaciente",pacientes.get(7).getIdPaciente());
@@ -257,7 +257,7 @@ public class menu_M_UI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                if(pacientes.get(8)!=null) {
+                if(pacientes.get(8).getNombre()!=null) {
 
                     Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
                     paciente.putExtra("idPaciente",pacientes.get(8).getIdPaciente());
@@ -277,7 +277,7 @@ public class menu_M_UI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                if(pacientes.get(9)!=null) {
+                if(pacientes.get(9).getNombre()!=null) {
 
                     Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
                     paciente.putExtra("idPaciente",pacientes.get(9).getIdPaciente());
@@ -297,7 +297,7 @@ public class menu_M_UI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                if(pacientes.get(10)!=null) {
+                if(pacientes.get(10).getNombre()!=null) {
 
                     Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
                     paciente.putExtra("idPaciente",pacientes.get(10).getIdPaciente());
@@ -317,7 +317,7 @@ public class menu_M_UI extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
-                if(pacientes.get(11)!=null) {
+                if(pacientes.get(11).getNombre()!=null) {
 
                     Intent paciente = new Intent(getApplicationContext(), PacienteUI.class);
                     paciente.putExtra("idPaciente",pacientes.get(11).getIdPaciente());

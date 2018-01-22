@@ -76,7 +76,8 @@
                     android:id="@+id/nombretxt"
                     android:layout_width="386dp"
                     android:layout_height="wrap_content"
-                    android:text="Nombre" />
+                    android:text="Nombre"
+                    android:textSize="18sp" />
 
             </TableRow>
 
@@ -88,7 +89,8 @@
                     android:id="@+id/apellidostxt"
                     android:layout_width="386dp"
                     android:layout_height="wrap_content"
-                    android:text="Apellidos" />
+                    android:text="Apellidos"
+                    android:textSize="18sp" />
 
             </TableRow>
 
@@ -100,7 +102,8 @@
                     android:id="@+id/dnitxt"
                     android:layout_width="386dp"
                     android:layout_height="wrap_content"
-                    android:text="DNI" />
+                    android:text="DNI"
+                    android:textSize="18sp" />
 
             </TableRow>
 
@@ -112,7 +115,8 @@
                     android:id="@+id/fechatxt"
                     android:layout_width="386dp"
                     android:layout_height="wrap_content"
-                    android:text="Fecha de nacimiento" />
+                    android:text="Fecha de nacimiento"
+                    android:textSize="18sp" />
 
             </TableRow>
 
@@ -123,18 +127,14 @@
                 <TextView
                     android:layout_width="386dp"
                     android:layout_height="wrap_content"
-                    android:text="Diagnostico" />
+                    android:text="Datos academicos"
+                    android:textSize="18sp" />
 
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="386dp"
-                    android:layout_height="wrap_content"
-                    android:text="Alergias" />
 
             </TableRow>
 

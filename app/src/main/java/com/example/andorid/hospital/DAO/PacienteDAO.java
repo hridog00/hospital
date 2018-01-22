@@ -40,7 +40,10 @@ public class PacienteDAO {
         System.out.println(p.getPlanta()+" "+p.getHabitacionID());
        // String sqlHabitacion = "UPDATE `mydb`.`Habitacion` SET `idPacienteH`='"+idUuario+"' WHERE `NumeroHabitacion`='"+p.getHabitacionID()+"' and`PlantaH`='"+p.getPlanta()+"';";
 
+        String sqlHabitacion ="UPDATE `mydb`.`Habitacion` SET `idPacienteH`='"+idUuario+"', `nombrePaciente`='"+p.getNombre()+"', `apellidoPaciente`='"+p.getApellidos()+"' WHERE `NumeroHabitacion`='"+p.getHabitacionID()+"' and`PlantaH`='"+p.getPlanta()+"';";
 
+
+        resultado3 = service.submit(new ConexionBD(sqlHabitacion));
         for(int i=0;i<p.getAlergias().size();i++) {
             String sqlAlergias = "INSERT INTO `mydb`.`Alergias` (`idPaciente`, `Nombre`) VALUES ('" + idUuario + "', '" + p.getAlergias().get(i) + "');\n";
             resultado3 = service.submit(new ConexionBD(sqlAlergias));
@@ -70,10 +73,7 @@ public class PacienteDAO {
         }
         */
 
-        String sqlHabitacion ="UPDATE `mydb`.`Habitacion` SET `idPacienteH`='"+idUuario+"', `nombrePaciente`='"+p.getNombre()+"', `apellidoPaciente`='"+p.getApellidos()+"' WHERE `NumeroHabitacion`='"+p.getHabitacionID()+"' and`PlantaH`='"+p.getPlanta()+"';";
 
-
-        resultado3 = service.submit(new ConexionBD(sqlHabitacion));
 
 
 
@@ -87,7 +87,8 @@ public class PacienteDAO {
 
         String sqlUsuario = "DELETE FROM `mydb`.`Usuario` WHERE `idUsuario`='"+idPaciente+"';";
         String sqlPaciente = "DELETE FROM `mydb`.`Paciente` WHERE `idPaciente`='"+idPaciente+"';";
-        String sqlHabitacion = "UPDATE `mydb`.`Habitacion` SET `idPacienteH`=NULL, `nombrePaciente`=NULL, `apellidoPaciente`=NULL WHERE `idPacienteH`='"+idPaciente+"';";
+        String sqlHabitacion = "UPDATE `mydb`.`Habitacion` SET  `nombrePaciente`=NULL, `apellidoPaciente`=NULL WHERE `idPacienteH`='"+idPaciente+"';";
+
 
         ExecutorService service = Executors.newFixedThreadPool(2);
         Future<List> resultado = service.submit(new ConexionBD(sqlHabitacion));
@@ -117,18 +118,30 @@ public class PacienteDAO {
         pac.setFechaNacimiento((String) objeto.get(6).toString());
 
 
-        String sentencia2 = "SELECT * FROM mydb.NecesidadesVH WHERE idPaciente='"+idPaciente +"'";
+        String sentencia2 = "SELECT Nombre FROM mydb.NecesidadesVH WHERE idPaciente='"+idPaciente +"'";
         ExecutorService service2 = Executors.newFixedThreadPool(2);
         Future<List> resultado2 = service.submit(new ConexionBD(sentencia2));
-        List res2 = resultado.get();
+        List res2 = resultado2.get();
         ArrayList<String> necesidades = new ArrayList<String>();
 
         for(int i=0; i<res2.size(); i++)
         {
             List objeto2 = (List)res2.get(i);
-            necesidades.add(objeto.get(2).toString());
+            necesidades.add(objeto2.get(0).toString());
         }
         pac.setNecesidadesVH(necesidades);
+
+        String sentencia3 = "SELECT Nombre FROM mydb.Alergias WHERE idPaciente='"+idPaciente +"'";
+                Future<List> resultado3 = service.submit(new ConexionBD(sentencia3));
+        List res3 = resultado3.get();
+        ArrayList<String> alergias = new ArrayList<String>();
+
+        for(int i=0; i<res3.size(); i++)
+        {
+            List objeto2 = (List)res3.get(i);
+            alergias.add(objeto2.get(0).toString());
+        }
+        pac.setAlergias(alergias);
 
         return pac;
 
@@ -150,6 +163,7 @@ public class PacienteDAO {
             Paciente pac = new Paciente();
             List objeto = (List)res.get(i);
             if(objeto.get(3)!= null){
+
                 pac.setNombre(objeto.get(3).toString());
 
             }

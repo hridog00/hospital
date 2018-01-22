@@ -31,7 +31,7 @@ public class MedicacionEstudianteUI extends AppCompatActivity {
         nombre.setText(datos.getString("nombrePaciente"));
 
         ArrayList<Medicacion> medicacions = new ArrayList<>();
-        System.out.println(idPaciente);
+
 
         try {
             medicacions = medicacionController.getMedicacion(idPaciente);

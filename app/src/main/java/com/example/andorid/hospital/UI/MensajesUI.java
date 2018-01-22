@@ -59,7 +59,7 @@ public class MensajesUI extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                String texto = ((EditText)findViewById(R.id.editText7)).getText().toString();
+                String texto = ((EditText)findViewById(R.id.mensaje)).getText().toString();
                 char tipo = 'X';
                 if(((RadioButton)findViewById(R.id.rEnfermero)).isChecked()){
                     tipo = 'E';
@@ -86,14 +86,19 @@ public class MensajesUI extends AppCompatActivity {
                     final TextView emisor = new TextView(getApplicationContext());
                     emisor.setText(mensajes.get(i).getNombreUsuario());
                     emisor.setTextColor(Color.BLUE);
-                    linearLayout.addView(emisor);
 
                     final TextView msg = new TextView(getApplicationContext());
                     msg.setText(mensajes.get(i).getTexto());
+
+                    linearLayout.addView(emisor);
+
                     linearLayout.addView(msg);
 
 
                 }
+
+                EditText espacioTexto = (EditText) findViewById(R.id.mensaje);
+                espacioTexto.setText("");
 
 
             }
@@ -121,11 +126,12 @@ public class MensajesUI extends AppCompatActivity {
                     final TextView emisor = new TextView(getApplicationContext());
                     emisor.setText(mensajes.get(i).getNombreUsuario());
                     emisor.setTextColor(Color.BLUE);
-                    linearLayout.addView(emisor);
 
                     final TextView msg = new TextView(getApplicationContext());
                     msg.setText(mensajes.get(i).getTexto());
                     linearLayout.addView(msg);
+                    linearLayout.addView(emisor);
+
 
 
                 }

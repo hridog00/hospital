@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.andorid.hospital.Controllers.PacienteController;
@@ -71,6 +72,27 @@ public class PacienteUI extends AppCompatActivity {
 
         TextView fechatxt = findViewById(R.id.fechatxt);
         fechatxt.setText("Fecha de Nacimiento:    "+paciente.getFechaNacimiento());
+
+        ArrayList<TextView> textviews = new ArrayList<>();
+
+        LinearLayout linearLayout = findViewById(R.id.linear);
+        for(int i = 0;i<paciente.getNecesidadesVH().size();i++){
+
+            final TextView textv = new TextView(this);
+            textv.setText(paciente.getNecesidadesVH().get(i));
+
+            linearLayout.addView(textv);
+            textviews.add(textv);
+
+        }
+        LinearLayout linearAlergias = findViewById(R.id.linearA);
+        for(int i =0;i<paciente.getAlergias().size();i++){
+            final TextView textv = new TextView(this);
+            textv.setText(paciente.getAlergias().get(i));
+
+           linearAlergias.addView(textv);
+
+        }
 
 
 

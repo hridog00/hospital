@@ -26,7 +26,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="fill"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:stretchColumns="2">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -91,7 +92,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Fecha de nacimiento" />
+                    android:text="Fecha de nacimiento (yyyy-mm-dd))" />
 
                 <EditText
                     android:id="@+id/fecha"
@@ -138,6 +139,12 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:text="" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Finalizar cada  alergia con ; (alergia;alergia;)" />
             </TableRow>
 
             <TableRow
@@ -156,6 +163,12 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:text="" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Finalizar cada  intervención con ;" />
             </TableRow>
 
             <TableRow
@@ -171,11 +184,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_span="2"
-                    android:orientation="vertical"><![CDATA[
-                    >
-
-                    ]]>
+                    android:layout_span="4"
+                    android:orientation="vertical">
 
                     <CheckBox
                         android:id="@+id/n1"
@@ -301,6 +311,12 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Finalizar cada  hábito con ;" />
             </TableRow>
 
             <TableRow
@@ -319,6 +335,12 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:text="" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Finalizar cada hábito con ;" />
             </TableRow>
 
             <TableRow
@@ -338,6 +360,12 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:text="" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Finalizar cada  antecedente con ;" />
             </TableRow>
 
             <TableRow

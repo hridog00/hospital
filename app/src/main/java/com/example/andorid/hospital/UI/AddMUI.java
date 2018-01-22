@@ -1,5 +1,6 @@
 package com.example.andorid.hospital.UI;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.andorid.hospital.Controllers.MedicacionController;
+import com.example.andorid.hospital.FactoriaInterfaz;
 import com.example.andorid.hospital.R;
 
 import java.util.ArrayList;
@@ -40,7 +42,7 @@ public class AddMUI extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                finish();
+
 
             }
         });

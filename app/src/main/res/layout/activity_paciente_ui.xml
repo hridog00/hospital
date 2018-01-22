@@ -48,7 +48,8 @@
                     android:id="@+id/nombretxt"
                     android:layout_width="386dp"
                     android:layout_height="wrap_content"
-                    android:text="Nombre" />
+                    android:text="Nombre"
+                    android:textSize="18sp" />
 
             </TableRow>
 
@@ -60,7 +61,8 @@
                     android:id="@+id/apellidostxt"
                     android:layout_width="386dp"
                     android:layout_height="wrap_content"
-                    android:text="Apellidos" />
+                    android:text="Apellidos"
+                    android:textSize="18sp" />
 
             </TableRow>
 
@@ -72,7 +74,8 @@
                     android:id="@+id/dnitxt"
                     android:layout_width="386dp"
                     android:layout_height="wrap_content"
-                    android:text="DNI" />
+                    android:text="DNI"
+                    android:textSize="18sp" />
 
             </TableRow>
 
@@ -84,7 +87,8 @@
                     android:id="@+id/fechatxt"
                     android:layout_width="386dp"
                     android:layout_height="wrap_content"
-                    android:text="Fecha de nacimiento" />
+                    android:text="Fecha de nacimiento"
+                    android:textSize="18sp" />
 
             </TableRow>
 
@@ -95,7 +99,8 @@
                 <TextView
                     android:layout_width="386dp"
                     android:layout_height="wrap_content"
-                    android:text="Diagnostico" />
+                    android:text="Diagnostico"
+                    android:textSize="18sp" />
 
             </TableRow>
 
@@ -107,32 +112,14 @@
                     android:id="@+id/alergiastxt"
                     android:layout_width="386dp"
                     android:layout_height="wrap_content"
-                    android:text="Alergias" />
+                    android:text="Alergias"
+                    android:textSize="18sp" />
 
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/domiciliotxt"
-                    android:layout_width="386dp"
+                <LinearLayout
+                    android:id="@+id/linearA"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Domicilio" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/telefonotxt"
-                    android:layout_width="386dp"
-                    android:layout_height="wrap_content"
-                    android:text="Teléfono" />
-
+                    android:orientation="vertical"></LinearLayout>
 
             </TableRow>
 
@@ -144,7 +131,16 @@
                     android:id="@+id/necesidades"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="Necesidades de Virginia Henderson"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:id="@+id/linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                </LinearLayout>
             </TableRow>
 
             <TableRow
