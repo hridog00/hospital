@@ -83,26 +83,33 @@
             android:orientation="horizontal"
             android:visibility="visible">
 
-            <RadioButton
-                android:id="@+id/rMedico"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Médico" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
 
-            <RadioButton
-                android:id="@+id/rEnfermero"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Enfermero" />
+                <RadioButton
+                    android:id="@+id/rPaciente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Paciente" />
 
-            <RadioButton
-                android:id="@+id/rPaciente"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Paciente" />
+                <RadioButton
+                    android:id="@+id/rMedico"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Médico" />
+
+                <RadioButton
+                    android:id="@+id/rEnfermero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Enfermero" />
+
+            </RadioGroup>
 
         </LinearLayout>
 

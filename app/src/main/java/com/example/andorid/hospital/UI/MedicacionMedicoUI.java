@@ -58,7 +58,7 @@ public class MedicacionMedicoUI extends AppCompatActivity {
             boton.setText("Eliminar");
             textv.setText("Nombre: "+medicacions.get(i).getNombre()+" Dosis: "+medicacions.get(i).getDosis()+" Hora: "+medicacions.get(i).getHora());
 
-            boton.setBackground(this.getResources().getDrawable(R.drawable.ic_menu_manage));
+            //boton.setBackground(this.getResources().getDrawable(R.drawable.ic_menu_manage));
             // add the textview to the linearlayout
 
             grid.addView(textv);
@@ -84,6 +84,7 @@ public class MedicacionMedicoUI extends AppCompatActivity {
 
                 @Override
                 public void onClick(View v) {
+                   // System.out.println("IDMEDICACION........"+idMedicacion);
                     medicacionController.eliminarMedicacion(medicacionActual, idMedicacion);
                     finish();
                 }

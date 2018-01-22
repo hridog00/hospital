@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.andorid.hospital.Controllers.MensajeController;
@@ -19,7 +20,10 @@ import com.example.andorid.hospital.Mensaje;
 import com.example.andorid.hospital.R;
 import com.example.andorid.hospital.Usuario;
 
+import java.security.Principal;
+import java.security.acl.Group;
 import java.util.ArrayList;
+import java.util.Enumeration;
 
 public class MensajesUI extends AppCompatActivity {
     private MensajeController mensajeController = new MensajeController();
@@ -77,12 +81,77 @@ public class MensajesUI extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-              Intent recargar = new Intent(getApplicationContext(),MensajesUI.class);
-              startActivity(recargar);
+              //Intent recargar = new Intent(getApplicationContext(),MensajesUI.class);
+             // startActivity(recargar);
+
+                ArrayList<Mensaje> mensajes = new ArrayList<>();
+                LinearLayout linearLayout = (LinearLayout)findViewById(R.id.linearMSG);
+
+                linearLayout.removeAllViews();
+                try{
+                    mensajes = mensajeController.getMensajes(Usuario.getInstance().getTipo());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                for(int i=0;i<mensajes.size();i++){
+                    final TextView emisor = new TextView(getApplicationContext());
+                    emisor.setText(mensajes.get(i).getNombreUsuario());
+                    emisor.setTextColor(Color.BLUE);
+                    linearLayout.addView(emisor);
+
+                    final TextView msg = new TextView(getApplicationContext());
+                    msg.setText(mensajes.get(i).getTexto());
+                    linearLayout.addView(msg);
+
+
+                }
+
 
 
             }
         });
+
+
+        final Button rMedico = (Button) findViewById(R.id.rMedico);
+        final Button rEnfermero = (Button) findViewById(R.id.rEnfermero);
+        final Button rPaciente = (Button) findViewById(R.id.rPaciente);
+
+
+
+
+       /* rMedico.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+
+                    rEnfermero.setActivated(false);
+                    rPaciente.setActivated(false);
+            }
+        });
+
+        rEnfermero.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                rMedico.setActivated(false);
+                rPaciente.setActivated(false);
+            }
+        });
+
+        rPaciente.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                rEnfermero.setActivated(false);
+                rMedico.setActivated(false);
+            }
+        });
+*/
+
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar
