@@ -106,6 +106,7 @@ public class FactoriaInterfaz {
             ArrayList<String> info = sesionController.getListaPacientes();
             Intent intent = new Intent(applicationContext, MedicacionEstudianteUI.class);
 
+
         //    intent.putExtra("idPaciente",paciente.getIdPaciente() );
             intent.putExtra("nombrePaciente", paciente.getNombre()+" "+paciente.getApellidos());
             intent.putExtra("idPaciente",paciente.getIdPaciente() );
