@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
@@ -28,7 +29,11 @@ public class MedicacionEstudianteUI extends AppCompatActivity {
 
         final int idPaciente = datos.getInt("idPaciente");
 
+        TextView nombre = (TextView) findViewById(R.id.nombre) ;
+        nombre.setText(datos.getString("nombrePaciente"));
+
         ArrayList<Medicacion> medicacions = new ArrayList<>();
+        System.out.println(idPaciente);
 
         try {
             medicacions = medicacionController.getMedicacion(idPaciente);

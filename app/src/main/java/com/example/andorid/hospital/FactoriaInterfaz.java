@@ -79,13 +79,14 @@ public class FactoriaInterfaz {
     }
 
 
-    public void mostrarUIMedicacion(char tipo, Context applicationContext,int idPaciente)
+    public void mostrarUIMedicacion(char tipo, Context applicationContext,Paciente paciente)
     {
         if(tipo=='E')
         {
             ArrayList<String> info = sesionController.getListaPacientes();
             Intent intent = new Intent(applicationContext, MedicacionEnfermeroUI.class);
-            intent.putExtra("idPaciente",idPaciente );
+            intent.putExtra("idPaciente",paciente.getIdPaciente() );
+            intent.putExtra("nombrePaciente", paciente.getNombre()+" "+paciente.getApellidos());
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
             applicationContext.startActivity(intent);
@@ -94,7 +95,8 @@ public class FactoriaInterfaz {
         {
             ArrayList<String> info = sesionController.getListaPacientes();
             Intent intent = new Intent(applicationContext, MedicacionMedicoUI.class);
-            intent.putExtra("idPaciente",idPaciente );
+            intent.putExtra("idPaciente",paciente.getIdPaciente() );
+            intent.putExtra("nombrePaciente", paciente.getNombre()+" "+paciente.getApellidos());
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
             applicationContext.startActivity(intent);
@@ -104,7 +106,10 @@ public class FactoriaInterfaz {
             ArrayList<String> info = sesionController.getListaPacientes();
             Intent intent = new Intent(applicationContext, MedicacionEstudianteUI.class);
 
-            intent.putExtra("idPaciente",idPaciente );
+        //    intent.putExtra("idPaciente",paciente.getIdPaciente() );
+            intent.putExtra("nombrePaciente", paciente.getNombre()+" "+paciente.getApellidos());
+            intent.putExtra("idPaciente",paciente.getIdPaciente() );
+
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
             applicationContext.startActivity(intent);

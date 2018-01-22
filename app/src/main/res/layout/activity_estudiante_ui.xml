@@ -168,7 +168,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/nombre"
                     android:layout_width="386dp"
                     android:layout_height="wrap_content"
                     android:text="TextView" />

@@ -79,6 +79,7 @@ public class PacienteUI extends AppCompatActivity {
         Button medicacion = (Button) findViewById(R.id.button5);
 
         final int idP = idPaciente;
+        final Paciente p = paciente;
         medicacion.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -93,7 +94,10 @@ public class PacienteUI extends AppCompatActivity {
 
                 startActivity(med);*/
                 FactoriaInterfaz factoria = FactoriaInterfaz.getInstance();
-                factoria.mostrarUIMedicacion(Usuario.getInstance().getTipo(),getApplicationContext(), idP);
+                p.setIdPaciente(idP);
+                factoria.mostrarUIMedicacion(Usuario.getInstance().getTipo(),getApplicationContext(), p);
+
+
 
 
             }

@@ -324,7 +324,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/nombre"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Antecedentes patológicos" />
