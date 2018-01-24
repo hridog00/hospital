@@ -85,16 +85,22 @@ public class PacienteDAO {
 
     public void eliminarPaciente(int idPaciente){
 
-        String sqlUsuario = "DELETE FROM `mydb`.`Usuario` WHERE `idUsuario`='"+idPaciente+"';";
-        String sqlPaciente = "DELETE FROM `mydb`.`Paciente` WHERE `idPaciente`='"+idPaciente+"';";
         String sqlHabitacion = "UPDATE `mydb`.`Habitacion` SET  `nombrePaciente`=NULL, `apellidoPaciente`=NULL WHERE `idPacienteH`='"+idPaciente+"';";
 
 
         ExecutorService service = Executors.newFixedThreadPool(2);
         Future<List> resultado = service.submit(new ConexionBD(sqlHabitacion));
+        System.out.println(sqlHabitacion);
+        String sqlPaciente = "DELETE FROM `mydb`.`Paciente` WHERE `idPaciente`='"+idPaciente+"';";
 
-        resultado = service.submit(new ConexionBD(sqlPaciente));
-         resultado = service.submit(new ConexionBD(sqlUsuario));
+        ExecutorService service2 = Executors.newFixedThreadPool(2);
+
+        resultado = service2.submit(new ConexionBD(sqlPaciente));
+        String sqlUsuario = "DELETE FROM `mydb`.`Usuario` WHERE `idUsuario`='"+idPaciente+"';";
+
+        ExecutorService service3 = Executors.newFixedThreadPool(2);
+
+        resultado = service3.submit(new ConexionBD(sqlUsuario));
 
 
 
@@ -197,19 +203,20 @@ public class PacienteDAO {
             // System.out.println(res.get(i));
             Paciente pac = new Paciente();
             List objeto = (List)res.get(i);
-            if(objeto.get(3)!= null){
-                pac.setNombre(objeto.get(3).toString());
 
-            }
-            if(objeto.get(4)!= null) {
-
-                pac.setApellidos(objeto.get(4).toString());
-
-            }
             if(objeto.get(2) != null){
 
                 //est.set(Integer.parseInt(objeto.get(0).toString()));
                 pac.setIdPaciente(Integer.parseInt(objeto.get(2).toString()));
+                if(objeto.get(3)!= null){
+                    pac.setNombre(objeto.get(3).toString());
+
+                }
+                if(objeto.get(4)!= null) {
+
+                    pac.setApellidos(objeto.get(4).toString());
+
+                }
             }
             listaPacientes.add(pac);
 
